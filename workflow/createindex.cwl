@@ -15,24 +15,24 @@ inputs:
     'sbg:y': -653.5
   - id: runThreadN
     type: int?
-    'sbg:x': -933
-    'sbg:y': -338
+    'sbg:x': -1116
+    'sbg:y': -318
   - id: dir_name
     type: string
     'sbg:x': -1126.984130859375
     'sbg:y': -518.8207397460938
   - id: url_genomefasta_human
     type: string
-    'sbg:x': -1021.496826171875
-    'sbg:y': -147.5
+    'sbg:x': -1102
+    'sbg:y': -167
   - id: output_name_genomefasta_human
     type: string
-    'sbg:x': -1026
-    'sbg:y': -18
+    'sbg:x': -1101
+    'sbg:y': -17
   - id: dir_name_human
     type: string
-    'sbg:x': -1028
-    'sbg:y': 117
+    'sbg:x': -1108
+    'sbg:y': 115
 outputs:
   - id: downloaded_virus
     outputSource:
@@ -56,8 +56,8 @@ outputs:
     outputSource:
       - rnaseq_star_index_human/downloaded_genomefasta
     type: File
-    'sbg:x': -497
-    'sbg:y': -35
+    'sbg:x': -496
+    'sbg:y': -30
 steps:
   - id: star_index_virus
     in:
@@ -110,7 +110,7 @@ steps:
       - id: downloaded_genomefasta
       - id: starIndex
     run: rnaseq-star_index/rnaseq-star_index.cwl
-    'sbg:x': -702.5
-    'sbg:y': -88.5
+    'sbg:x': -688
+    'sbg:y': -91
 requirements:
   - class: SubworkflowFeatureRequirement
