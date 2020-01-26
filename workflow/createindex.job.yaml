@@ -1,5 +1,5 @@
-dir_name_virus: STAR_index_Virus
-output_name_genomefasta_virus: Viruses_757.fasta.gz
+dir_name: STAR_index_virus
+output_name_virus: viruses_757.fasta
 runThreadN: 4
-url_genomefasta_virus: >-
-  https://raw.githubusercontent.com/yyoshiaki/VirTect_cwl/master/data/viruses_757.fasta.gz
+url_virus: >-
+  https://raw.githubusercontent.com/WGLab/VirTect/master/viruses_reference/viruses_757.fasta

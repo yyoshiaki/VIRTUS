@@ -6,7 +6,7 @@ $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 inputs:
   - id: runThreadN
-    type: string?
+    type: int?
     'sbg:x': -223
     'sbg:y': -263
   - id: url_genomefasta
