@@ -1,5 +1,9 @@
 dir_name: STAR_index_virus
+dir_name_human: STAR_index_human
+output_name_genomefasta_human: GRCh38.p12.genome.fa.gz
 output_name_virus: viruses_757.fasta
 runThreadN: 4
+url_genomefasta_human: >-
+  ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_29/GRCh38.p12.genome.fa.gz
 url_virus: >-
   https://raw.githubusercontent.com/WGLab/VirTect/master/viruses_reference/viruses_757.fasta

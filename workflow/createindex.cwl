@@ -15,12 +15,24 @@ inputs:
     'sbg:y': -653.5
   - id: runThreadN
     type: int?
-    'sbg:x': -973
-    'sbg:y': -242
+    'sbg:x': -933
+    'sbg:y': -338
   - id: dir_name
     type: string
-    'sbg:x': -1123.5
-    'sbg:y': -474.5
+    'sbg:x': -1126.984130859375
+    'sbg:y': -518.8207397460938
+  - id: url_genomefasta_human
+    type: string
+    'sbg:x': -1021.496826171875
+    'sbg:y': -147.5
+  - id: output_name_genomefasta_human
+    type: string
+    'sbg:x': -1026
+    'sbg:y': -18
+  - id: dir_name_human
+    type: string
+    'sbg:x': -1028
+    'sbg:y': 117
 outputs:
   - id: downloaded_virus
     outputSource:
@@ -34,6 +46,18 @@ outputs:
     type: Directory
     'sbg:x': -486.8369140625
     'sbg:y': -606.5
+  - id: starIndex_human
+    outputSource:
+      - rnaseq_star_index_human/starIndex
+    type: Directory
+    'sbg:x': -491.496826171875
+    'sbg:y': -166.5
+  - id: downloaded_genomefasta_human
+    outputSource:
+      - rnaseq_star_index_human/downloaded_genomefasta
+    type: File
+    'sbg:x': -497
+    'sbg:y': -35
 steps:
   - id: star_index_virus
     in:
@@ -58,8 +82,8 @@ steps:
       - id: created_directory
     run: ../tool/mkdir/mkdir.cwl
     label: Make directory if not exists
-    'sbg:x': -977
-    'sbg:y': -478
+    'sbg:x': -937.1593627929688
+    'sbg:y': -520.8286743164062
   - id: wget_virus
     in:
       - id: output_name
@@ -72,4 +96,21 @@ steps:
     run: ../tool/wget/wget.cwl
     'sbg:x': -954
     'sbg:y': -720
-requirements: []
+  - id: rnaseq_star_index_human
+    in:
+      - id: runThreadN
+        source: runThreadN
+      - id: url_genomefasta
+        source: url_genomefasta_human
+      - id: output_name_genomefasta
+        source: output_name_genomefasta_human
+      - id: dir_name
+        source: dir_name_human
+    out:
+      - id: downloaded_genomefasta
+      - id: starIndex
+    run: rnaseq-star_index/rnaseq-star_index.cwl
+    'sbg:x': -702.5
+    'sbg:y': -88.5
+requirements:
+  - class: SubworkflowFeatureRequirement
