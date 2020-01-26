@@ -1,8 +1,5 @@
 dir_name: STAR_reference
 output_name_genomefasta: GRCh38.p12.genome.fa.gz
-output_name_gtf: gencode.v29.annotation.gtf.gz
 runThreadN: '4'
 url_genomefasta: >-
   ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_29/GRCh38.p12.genome.fa.gz
-url_gtf: >-
-  ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_29/gencode.v29.annotation.gtf.gz

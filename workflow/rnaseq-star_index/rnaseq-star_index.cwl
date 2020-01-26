@@ -7,16 +7,8 @@ $namespaces:
 inputs:
   - id: runThreadN
     type: string?
-    'sbg:x': -98
-    'sbg:y': 229
-  - id: url_gtf
-    type: string
-    'sbg:x': -607
-    'sbg:y': -378
-  - id: output_name_gtf
-    type: string
-    'sbg:x': -630
-    'sbg:y': -227.9956817626953
+    'sbg:x': -223
+    'sbg:y': -263
   - id: url_genomefasta
     type: string
     'sbg:x': -679
@@ -30,24 +22,18 @@ inputs:
     'sbg:x': -505.46875
     'sbg:y': 335
 outputs:
-  - id: starIndex
-    outputSource:
-      - star_index/starIndex
-    type: Directory
-    'sbg:x': 300
-    'sbg:y': -109
-  - id: downloaded_gtf
-    outputSource:
-      - wget_gtf/downloaded
-    type: File
-    'sbg:x': -354.08599853515625
-    'sbg:y': -405.5
   - id: downloaded_genomefasta
     outputSource:
       - wget_genomefasta/downloaded
     type: File
     'sbg:x': -426
     'sbg:y': 130
+  - id: starIndex
+    outputSource:
+      - star_index/starIndex
+    type: Directory
+    'sbg:x': 304.6953125
+    'sbg:y': -14.5
 steps:
   - id: star_index
     in:
@@ -58,26 +44,12 @@ steps:
       - id: runThreadN
         default: '4'
         source: runThreadN
-      - id: sjdbGTFfile
-        source: gunzip_gtf/decompressed
     out:
       - id: starIndex
     run: ../../tool/star/star_index/star_index.cwl
     label: 'STAR genomeGenerate: Generating genome indexes.'
-    'sbg:x': 60
-    'sbg:y': -108
-  - id: wget_gtf
-    in:
-      - id: output_name
-        source: output_name_gtf
-      - id: url
-        source: url_gtf
-    out:
-      - id: downloaded
-      - id: stderr
-    run: ../../tool/wget/wget.cwl
-    'sbg:x': -450
-    'sbg:y': -265
+    'sbg:x': 78
+    'sbg:y': -19
   - id: wget_genomefasta
     in:
       - id: output_name
@@ -100,16 +72,6 @@ steps:
     label: Make directory if not exists
     'sbg:x': -292.46875
     'sbg:y': 237.5
-  - id: gunzip_gtf
-    in:
-      - id: file
-        source: wget_gtf/downloaded
-    out:
-      - id: decompressed
-      - id: stderr
-    run: ../../tool/gunzip/gunzip.cwl
-    'sbg:x': -234.9669189453125
-    'sbg:y': -189.5
   - id: gunzip_genomefasta
     in:
       - id: file

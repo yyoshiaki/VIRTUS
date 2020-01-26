@@ -20,12 +20,12 @@ inputs:
       position: 0
       prefix: '--genomeFastaFiles'
   - id: runThreadN
-    type: string?
+    type: int?
     inputBinding:
       position: 0
       prefix: '--runThreadN'
   - id: sjdbGTFfile
-    type: File
+    type: File?
     inputBinding:
       position: 0
       prefix: '--sjdbGTFfile'
