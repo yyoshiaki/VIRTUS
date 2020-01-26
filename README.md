@@ -4,6 +4,8 @@ Re-implementation and upadate of [VirTect](https://github.com/WGLab/VirTect) by 
 
 ## createindex.cwl
 
+`VirTect_cwl/workflow`
+
 ```
 cwltool createindex.cwl createindex.job.yaml
 ```
