@@ -1,0 +1,4 @@
+use_remote_name: false  # type "boolean"
+url: a_string  # type "string"
+track_location: false  # type "boolean"
+output_name: wget-stdout.txt  # default value of type "string".

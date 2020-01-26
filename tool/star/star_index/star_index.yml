@@ -1,0 +1,11 @@
+sjdbOverhang: 0  # type "int" (optional)
+sjdbGTFfile:  # type "File"
+    class: File
+    path: a/file/path
+runThreadN: a_string  # type "string" (optional)
+genomeFastaFiles:  # type "File"
+    class: File
+    path: a/file/path
+genomeDir:  # type "Directory"
+    class: Directory
+    path: a/directory/path
