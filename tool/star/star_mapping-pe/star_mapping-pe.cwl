@@ -11,7 +11,7 @@ baseCommand:
 inputs:
   - default: 1000000
     id: alignIntronMax
-    type: int
+    type: int?
     inputBinding:
       position: 0
       prefix: '--alignIntronMax'
@@ -21,7 +21,7 @@ inputs:
       (2ˆwinBinNbits)*winAnchorDistNbins
   - default: 20
     id: alignIntronMin
-    type: int
+    type: int?
     inputBinding:
       position: 0
       prefix: '--alignIntronMin'
@@ -31,7 +31,7 @@ inputs:
       length>=alignIntronMin, otherwise it is considered Deletion
   - default: 1000000
     id: alignMatesGapMax
-    type: int
+    type: int?
     inputBinding:
       position: 0
       prefix: '--alignMatesGapMax'
@@ -41,7 +41,7 @@ inputs:
       (2ˆwinBinNbits)*winAnchorDistNbins
   - default: 1
     id: alignSJDBoverhangMin
-    type: int
+    type: int?
     inputBinding:
       position: 0
       prefix: '--alignSJDBoverhangMin'
@@ -49,7 +49,7 @@ inputs:
     doc: minimum overhang (i.e. block size) for annotated (sjdb) spliced alignments
   - default: 8
     id: alignSJoverhangMin
-    type: int
+    type: int?
     inputBinding:
       position: 0
       prefix: '--alignSJoverhangMin'
@@ -86,7 +86,7 @@ inputs:
       index size. 0 value can only be used with –genomeLoad NoSharedMemory
       option
   - id: nthreads
-    type: int
+    type: int?
     inputBinding:
       position: 0
       prefix: '--runThreadN'
@@ -96,7 +96,7 @@ inputs:
       be set to the number of available cores on the server node.
   - default: 10
     id: outBAMcompression
-    type: int
+    type: int?
     inputBinding:
       position: 0
       prefix: '--outBAMcompression'
@@ -106,7 +106,7 @@ inputs:
       10=maximum compression
   - default: 999
     id: outFilterMismatchNmax
-    type: int
+    type: int?
     inputBinding:
       position: 0
       prefix: '--outFilterMismatchNmax'
@@ -114,7 +114,7 @@ inputs:
     doc: alignment will be output only if it has no more mismatches than this value
   - default: 0.04
     id: outFilterMismatchNoverReadLmax
-    type: float
+    type: float?
     inputBinding:
       position: 0
       prefix: '--outFilterMismatchNoverReadLmax'
@@ -126,7 +126,7 @@ inputs:
       is less than or equal to this value.
   - default: 20
     id: outFilterMultimapNmax
-    type: int
+    type: int?
     inputBinding:
       position: 0
       prefix: '--outFilterMultimapNmax'
@@ -138,7 +138,7 @@ inputs:
       counted as ”mapped to too many loci” in the Log.final.out .
   - default: BySJout
     id: outFilterType
-    type: string
+    type: string?
     inputBinding:
       position: 0
       prefix: '--outFilterType'
@@ -154,7 +154,7 @@ inputs:
       - NM
       - MD
     id: outSAMattributes
-    type: 'string[]'
+    type: 'string[]?'
     inputBinding:
       position: 0
       prefix: '--outSAMattributes'
@@ -166,7 +166,7 @@ inputs:
       NM MD jM jI ch, None: no attributes
   - default: intronMotif
     id: outSAMstrandField
-    type: string
+    type: string?
     inputBinding:
       position: 0
       prefix: '--outSAMstrandField'
@@ -179,7 +179,7 @@ inputs:
       - BAM
       - Unsorted
     id: outSAMtype
-    type: 'string[]'
+    type: 'string[]?'
     inputBinding:
       position: 1
       prefix: '--outSAMtype'
@@ -192,7 +192,7 @@ inputs:
       memory for sorting which can be specified by –limitBAMsortRAM
   - default: Within
     id: outSAMunmapped
-    type: string
+    type: string?
     inputBinding:
       position: 0
       prefix: '--outSAMunmapped'
@@ -204,7 +204,7 @@ inputs:
       its mapped mate. Only a↵ects multi-mapping reads.
   - default: Unique
     id: outSJfilterReads
-    type: string
+    type: string?
     inputBinding:
       position: 0
       prefix: '--outSJfilterReads'
@@ -214,25 +214,12 @@ inputs:
       reads, unique- and multi-mappers, Unique: uniquely mapping reads only.
   - default: STAR
     id: output_dir_name
-    type: string
+    type: string?
     label: Name of the directory to write output files in
     doc: Name of the directory to write output files in
-  - default:
-      - TranscriptomeSAM
-      - GeneCounts
-    id: quantMode
-    type: string
-    inputBinding:
-      position: 0
-      prefix: '--quantMode'
-    label: types of quantification requested
-    doc: >-
-      types of quantification requested. -: none, TranscriptomeSAM: output
-      SAM/BAM alignments to transcriptome into a separate file, GeneCounts:
-      count reads per gene
   - default: 10
     id: quantTranscriptomeBAMcompression
-    type: int
+    type: int?
     inputBinding:
       position: 0
       prefix: '--quantTranscriptomeBAMcompression'
@@ -242,7 +229,7 @@ inputs:
       compression, 10=maximum compression
   - default: 1
     id: sjdbScore
-    type: int
+    type: int?
     inputBinding:
       position: 0
       prefix: '--sjdbScore'
@@ -336,6 +323,10 @@ outputs:
           var p=inputs.outFileNamePrefix?inputs.outFileNamePrefix:"";
           return p+"SJ.out.tab";
         }
+  - id: unmapped
+    type: File?
+    outputBinding:
+      glob: $(inputs.outSAMunmapped)
 doc: >-
   STAR: Spliced Transcripts Alignment to a Reference.
   https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf

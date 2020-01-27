@@ -13,3 +13,11 @@ cwltool createindex.cwl createindex.job.yaml
 virus fasta is from [VirTect](https://github.com/WGLab/VirTect).
 
 ![img_createindex.cwl](img/createindex.jpg)
+
+
+## test
+
+```
+cd test
+bash prep_test.sh
+```

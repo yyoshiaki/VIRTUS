@@ -1,0 +1,33 @@
+alignIntronMax: null
+alignIntronMin: null
+alignMatesGapMax: null
+alignSJDBoverhangMin: null
+alignSJoverhangMin: null
+fq1:
+  class: File
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/cwl/VirTect_cwl/test/ERR3240275_1.fastq
+fq2:
+  class: File
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/cwl/VirTect_cwl/test/ERR3240275_2.fastq
+genomeDir:
+  class: Directory
+  path: /Users/yasumizuyoshiaki/bioinformatics/cwl/VirTect_cwl/test/STAR_index_human
+limitBAMsortRAM: null
+nthreads: 4
+outBAMcompression: null
+outFileNamePrefix: null
+outFilterMismatchNmax: null
+outFilterMismatchNoverReadLmax: null
+outFilterMultimapNmax: null
+outFilterType: null
+outSAMattributes: null
+outSAMstrandField: null
+outSAMtype: null
+outSAMunmapped: unmapped
+outSJfilterReads: null
+output_dir_name: null
+quantTranscriptomeBAMcompression: null
+readFilesCommand: null
+sjdbScore: null
