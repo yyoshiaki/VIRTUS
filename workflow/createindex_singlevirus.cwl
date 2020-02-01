@@ -19,6 +19,7 @@ inputs:
     'sbg:y': -338
   - id: genomeSAindexNbases
     type: int?
+    doc: 'For small genome such as single virus, this value need to be small.'
     'sbg:x': -576.8984375
     'sbg:y': -517
 outputs:
