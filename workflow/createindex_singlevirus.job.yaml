@@ -2,5 +2,5 @@ dir_name: STAR_index_NC_007605.1
 genomeFastaFiles:
   class: File
   path: >-
-    ../data/NC_007605.1.fasta
+    /Users/yasumizuyoshiaki/bioinformatics/cwl/VirTect_cwl/data/NC_007605.1.fasta
 runThreadN: 40

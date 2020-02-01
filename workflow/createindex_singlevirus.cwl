@@ -7,8 +7,8 @@ $namespaces:
 inputs:
   - id: dir_name
     type: string
-    'sbg:x': -720.3968505859375
-    'sbg:y': -114
+    'sbg:x': -723
+    'sbg:y': -122
   - id: runThreadN
     type: int?
     'sbg:x': -376.3968505859375
@@ -17,7 +17,13 @@ inputs:
     type: File
     'sbg:x': -564.734375
     'sbg:y': -338
-outputs: []
+outputs:
+  - id: starIndex
+    outputSource:
+      - star_index/starIndex
+    type: Directory
+    'sbg:x': 36.765625
+    'sbg:y': -256
 steps:
   - id: star_index
     in:
