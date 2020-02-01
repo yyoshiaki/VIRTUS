@@ -14,6 +14,15 @@ virus fasta is from [VirTect](https://github.com/WGLab/VirTect).
 
 ![img_createindex.cwl](img/createindex.jpg)
 
+## createindex.cwl
+
+`VirTect_cwl/workflow`
+
+```
+cwltool createindex_singlevirus.cwl createindex_singlevirus.job.yaml
+```
+
+virus fasta is from [NCBI](https://www.ncbi.nlm.nih.gov/nuccore/NC_007605.1?report=fasta).
 
 ## test
 
