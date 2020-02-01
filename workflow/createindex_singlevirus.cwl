@@ -17,6 +17,10 @@ inputs:
     type: File
     'sbg:x': -564.734375
     'sbg:y': -338
+  - id: genomeSAindexNbases
+    type: int?
+    'sbg:x': -576.8984375
+    'sbg:y': -517
 outputs:
   - id: starIndex
     outputSource:
@@ -35,6 +39,7 @@ steps:
         source: runThreadN
       - id: genomeSAindexNbases
         default: 10
+        source: genomeSAindexNbases
     out:
       - id: starIndex
     run: ../tool/star/star_index/star_index.cwl

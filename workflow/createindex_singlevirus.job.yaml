@@ -3,4 +3,5 @@ genomeFastaFiles:
   class: File
   path: >-
     ../data/NC_007605.1.fasta
+genomeSAindexNbases: 3
 runThreadN: 40
