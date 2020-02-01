@@ -34,6 +34,11 @@ inputs:
     inputBinding:
       position: 0
       prefix: '--sjdbOverhang'
+  - id: genomeSAindexNbases
+    type: int?
+    inputBinding:
+      position: 4
+      prefix: '--genomeSAindexNbases'
 outputs:
   - id: starIndex
     type: Directory

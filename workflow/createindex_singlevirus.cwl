@@ -33,6 +33,8 @@ steps:
         source: genomeFastaFiles
       - id: runThreadN
         source: runThreadN
+      - id: genomeSAindexNbases
+        default: 10
     out:
       - id: starIndex
     run: ../tool/star/star_index/star_index.cwl

@@ -44,6 +44,8 @@ steps:
       - id: runThreadN
         default: '4'
         source: runThreadN
+      - id: genomeSAindexNbases
+        default: 14
     out:
       - id: starIndex
     run: ../../tool/star/star_index/star_index.cwl
