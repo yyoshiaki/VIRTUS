@@ -15,12 +15,17 @@ Re-implementation and upadate of [VirTect](https://github.com/WGLab/VirTect) by 
 cwltool createindex.cwl -h
 usage: ../workflow/createindex.cwl [-h] --url_virus URL_VIRUS
                                    --output_name_virus OUTPUT_NAME_VIRUS
-                                   [--runThreadN RUNTHREADN] --dir_name
-                                   DIR_NAME --url_genomefasta_human
+                                   [--runThreadN RUNTHREADN]
+                                   --dir_name_STAR_virus DIR_NAME_STAR_VIRUS
+                                   --url_genomefasta_human
                                    URL_GENOMEFASTA_HUMAN
                                    --output_name_genomefasta_human
                                    OUTPUT_NAME_GENOMEFASTA_HUMAN
-                                   --dir_name_human DIR_NAME_HUMAN
+                                   --dir_name_STAR_human DIR_NAME_STAR_HUMAN
+                                   --salmon_index_human SALMON_INDEX_HUMAN
+                                   --url_transcript_human URL_TRANSCRIPT_HUMAN
+                                   --output_name_human_transcipt
+                                   OUTPUT_NAME_HUMAN_TRANSCIPT
                                    [job_order]
 
 positional arguments:
@@ -31,10 +36,13 @@ optional arguments:
   --url_virus URL_VIRUS
   --output_name_virus OUTPUT_NAME_VIRUS
   --runThreadN RUNTHREADN
-  --dir_name DIR_NAME
+  --dir_name_STAR_virus DIR_NAME_STAR_VIRUS
   --url_genomefasta_human URL_GENOMEFASTA_HUMAN
   --output_name_genomefasta_human OUTPUT_NAME_GENOMEFASTA_HUMAN
-  --dir_name_human DIR_NAME_HUMAN
+  --dir_name_STAR_human DIR_NAME_STAR_HUMAN
+  --salmon_index_human SALMON_INDEX_HUMAN
+  --url_transcript_human URL_TRANSCRIPT_HUMAN
+  --output_name_human_transcipt OUTPUT_NAME_HUMAN_TRANSCIPT
 ```
 
 ```
@@ -51,19 +59,29 @@ virus fasta is from [VirTect](https://github.com/WGLab/VirTect).
 
 ```
 cwltool createindex_singlevirus.cwl -h
-usage: createindex_singlevirus.cwl [-h] --dir_name DIR_NAME
-                                   [--runThreadN RUNTHREADN]
-                                   --genomeFastaFiles GENOMEFASTAFILES
-                                   [job_order]
+usage: ../workflow/createindex_singlevirus.cwl [-h] --dir_name_STAR
+                                               DIR_NAME_STAR
+                                               [--runThreadN RUNTHREADN]
+                                               --genomeFastaFiles
+                                               GENOMEFASTAFILES
+                                               [--genomeSAindexNbases GENOMESAINDEXNBASES]
+                                               --transcripts TRANSCRIPTS
+                                               --index_salmon INDEX_SALMON
+                                               [job_order]
 
 positional arguments:
   job_order             Job input json file
 
 optional arguments:
   -h, --help            show this help message and exit
-  --dir_name DIR_NAME
+  --dir_name_STAR DIR_NAME_STAR
   --runThreadN RUNTHREADN
   --genomeFastaFiles GENOMEFASTAFILES
+  --genomeSAindexNbases GENOMESAINDEXNBASES
+                        For small genome such as single virus, this value need
+                        to be small.
+  --transcripts TRANSCRIPTS
+  --index_salmon INDEX_SALMON
 ```
 
 example (EBV)
