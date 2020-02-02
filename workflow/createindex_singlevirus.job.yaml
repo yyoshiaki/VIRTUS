@@ -4,4 +4,9 @@ genomeFastaFiles:
   path: >-
     ../data/NC_007605.1.fasta
 genomeSAindexNbases: 3
+index: salmon_index_NC_007605.1
 runThreadN: 40
+transcripts:
+  class: File
+  path: >-
+    ../data/NC_007605.1.transcripts.fasta

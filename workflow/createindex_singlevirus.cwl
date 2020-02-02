@@ -11,8 +11,8 @@ inputs:
     'sbg:y': -122
   - id: runThreadN
     type: int?
-    'sbg:x': -376.3968505859375
-    'sbg:y': -525
+    'sbg:x': -591.2459716796875
+    'sbg:y': -674
   - id: genomeFastaFiles
     type: File
     'sbg:x': -564.734375
@@ -22,6 +22,14 @@ inputs:
     doc: 'For small genome such as single virus, this value need to be small.'
     'sbg:x': -576.8984375
     'sbg:y': -517
+  - id: transcripts
+    type: File
+    'sbg:x': -570
+    'sbg:y': 54
+  - id: index
+    type: string
+    'sbg:x': -578
+    'sbg:y': 216
 outputs:
   - id: starIndex
     outputSource:
@@ -57,4 +65,17 @@ steps:
     label: Make directory if not exists
     'sbg:x': -548
     'sbg:y': -123
+  - id: salmon_index
+    in:
+      - id: index
+        source: index
+      - id: runThreadN
+        source: runThreadN
+      - id: transcripts
+        source: transcripts
+    out:
+      - id: index
+    run: ../tool/salmon-cwl/salmon-index.cwl
+    'sbg:x': -186
+    'sbg:y': 158
 requirements: []
