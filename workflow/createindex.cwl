@@ -35,8 +35,8 @@ inputs:
     'sbg:y': 115
   - id: salmon_index_human
     type: string
-    'sbg:x': -1138
-    'sbg:y': -939
+    'sbg:x': -1140
+    'sbg:y': -978
   - id: url_transcript_human
     type: string
     'sbg:x': -1146
@@ -144,6 +144,12 @@ steps:
         source: runThreadN
       - id: transcripts
         source: wget_transcipt/downloaded
+      - id: gencode
+        default: true
+      - id: kmer
+        default: 31
+      - id: type
+        default: quasi
     out:
       - id: index
     run: ../tool/salmon-cwl/salmon-index.cwl

@@ -73,6 +73,10 @@ steps:
         source: runThreadN
       - id: transcripts
         source: transcripts
+      - id: kmer
+        default: 31
+      - id: type
+        default: quasi
     out:
       - id: index
     run: ../tool/salmon-cwl/salmon-index.cwl
