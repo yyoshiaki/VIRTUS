@@ -140,7 +140,7 @@ steps:
     in:
       - id: index
         source: salmon_index_human
-      - id: runThreadN
+      - id: threads
         source: runThreadN
       - id: transcripts
         source: wget_transcipt/downloaded

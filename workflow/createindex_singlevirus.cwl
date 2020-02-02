@@ -69,7 +69,7 @@ steps:
     in:
       - id: index
         source: index_salmon
-      - id: runThreadN
+      - id: threads
         source: runThreadN
       - id: transcripts
         source: transcripts

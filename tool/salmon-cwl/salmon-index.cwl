@@ -10,11 +10,11 @@ inputs:
     inputBinding:
       position: 0
       prefix: '--index'
-  - id: runThreadN
+  - id: threads
     type: int?
     inputBinding:
       position: 0
-      prefix: '--runThreadN'
+      prefix: '--threads'
     doc: |
       1
       int: number of threads to run Salmon
@@ -32,4 +32,4 @@ arguments:
   - index
 requirements:
   - class: DockerRequirement
-    dockerPull: combinelab/salmon
+    dockerPull: 'combinelab/salmon:1.1.0'
