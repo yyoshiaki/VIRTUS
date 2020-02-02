@@ -92,6 +92,8 @@ cwltool createindex_singlevirus.cwl createindex_singlevirus.job.yaml
 
 We recommend you to download fasta files for viruses from [NCBI](https://www.ncbi.nlm.nih.gov/nuccore/NC_007605.1?report=fasta).
 
+![img_createindex_singlevirus.cwl](img/createindex_singlevirus.jpg)
+
 ## test
 
 ```
