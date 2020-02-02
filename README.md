@@ -2,6 +2,11 @@
 
 Re-implementation and upadate of [VirTect](https://github.com/WGLab/VirTect) by cwl. Base cwl tools are mainly from [DAT2-cwl](https://github.com/pitagora-network/DAT2-cwl/tree/develop).
 
+## dependencies
+
+- cwltool `conda install -c bioconda cwltool`
+- docker
+
 ## createindex.cwl
 
 `VirTect_cwl/workflow`
