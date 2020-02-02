@@ -5,14 +5,14 @@ label: createindex_singlevirus
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 inputs:
-  - id: dir_name
+  - id: dir_name_STAR
     type: string
     'sbg:x': -723
     'sbg:y': -122
   - id: runThreadN
     type: int?
-    'sbg:x': -376.3968505859375
-    'sbg:y': -525
+    'sbg:x': -566
+    'sbg:y': -675
   - id: genomeFastaFiles
     type: File
     'sbg:x': -564.734375
@@ -20,8 +20,16 @@ inputs:
   - id: genomeSAindexNbases
     type: int?
     doc: 'For small genome such as single virus, this value need to be small.'
-    'sbg:x': -576.8984375
-    'sbg:y': -517
+    'sbg:x': -563
+    'sbg:y': -516
+  - id: transcripts
+    type: File
+    'sbg:x': -570
+    'sbg:y': 54
+  - id: index_salmon
+    type: string
+    'sbg:x': -578
+    'sbg:y': 216
 outputs:
   - id: starIndex
     outputSource:
@@ -50,11 +58,24 @@ steps:
   - id: mkdir
     in:
       - id: dir_name
-        source: dir_name
+        source: dir_name_STAR
     out:
       - id: created_directory
     run: ../tool/mkdir/mkdir.cwl
     label: Make directory if not exists
     'sbg:x': -548
     'sbg:y': -123
+  - id: salmon_index
+    in:
+      - id: index
+        source: index_salmon
+      - id: runThreadN
+        source: runThreadN
+      - id: transcripts
+        source: transcripts
+    out:
+      - id: index
+    run: ../tool/salmon-cwl/salmon-index.cwl
+    'sbg:x': -186
+    'sbg:y': 158
 requirements: []

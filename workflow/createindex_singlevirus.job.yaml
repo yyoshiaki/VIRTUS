@@ -1,7 +1,12 @@
-dir_name: STAR_index_NC_007605.1
+dir_name_STAR: STAR_index_NC_007605.1
 genomeFastaFiles:
   class: File
   path: >-
     ../data/NC_007605.1.fasta
 genomeSAindexNbases: 3
+index_salmon: salmon_index_NC_007605.1
 runThreadN: 40
+transcripts:
+  class: File
+  path: >-
+    ../data/NC_007605.1.transcripts.fasta

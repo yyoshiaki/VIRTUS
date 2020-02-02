@@ -17,7 +17,7 @@ inputs:
     type: int?
     'sbg:x': -1116
     'sbg:y': -318
-  - id: dir_name
+  - id: dir_name_STAR_virus
     type: string
     'sbg:x': -1126.984130859375
     'sbg:y': -518.8207397460938
@@ -27,12 +27,24 @@ inputs:
     'sbg:y': -167
   - id: output_name_genomefasta_human
     type: string
-    'sbg:x': -1101
-    'sbg:y': -17
-  - id: dir_name_human
+    'sbg:x': -1106
+    'sbg:y': -32
+  - id: dir_name_STAR_human
     type: string
     'sbg:x': -1108
     'sbg:y': 115
+  - id: salmon_index_human
+    type: string
+    'sbg:x': -1138
+    'sbg:y': -939
+  - id: url_transcript_human
+    type: string
+    'sbg:x': -1146
+    'sbg:y': -1238
+  - id: output_name_human_transcipt
+    type: string
+    'sbg:x': -1139
+    'sbg:y': -1086
 outputs:
   - id: downloaded_virus
     outputSource:
@@ -58,6 +70,18 @@ outputs:
     type: File
     'sbg:x': -496
     'sbg:y': -30
+  - id: salmon_index_human
+    outputSource:
+      - salmon_index_human/index
+    type: Directory
+    'sbg:x': -404
+    'sbg:y': -988
+  - id: downloaded
+    outputSource:
+      - wget_transcipt/downloaded
+    type: File
+    'sbg:x': -733
+    'sbg:y': -1171
 steps:
   - id: star_index_virus
     in:
@@ -77,7 +101,7 @@ steps:
     in:
       - id: dir_name
         default: STAR_index_virus
-        source: dir_name
+        source: dir_name_STAR_virus
     out:
       - id: created_directory
     run: ../tool/mkdir/mkdir.cwl
@@ -105,12 +129,37 @@ steps:
       - id: output_name_genomefasta
         source: output_name_genomefasta_human
       - id: dir_name
-        source: dir_name_human
+        source: dir_name_STAR_human
     out:
       - id: downloaded_genomefasta
       - id: starIndex
     run: rnaseq-star_index/rnaseq-star_index.cwl
     'sbg:x': -688
     'sbg:y': -91
+  - id: salmon_index_human
+    in:
+      - id: index
+        source: salmon_index_human
+      - id: runThreadN
+        source: runThreadN
+      - id: transcripts
+        source: wget_transcipt/downloaded
+    out:
+      - id: index
+    run: ../tool/salmon-cwl/salmon-index.cwl
+    'sbg:x': -708
+    'sbg:y': -947
+  - id: wget_transcipt
+    in:
+      - id: output_name
+        source: output_name_human_transcipt
+      - id: url
+        source: url_transcript_human
+    out:
+      - id: downloaded
+      - id: stderr
+    run: ../tool/wget/wget.cwl
+    'sbg:x': -946
+    'sbg:y': -1069
 requirements:
   - class: SubworkflowFeatureRequirement
