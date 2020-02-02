@@ -38,7 +38,7 @@ virus fasta is from [VirTect](https://github.com/WGLab/VirTect).
 
 ![img_createindex.cwl](img/createindex.jpg)
 
-## createindex.cwl
+## createindex_singlevirus.cwl
 
 `VirTect_cwl/workflow`
 
