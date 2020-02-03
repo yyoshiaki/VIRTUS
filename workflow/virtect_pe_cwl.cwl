@@ -23,8 +23,8 @@ inputs:
     'sbg:y': -750
   - id: nthreads
     type: int?
-    'sbg:x': -581
-    'sbg:y': -908
+    'sbg:x': -319.9783020019531
+    'sbg:y': 9.23515796661377
 outputs:
   - id: Log.out
     outputSource:
@@ -38,18 +38,24 @@ outputs:
     type: File?
     'sbg:x': 203
     'sbg:y': -268
-  - id: aligned
-    outputSource:
-      - star_mapping_pe_human/aligned
-    type: File
-    'sbg:x': 187
-    'sbg:y': 130
   - id: SJ.out.tab
     outputSource:
       - star_mapping_pe_human/SJ.out.tab
     type: File?
     'sbg:x': 206
     'sbg:y': -425
+  - id: aligned_bam_human
+    outputSource:
+      - star_mapping_pe_human/aligned
+    type: File
+    'sbg:x': 57.4921875
+    'sbg:y': 130.5
+  - id: unmapped_bam
+    outputSource:
+      - samtools_view/output
+    type: stdout
+    'sbg:x': 317
+    'sbg:y': 33
 steps:
   - id: fastp_pe
     in:
@@ -95,4 +101,16 @@ steps:
     label: 'STAR mapping: running mapping jobs.'
     'sbg:x': -29
     'sbg:y': -369
+  - id: samtools_view
+    in:
+      - id: threads
+        source: nthreads
+      - id: bam
+        source: star_mapping_pe_human/aligned
+    out:
+      - id: output
+    run: ../tool/samtools/samtools-view.cwl
+    label: samtools-view
+    'sbg:x': 155
+    'sbg:y': 33
 requirements: []

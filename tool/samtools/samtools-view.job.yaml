@@ -1,0 +1,8 @@
+b: true
+bam:
+  class: File
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/cwl/VirTect_cwl/test/ERR3240275/Aligned.out.bam
+f: 4
+prefix: human
+threads: 4
