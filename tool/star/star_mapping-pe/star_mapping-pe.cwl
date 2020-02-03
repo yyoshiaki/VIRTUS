@@ -65,6 +65,11 @@ inputs:
     inputBinding:
       position: 0
       prefix: '--readFilesCommand'
+  - id: outSAMtype
+    type: string?
+    inputBinding:
+      position: 0
+      prefix: '--outSAMtype'
 outputs:
   - id: aligned
     type: File

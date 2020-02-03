@@ -1,0 +1,13 @@
+fastq1:
+  class: File
+  path: >-
+    ./ERR3240275_1.fastq.gz
+fastq2:
+  class: File
+  path: >-
+    ./ERR3240275_2.fastq.gz
+genomeDir_human:
+  class: Directory
+  path: ./STAR_index_human
+nthreads: 40
+outFileNamePrefix_human: human
