@@ -37,8 +37,6 @@ inputs:
 outputs:
   - id: output
     type: stdout
-    outputBinding:
-        glob: $(inputs.prefix).unmapped.bam
 label: samtools-view
 arguments:
   - position: 0
