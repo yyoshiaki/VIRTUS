@@ -53,7 +53,7 @@ outputs:
   - id: output_unmapped
     outputSource:
       - samtools_view/output
-    type: stdout
+    type: File
     'sbg:x': 401.0941162109375
     'sbg:y': 95.5
 steps:
