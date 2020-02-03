@@ -1,5 +1,5 @@
-fq: unmapped_1
-fq2: unmapped_2
+fq: unmapped_1.fq
+fq2: unmapped_2.fq
 input:
   class: File
   path: >-

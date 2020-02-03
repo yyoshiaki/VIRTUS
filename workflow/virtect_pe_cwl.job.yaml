@@ -9,5 +9,8 @@ fastq2:
 genomeDir_human:
   class: Directory
   path: ../test/STAR_index_human
+genomeDir_virus:
+  class: Directory
+  path: ../test/STAR_index_virus
 nthreads: 40
 outFileNamePrefix_human: human
