@@ -37,6 +37,12 @@ outputs:
     type: Directory
     'sbg:x': 36.765625
     'sbg:y': -256
+  - id: index
+    outputSource:
+      - salmon_index/index
+    type: Directory
+    'sbg:x': 29.8203125
+    'sbg:y': 159
 steps:
   - id: star_index
     in:
