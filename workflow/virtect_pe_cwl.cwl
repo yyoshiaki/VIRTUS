@@ -79,8 +79,6 @@ steps:
         default: Within
       - id: outFileNamePrefix
         source: outFileNamePrefix_human
-      - id: readFilesCommand
-        default: gunzip -c
       - id: outSAMtype
         default: BAM SortedByCoordinate
     out:
