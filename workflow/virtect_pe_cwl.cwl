@@ -54,8 +54,8 @@ outputs:
     outputSource:
       - samtools_view/output
     type: stdout
-    'sbg:x': 376
-    'sbg:y': 57
+    'sbg:x': 401.0941162109375
+    'sbg:y': 95.5
 steps:
   - id: fastp_pe
     in:
@@ -105,6 +105,8 @@ steps:
     in:
       - id: threads
         source: nthreads
+      - id: b
+        default: true
       - id: f
         default: 4
       - id: prefix
@@ -115,6 +117,6 @@ steps:
       - id: output
     run: ../tool/samtools/samtools-view.cwl
     label: samtools-view
-    'sbg:x': 227.09375
-    'sbg:y': 59.5
+    'sbg:x': 256
+    'sbg:y': 97
 requirements: []
