@@ -50,12 +50,12 @@ outputs:
     type: File
     'sbg:x': 57.4921875
     'sbg:y': 130.5
-  - id: unmapped_bam
+  - id: output
     outputSource:
       - samtools_view/output
     type: stdout
-    'sbg:x': 317
-    'sbg:y': 33
+    'sbg:x': 376
+    'sbg:y': 57
 steps:
   - id: fastp_pe
     in:
@@ -111,6 +111,6 @@ steps:
       - id: output
     run: ../tool/samtools/samtools-view.cwl
     label: samtools-view
-    'sbg:x': 155
-    'sbg:y': 33
+    'sbg:x': 227.09375
+    'sbg:y': 59.5
 requirements: []
