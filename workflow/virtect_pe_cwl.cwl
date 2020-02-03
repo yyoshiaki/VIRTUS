@@ -50,7 +50,7 @@ outputs:
     type: File
     'sbg:x': 57.4921875
     'sbg:y': 130.5
-  - id: output
+  - id: output_unmapped
     outputSource:
       - samtools_view/output
     type: stdout
