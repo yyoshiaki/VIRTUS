@@ -105,6 +105,10 @@ steps:
     in:
       - id: threads
         source: nthreads
+      - id: f
+        default: 4
+      - id: prefix
+        default: human
       - id: bam
         source: star_mapping_pe_human/aligned
     out:

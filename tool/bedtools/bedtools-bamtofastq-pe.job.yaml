@@ -1,0 +1,6 @@
+fq: unmapped_1
+fq2: unmapped_2
+input:
+  class: File
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/cwl/VirTect_cwl/test/ERR3240275/unmapped
