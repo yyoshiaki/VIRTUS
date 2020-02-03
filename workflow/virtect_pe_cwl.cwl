@@ -23,8 +23,8 @@ inputs:
     'sbg:y': -750
   - id: nthreads
     type: int?
-    'sbg:x': -309
-    'sbg:y': -933
+    'sbg:x': -581
+    'sbg:y': -908
 outputs:
   - id: Log.out
     outputSource:
@@ -57,6 +57,8 @@ steps:
         source: fastq1
       - id: fastq2
         source: fastq2
+      - id: threads
+        source: nthreads
     out:
       - id: out_fastq1
       - id: out_fastq2
@@ -74,7 +76,7 @@ steps:
       - id: nthreads
         source: nthreads
       - id: outSAMunmapped
-        default: within
+        default: Within
       - id: outFileNamePrefix
         source: outFileNamePrefix_human
       - id: readFilesCommand
