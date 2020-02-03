@@ -1,6 +1,6 @@
 # VirTect_cwl
 
-Re-implementation and upadate of [VirTect](https://github.com/WGLab/VirTect) by cwl. Base cwl tools are mainly from [DAT2-cwl](https://github.com/pitagora-network/DAT2-cwl/tree/develop).
+Re-implementation and upadate of [VirTect](https://github.com/WGLab/VirTect) by cwl.
 
 ## dependencies
 
@@ -100,3 +100,9 @@ We recommend you to download fasta files for viruses from [NCBI](https://www.ncb
 cd test
 bash prep_test.sh
 ```
+
+## cwl sources
+
+- [(https://github.com/pitagora-network/DAT2-cwl](https://github.com/pitagora-network/DAT2-cwl/tree/develop) : most tools
+- [https://github.com/roryk/salmon-cwl](https://github.com/roryk/salmon-cwl) : salmon
+- [https://github.com/nigyta/bact_genome](https://github.com/nigyta/bact_genome) : fastp

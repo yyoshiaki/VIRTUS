@@ -33,11 +33,6 @@ inputs:
     inputBinding:
       position: 0
       prefix: '-k'
-  - id: type
-    type: string?
-    inputBinding:
-      position: 0
-      prefix: '--type'
 outputs:
   - id: index
     type: Directory
