@@ -27,6 +27,7 @@ inputs:
     inputBinding:
       position: 0
       prefix: '--genomeDir'
+      shellQuote: false
     label: path to the directory where genome files are stored
     doc: path to the directory where genome files are stored
   - id: nthreads
@@ -34,6 +35,7 @@ inputs:
     inputBinding:
       position: 0
       prefix: '--runThreadN'
+      shellQuote: false
     label: Number of threads
     doc: >-
       defines the number of threads to be used for genome generation, it has to
@@ -44,6 +46,7 @@ inputs:
     inputBinding:
       position: 0
       prefix: '--outSAMunmapped'
+      shellQuote: false
     label: output of unmapped reads in the SAM format
     doc: >-
       1st word: None: no output, Within: output unmapped reads within the main
@@ -60,16 +63,19 @@ inputs:
     inputBinding:
       position: 0
       prefix: '--outFileNamePrefix'
+      shellQuote: false
   - id: readFilesCommand
     type: string?
     inputBinding:
       position: 0
       prefix: '--readFilesCommand'
+      shellQuote: false
   - id: outSAMtype
     type: string?
     inputBinding:
       position: 0
       prefix: '--outSAMtype'
+      shellQuote: false
 outputs:
   - id: aligned
     type: File
@@ -157,6 +163,7 @@ doc: >-
   https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf
 label: 'STAR mapping: running mapping jobs.'
 requirements:
+  - class: ShellCommandRequirement
   - class: InitialWorkDirRequirement
     listing:
       - entry: $(inputs.genomeDir)
