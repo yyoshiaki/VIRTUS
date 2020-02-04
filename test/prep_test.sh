@@ -1,6 +1,8 @@
 #!/bin/bash
 set -xe
 
+ls | grep -v -E 'prep_test.sh' | xargs rm -r
+
 fasterq-dump -e 8 ERR3240275 -p
 cwltool ../workflow/createindex.cwl ../workflow/createindex.job.yaml
 cwltool ../workflow/createindex_singlevirus.cwl ../workflow/createindex_singlevirus.job.yaml

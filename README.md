@@ -136,6 +136,55 @@ example2
 
 ![img/virtect_pe.jpg](img/virtect_pe.jpg)
 
+## virtect_pe_quant_singlevirus.cwl
+
+`VirTect_cwl/workflow`
+
+```
+usage: ./virtect_pe_quant_singlevirus.cwl [-h] --fq2_unmapped FQ2_UNMAPPED
+                                          --fq1_unmapped FQ1_UNMAPPED
+                                          --genomeDir_singlevirus GENOMEDIR_SINGLEVIRUS
+                                          --salmon_index_singlevirus SALMON_INDEX_SINGLEVIRUS 
+                                          --quantdir QUANTDIR
+                                          [--outFileNamePrefix_star OUTFILENAMEPREFIX_STAR]
+                                          [--runThreadN RUNTHREADN]
+                                          [job_order]
+
+positional arguments:
+  job_order             Job input json file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --fq2_unmapped FQ2_UNMAPPED
+  --fq1_unmapped FQ1_UNMAPPED
+  --genomeDir_singlevirus GENOMEDIR_SINGLEVIRUS
+  --salmon_index_singlevirus SALMON_INDEX_SINGLEVIRUS
+  --quantdir QUANTDIR
+  --outFileNamePrefix_star OUTFILENAMEPREFIX_STAR
+  --runThreadN RUNTHREADN
+```
+
+example1
+
+```
+./virtect_pe_quant_singlevirus.cwl virtect_pe_quant_singlevirus.job.yaml
+```
+
+example2
+
+```
+./virtect_pe_quant_singlevirus.cw \
+--fq1_unmapped ../test/unmapped_1.fq \
+--fq2_unmapped ../test/unmapped_2.fq \
+--genomeDir_singlevirus ../test/STAR_index_NC_007605.1 \
+--salmon_index_singlevirus ../test/salmon_index_NC_007605.1 \
+--outFileNamePrefix_star NC_007605.1 \
+--quantdir salmon_NC_007605.1
+--runThreadN 40
+```
+
+![img/virtect_pe_quant_singlevirus.jpg](img/virtect_pe_quant_singlevirus.jpg)
+
 ## test
 
 ```

@@ -1,0 +1,17 @@
+fq1_unmapped:
+  class: File
+  path: ../test/unmapped_1.fq
+fq2_unmapped:
+  class: File
+  path: ../test/unmapped_2.fq
+genomeDir_singlevirus:
+  class: Directory
+  path: >-
+    ../test/STAR_index_NC_007605.1
+outFileNamePrefix_star: NC_007605.1
+quantdir: salmon_NC_007605.1
+runThreadN: 40
+salmon_index_singlevirus:
+  class: Directory
+  path: >-
+    ../test/salmon_index_NC_007605.1

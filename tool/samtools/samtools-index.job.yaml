@@ -1,0 +1,4 @@
+input:
+  class: File
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/cwl/VirTect_cwl/test/ERR3240275/virusAligned.sortedByCoord.out.bam
