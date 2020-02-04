@@ -16,15 +16,12 @@ usage: createindex.cwl [-h] --url_virus URL_VIRUS
                                    --output_name_virus OUTPUT_NAME_VIRUS
                                    [--runThreadN RUNTHREADN]
                                    --dir_name_STAR_virus DIR_NAME_STAR_VIRUS
-                                   --url_genomefasta_human
-                                   URL_GENOMEFASTA_HUMAN
-                                   --output_name_genomefasta_human
-                                   OUTPUT_NAME_GENOMEFASTA_HUMAN
+                                   --url_genomefasta_human URL_GENOMEFASTA_HUMAN
+                                   --output_name_genomefasta_human OUTPUT_NAME_GENOMEFASTA_HUMAN
                                    --dir_name_STAR_human DIR_NAME_STAR_HUMAN
                                    --salmon_index_human SALMON_INDEX_HUMAN
                                    --url_transcript_human URL_TRANSCRIPT_HUMAN
-                                   --output_name_human_transcipt
-                                   OUTPUT_NAME_HUMAN_TRANSCIPT
+                                   --output_name_human_transcipt OUTPUT_NAME_HUMAN_TRANSCIPT
                                    [job_order]
 
 positional arguments:
@@ -57,11 +54,9 @@ virus fasta is from [VirTect](https://github.com/WGLab/VirTect).
 `VirTect_cwl/workflow`
 
 ```
-usage: createindex_singlevirus.cwl [-h] --dir_name_STAR
-                                               DIR_NAME_STAR
+usage: createindex_singlevirus.cwl [-h] --dir_name_STAR DIR_NAME_STAR
                                                [--runThreadN RUNTHREADN]
-                                               --genomeFastaFiles
-                                               GENOMEFASTAFILES
+                                               --genomeFastaFiles GENOMEFASTAFILES
                                                [--genomeSAindexNbases GENOMESAINDEXNBASES]
                                                --transcripts TRANSCRIPTS
                                                --index_salmon INDEX_SALMON
@@ -97,12 +92,12 @@ We recommend you to download fasta files for viruses from [NCBI](https://www.ncb
 `VirTect_cwl/workflow`
 
 ```
-usage: ./virtect_pe.cwl [-h] --fastq2 FASTQ2 --fastq1 FASTQ1 --genomeDir_human
-                        GENOMEDIR_HUMAN
+usage: ./virtect_pe.cwl [-h] --fastq2 FASTQ2 --fastq1 FASTQ1 
+                        --genomeDir_human GENOMEDIR_HUMAN
                         [--outFileNamePrefix_human OUTFILENAMEPREFIX_HUMAN]
-                        [--nthreads NTHREADS] --genomeDir_virus
-                        GENOMEDIR_VIRUS --salmon_index_human
-                        SALMON_INDEX_HUMAN
+                        [--nthreads NTHREADS] 
+                        --genomeDir_virus GENOMEDIR_VIRUS 
+                        --salmon_index_human SALMON_INDEX_HUMAN
                         [job_order]
 
 positional arguments:

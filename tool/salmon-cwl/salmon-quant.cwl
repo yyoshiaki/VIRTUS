@@ -9,7 +9,7 @@ inputs:
   - id: index
     type: Directory
     inputBinding:
-      position: 0
+      position: -2
       prefix: '-i'
       shellQuote: false
   - id: inf1
@@ -28,7 +28,7 @@ inputs:
     id: libType
     type: string
     inputBinding:
-      position: 0
+      position: -2
       prefix: '-l'
       shellQuote: false
   - id: quantdir
