@@ -13,9 +13,9 @@ inputs:
       position: 0
 outputs:
   - id: output
-    type: File
+    type: File?
     outputBinding:
-      glob: '*.bai'
+      glob: '*'
 label: samtools-index
 requirements:
   - class: DockerRequirement

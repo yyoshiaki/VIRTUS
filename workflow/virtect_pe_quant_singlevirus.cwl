@@ -1,5 +1,3 @@
-#!/usr/bin/env cwltool
-
 class: Workflow
 cwlVersion: v1.0
 id: virtect_pe_quant_singlevirus
@@ -33,8 +31,8 @@ inputs:
     'sbg:y': -568
   - id: runThreadN
     type: int?
-    'sbg:x': -612
-    'sbg:y': 16
+    'sbg:x': -632
+    'sbg:y': -24
 outputs:
   - id: SJ.out.tab
     outputSource:
