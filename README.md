@@ -7,13 +7,12 @@ Re-implementation and upadate of [VirTect](https://github.com/WGLab/VirTect) by 
 - cwltool `conda install -c bioconda cwltool`
 - docker
 
-## createindex.cwl
+## createindex.cwl (execute only once)
 
 `VirTect_cwl/workflow`
 
 ```
-cwltool createindex.cwl -h
-usage: ../workflow/createindex.cwl [-h] --url_virus URL_VIRUS
+usage: createindex.cwl [-h] --url_virus URL_VIRUS
                                    --output_name_virus OUTPUT_NAME_VIRUS
                                    [--runThreadN RUNTHREADN]
                                    --dir_name_STAR_virus DIR_NAME_STAR_VIRUS
@@ -46,20 +45,19 @@ optional arguments:
 ```
 
 ```
-cwltool createindex.cwl createindex.job.yaml
+./createindex.cwl createindex.job.yaml
 ```
 
 virus fasta is from [VirTect](https://github.com/WGLab/VirTect).
 
 ![img_createindex.cwl](img/createindex.jpg)
 
-## createindex_singlevirus.cwl
+## createindex_singlevirus.cwl (execute only once)
 
 `VirTect_cwl/workflow`
 
 ```
-cwltool createindex_singlevirus.cwl -h
-usage: ../workflow/createindex_singlevirus.cwl [-h] --dir_name_STAR
+usage: createindex_singlevirus.cwl [-h] --dir_name_STAR
                                                DIR_NAME_STAR
                                                [--runThreadN RUNTHREADN]
                                                --genomeFastaFiles
@@ -87,12 +85,61 @@ optional arguments:
 example (EBV)
 
 ```
-cwltool createindex_singlevirus.cwl createindex_singlevirus.job.yaml
+./createindex_singlevirus.cwl createindex_singlevirus.job.yaml
 ```
 
 We recommend you to download fasta files for viruses from [NCBI](https://www.ncbi.nlm.nih.gov/nuccore/NC_007605.1?report=fasta).
 
 ![img_createindex_singlevirus.cwl](img/createindex_singlevirus.jpg)
+
+## virtect_pe.cwl
+
+`VirTect_cwl/workflow`
+
+```
+usage: ./virtect_pe.cwl [-h] --fastq2 FASTQ2 --fastq1 FASTQ1 --genomeDir_human
+                        GENOMEDIR_HUMAN
+                        [--outFileNamePrefix_human OUTFILENAMEPREFIX_HUMAN]
+                        [--nthreads NTHREADS] --genomeDir_virus
+                        GENOMEDIR_VIRUS --salmon_index_human
+                        SALMON_INDEX_HUMAN
+                        [job_order]
+
+positional arguments:
+  job_order             Job input json file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --fastq2 FASTQ2
+  --fastq1 FASTQ1
+  --genomeDir_human GENOMEDIR_HUMAN
+  --outFileNamePrefix_human OUTFILENAMEPREFIX_HUMAN
+  --nthreads NTHREADS
+  --genomeDir_virus GENOMEDIR_VIRUS
+  --salmon_index_human SALMON_INDEX_HUMAN
+
+```
+
+example1
+
+```
+./virtect_pe.cwl virtect_pe.job.yaml
+```
+
+example2
+
+```
+./virtect_pe.cwl \
+--fastq1 ../test/ERR3240275_1.fastq.gz \
+--fastq2 ../test/ERR3240275_2.fastq.gz \
+--genomeDir_human ../test/STAR_index_human \
+--genomeDir_virus ../test/STAR_index_virus \
+--salmon_index_human ../test/salmon_index_human
+--outFileNamePrefix_human human \
+--nthreads 40
+```
+
+![img/virtect_pe.jpg](img/virtect_pe.jpg)
 
 ## test
 
