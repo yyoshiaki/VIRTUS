@@ -115,7 +115,7 @@ outputs:
   - id: virus_count
     outputSource:
       - mk_virus_count/virus_count
-    type: stdout
+    type: File
     'sbg:x': 1124.24560546875
     'sbg:y': 477.10260009765625
   - id: output_quantdir_human
