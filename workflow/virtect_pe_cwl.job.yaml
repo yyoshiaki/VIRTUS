@@ -12,5 +12,8 @@ genomeDir_human:
 genomeDir_virus:
   class: Directory
   path: ../test/STAR_index_virus
+salmon_index_human:
+  class: Directory
+  path: ../test/salmon_index_human
 nthreads: 40
 outFileNamePrefix_human: human

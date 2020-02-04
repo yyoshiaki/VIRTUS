@@ -1,0 +1,1150 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="cwl-workflow pAKRrX __plugin-port-drag __plugin-validate __plugin-selection __plugin-update" ct-click="" tabindex="-1" ct-drop-enabled="" ct-drop-zones="graph-editor">
+            <rect x="0" y="0" width="100%" height="100%" class="pan-handle" transform="matrix(1,0,0,1,0,0)" style="fill:rgb(48, 48, 48); stroke:none; stroke-width:1px; "/>
+            <g class="workflow" transform="matrix(0.582591 0 0 0.582591 401.745 689.397)">
+            <g tabindex="-1" class="edge " data-source-port="fastq1" data-destination-port="fastq1" data-source-node="fastq1" data-source-connection="out/fastq1/fastq1" data-destination-connection="in/fastp_pe/fastq1" data-destination-node="fastp_pe">
+                <path class="sub-edge outer" d="M -497 -269 C -420.3883762359619 -269 -420.3883762359619 -313.74760246276855 -343.7767524719238 -313.74760246276855" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M -497 -269 C -420.3883762359619 -269 -420.3883762359619 -313.74760246276855 -343.7767524719238 -313.74760246276855" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="fastq2" data-destination-port="fastq2" data-source-node="fastq2" data-source-connection="out/fastq2/fastq2" data-destination-connection="in/fastp_pe/fastq2" data-destination-node="fastp_pe">
+                <path class="sub-edge outer" d="M -495 -424 C -424 -424 -424 -343 -353 -343" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M -495 -424 C -424 -424 -424 -343 -353 -343" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="nthreads" data-destination-port="threads" data-source-node="nthreads" data-source-connection="out/nthreads/nthreads" data-destination-connection="in/fastp_pe/threads" data-destination-node="fastp_pe">
+                <path class="sub-edge outer" d="M -329 303 C -321.6116237640381 303 -351.16512870788574 -372.25239753723145 -343.7767524719238 -372.25239753723145" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M -329 303 C -321.6116237640381 303 -351.16512870788574 -372.25239753723145 -343.7767524719238 -372.25239753723145" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="out_fastq1" data-destination-port="fq1" data-source-node="fastp_pe" data-source-connection="out/fastp_pe/out_fastq1" data-destination-connection="in/star_mapping_pe_human/fq1" data-destination-node="star_mapping_pe_human">
+                <path class="sub-edge outer" d="M -255.17097854614258 -322.79993057250977 C -173.9957218170166 -322.79993057250977 -173.9957218170166 -301.354248046875 -92.82046508789062 -301.354248046875" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M -255.17097854614258 -322.79993057250977 C -173.9957218170166 -322.79993057250977 -173.9957218170166 -301.354248046875 -92.82046508789062 -301.354248046875" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="out_fastq2" data-destination-port="fq2" data-source-node="fastp_pe" data-source-connection="out/fastp_pe/out_fastq2" data-destination-connection="in/star_mapping_pe_human/fq2" data-destination-node="star_mapping_pe_human">
+                <path class="sub-edge outer" d="M -255.17097854614258 -363.20006942749023 C -184.7825412750244 -363.20006942749023 -184.7825412750244 -332.16458892822266 -114.39410400390625 -332.16458892822266" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M -255.17097854614258 -363.20006942749023 C -184.7825412750244 -363.20006942749023 -184.7825412750244 -332.16458892822266 -114.39410400390625 -332.16458892822266" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="genomeDir_human" data-destination-port="genomeDir" data-source-node="genomeDir_human" data-source-connection="out/genomeDir_human/genomeDir_human" data-destination-connection="in/star_mapping_pe_human/genomeDir" data-destination-node="star_mapping_pe_human">
+                <path class="sub-edge outer" d="M -268 -602 C -195 -602 -195 -369 -122 -369" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M -268 -602 C -195 -602 -195 -369 -122 -369" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="nthreads" data-destination-port="nthreads" data-source-node="nthreads" data-source-connection="out/nthreads/nthreads" data-destination-connection="in/star_mapping_pe_human/nthreads" data-destination-node="star_mapping_pe_human">
+                <path class="sub-edge outer" d="M -329 303 C -221.69705200195312 303 -221.69705200195312 -405.83541107177734 -114.39410400390625 -405.83541107177734" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M -329 303 C -221.69705200195312 303 -221.69705200195312 -405.83541107177734 -114.39410400390625 -405.83541107177734" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="outFileNamePrefix_human" data-destination-port="outFileNamePrefix" data-source-node="outFileNamePrefix_human" data-source-connection="out/outFileNamePrefix_human/outFileNamePrefix_human" data-destination-connection="in/star_mapping_pe_human/outFileNamePrefix" data-destination-node="star_mapping_pe_human">
+                <path class="sub-edge outer" d="M -267 -750 C -179.9102325439453 -750 -179.9102325439453 -436.645751953125 -92.82046508789062 -436.645751953125" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M -267 -750 C -179.9102325439453 -750 -179.9102325439453 -436.645751953125 -92.82046508789062 -436.645751953125" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="nthreads" data-destination-port="threads" data-source-node="nthreads" data-source-connection="out/nthreads/nthreads" data-destination-connection="in/samtools_view/threads" data-destination-node="samtools_view">
+                <path class="sub-edge outer" d="M -329 303 C -56.70075607299805 303 -56.70075607299805 79.57249450683594 215.5984878540039 79.57249450683594" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M -329 303 C -56.70075607299805 303 -56.70075607299805 79.57249450683594 215.5984878540039 79.57249450683594" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="aligned" data-destination-port="bam" data-source-node="star_mapping_pe_human" data-source-connection="out/star_mapping_pe_human/aligned" data-destination-connection="in/samtools_view/bam" data-destination-node="samtools_view">
+                <path class="sub-edge outer" d="M 23.004940032958984 -291.8995056152344 C 119.30171394348145 -291.8995056152344 119.30171394348145 114.42750549316406 215.5984878540039 114.42750549316406" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 23.004940032958984 -291.8995056152344 C 119.30171394348145 -291.8995056152344 119.30171394348145 114.42750549316406 215.5984878540039 114.42750549316406" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge __validate-invalid" data-source-port="output" data-destination-port="input" data-source-node="samtools_view" data-source-connection="out/samtools_view/output" data-destination-connection="in/bedtools_bamtofastq_pe/input" data-destination-node="bedtools_bamtofastq_pe">
+                <path class="sub-edge outer" d="M 300 97 C 350.5 97 350.5 37.00000000000001 401 37.00000000000001" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 300 97 C 350.5 97 350.5 37.00000000000001 401 37.00000000000001" style="fill:none; stroke:rgb(248, 148, 6); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="output_fq1" data-destination-port="fq1" data-source-node="bedtools_bamtofastq_pe" data-source-connection="out/bedtools_bamtofastq_pe/output_fq1" data-destination-connection="in/star_mapping_pe_virus/fq1" data-destination-node="star_mapping_pe_virus">
+                <path class="sub-edge outer" d="M 485.4015083312988 54.42750930786133 C 601.1445178985596 54.42750930786133 601.1445178985596 256.2291450500488 716.8875274658203 256.2291450500488" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 485.4015083312988 54.42750930786133 C 601.1445178985596 54.42750930786133 601.1445178985596 256.2291450500488 716.8875274658203 256.2291450500488" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="output_fq2" data-destination-port="fq2" data-source-node="bedtools_bamtofastq_pe" data-source-connection="out/bedtools_bamtofastq_pe/output_fq2" data-destination-connection="in/star_mapping_pe_virus/fq2" data-destination-node="star_mapping_pe_virus">
+                <path class="sub-edge outer" d="M 485.4015083312988 19.572490692138672 C 590.5820026397705 19.572490692138672 590.5820026397705 216.49873542785645 695.7624969482422 216.49873542785645" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 485.4015083312988 19.572490692138672 C 590.5820026397705 19.572490692138672 590.5820026397705 216.49873542785645 695.7624969482422 216.49873542785645" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="genomeDir_virus" data-destination-port="genomeDir" data-source-node="genomeDir_virus" data-source-connection="out/genomeDir_virus/genomeDir_virus" data-destination-connection="in/star_mapping_pe_virus/genomeDir" data-destination-node="star_mapping_pe_virus">
+                <path class="sub-edge outer" d="M 707 -69 C 712.6187515258789 -69 690.1437454223633 171.50126457214355 695.7624969482422 171.50126457214355" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 707 -69 C 712.6187515258789 -69 690.1437454223633 171.50126457214355 695.7624969482422 171.50126457214355" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="nthreads" data-destination-port="nthreads" data-source-node="nthreads" data-source-connection="out/nthreads/nthreads" data-destination-connection="in/star_mapping_pe_virus/nthreads" data-destination-node="star_mapping_pe_virus">
+                <path class="sub-edge outer" d="M -329 303 C 193.94376373291016 303 193.94376373291016 131.77085494995117 716.8875274658203 131.77085494995117" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M -329 303 C 193.94376373291016 303 193.94376373291016 131.77085494995117 716.8875274658203 131.77085494995117" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="aligned" data-destination-port="virus_bam" data-source-node="star_mapping_pe_virus" data-source-connection="out/star_mapping_pe_virus/aligned" data-destination-connection="in/mk_virus_count/virus_bam" data-destination-node="mk_virus_count">
+                <path class="sub-edge outer" d="M 838.004940032959 271.1004943847656 C 951.5024700164795 271.1004943847656 951.5024700164795 602 1065 602" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 838.004940032959 271.1004943847656 C 951.5024700164795 271.1004943847656 951.5024700164795 602 1065 602" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="Log.out" data-destination-port="Log.out_human" data-source-node="star_mapping_pe_human" data-source-connection="out/star_mapping_pe_human/Log.out" data-destination-connection="in/Log.out_human/Log.out_human" data-destination-node="Log.out_human">
+                <path class="sub-edge outer" d="M 53.11412811279297 -325.3391456604004 C 108.55706405639648 -325.3391456604004 108.55706405639648 -114 164 -114" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 53.11412811279297 -325.3391456604004 C 108.55706405639648 -325.3391456604004 108.55706405639648 -114 164 -114" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="Log.progress.out" data-destination-port="Log.progress.out_human" data-source-node="star_mapping_pe_human" data-source-connection="out/star_mapping_pe_human/Log.progress.out" data-destination-connection="in/Log.progress.out_human/Log.progress.out_human" data-destination-node="Log.progress.out_human">
+                <path class="sub-edge outer" d="M 61.23750305175781 -346.50126457214355 C 113.6187515258789 -346.50126457214355 113.6187515258789 -268 166 -268" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 61.23750305175781 -346.50126457214355 C 113.6187515258789 -346.50126457214355 113.6187515258789 -268 166 -268" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="SJ.out.tab" data-destination-port="SJ.out.tab_human" data-source-node="star_mapping_pe_human" data-source-connection="out/star_mapping_pe_human/SJ.out.tab" data-destination-connection="in/SJ.out.tab_human/SJ.out.tab_human" data-destination-node="SJ.out.tab_human">
+                <path class="sub-edge outer" d="M 53.11412811279297 -412.6608543395996 C 111.05706405639648 -412.6608543395996 111.05706405639648 -521 169 -521" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 53.11412811279297 -412.6608543395996 C 111.05706405639648 -412.6608543395996 111.05706405639648 -521 169 -521" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="aligned" data-destination-port="aligned_bam_human" data-source-node="star_mapping_pe_human" data-source-connection="out/star_mapping_pe_human/aligned" data-destination-connection="in/aligned_bam_human/aligned_bam_human" data-destination-node="aligned_bam_human">
+                <path class="sub-edge outer" d="M 23.004940032958984 -291.8995056152344 C 24.507410049438477 -291.8995056152344 18.497529983520508 130 20 130" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 23.004940032958984 -291.8995056152344 C 24.507410049438477 -291.8995056152344 18.497529983520508 130 20 130" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge __validate-invalid" data-source-port="output" data-destination-port="output_unmapped" data-source-node="samtools_view" data-source-connection="out/samtools_view/output" data-destination-connection="in/output_unmapped/output_unmapped" data-destination-node="output_unmapped">
+                <path class="sub-edge outer" d="M 300 97 C 337.5 97 337.5 218 375 218" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 300 97 C 337.5 97 337.5 218 375 218" style="fill:none; stroke:rgb(248, 148, 6); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="output_fq2" data-destination-port="output_fq2" data-source-node="bedtools_bamtofastq_pe" data-source-connection="out/bedtools_bamtofastq_pe/output_fq2" data-destination-connection="in/output_fq2/output_fq2" data-destination-node="output_fq2">
+                <path class="sub-edge outer" d="M 485.4015083312988 19.572490692138672 C 519.7007541656494 19.572490692138672 519.7007541656494 -329 554 -329" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 485.4015083312988 19.572490692138672 C 519.7007541656494 19.572490692138672 519.7007541656494 -329 554 -329" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="output_fq1" data-destination-port="output_fq1" data-source-node="bedtools_bamtofastq_pe" data-source-connection="out/bedtools_bamtofastq_pe/output_fq1" data-destination-connection="in/output_fq1/output_fq1" data-destination-node="output_fq1">
+                <path class="sub-edge outer" d="M 485.4015083312988 54.42750930786133 C 518.7007541656494 54.42750930786133 518.7007541656494 -168 552 -168" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 485.4015083312988 54.42750930786133 C 518.7007541656494 54.42750930786133 518.7007541656494 -168 552 -168" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="SJ.out.tab" data-destination-port="SJ.out.tab_virus" data-source-node="star_mapping_pe_virus" data-source-connection="out/star_mapping_pe_virus/SJ.out.tab" data-destination-connection="in/SJ.out.tab_virus/SJ.out.tab_virus" data-destination-node="SJ.out.tab_virus">
+                <path class="sub-edge outer" d="M 868.114128112793 150.3391456604004 C 932.5570640563965 150.3391456604004 932.5570640563965 17.000000000000004 997 17.000000000000004" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 868.114128112793 150.3391456604004 C 932.5570640563965 150.3391456604004 932.5570640563965 17.000000000000004 997 17.000000000000004" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="Log.progress.out" data-destination-port="Log.progress.out_virus" data-source-node="star_mapping_pe_virus" data-source-connection="out/star_mapping_pe_virus/Log.progress.out" data-destination-connection="in/Log.progress.out_virus/Log.progress.out_virus" data-destination-node="Log.progress.out_virus">
+                <path class="sub-edge outer" d="M 876.2375030517578 216.49873542785645 C 935.6187515258789 216.49873542785645 935.6187515258789 293 995 293" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 876.2375030517578 216.49873542785645 C 935.6187515258789 216.49873542785645 935.6187515258789 293 995 293" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="Log.out" data-destination-port="Log.out_virus" data-source-node="star_mapping_pe_virus" data-source-connection="out/star_mapping_pe_virus/Log.out" data-destination-connection="in/Log.out_virus/Log.out_virus" data-destination-node="Log.out_virus">
+                <path class="sub-edge outer" d="M 868.114128112793 237.6608543395996 C 932.5570640563965 237.6608543395996 932.5570640563965 438 997 438" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 868.114128112793 237.6608543395996 C 932.5570640563965 237.6608543395996 932.5570640563965 438 997 438" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="aligned" data-destination-port="aligned_virus" data-source-node="star_mapping_pe_virus" data-source-connection="out/star_mapping_pe_virus/aligned" data-destination-connection="in/aligned_virus/aligned_virus" data-destination-node="aligned_virus">
+                <path class="sub-edge outer" d="M 838.004940032959 271.1004943847656 C 919.0024700164795 271.1004943847656 919.0024700164795 763 1000 763" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 838.004940032959 271.1004943847656 C 919.0024700164795 271.1004943847656 919.0024700164795 763 1000 763" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="mappingstats" data-destination-port="mappingstats_virus" data-source-node="star_mapping_pe_virus" data-source-connection="out/star_mapping_pe_virus/mappingstats" data-destination-connection="in/mappingstats_virus/mappingstats_virus" data-destination-node="mappingstats_virus">
+                <path class="sub-edge outer" d="M 879 194 C 940 194 940 146 1001 146" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 879 194 C 940 194 940 146 1001 146" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="mappingstats" data-destination-port="mappingstats_human" data-source-node="star_mapping_pe_human" data-source-connection="out/star_mapping_pe_human/mappingstats" data-destination-connection="in/mappingstats_human/mappingstats_human" data-destination-node="mappingstats_human">
+                <path class="sub-edge outer" d="M 64 -369 C 116.5 -369 116.5 -394 169 -394" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 64 -369 C 116.5 -369 116.5 -394 169 -394" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="virus_count" data-destination-port="virus_count" data-source-node="mk_virus_count" data-source-connection="out/mk_virus_count/virus_count" data-destination-connection="in/virus_count/virus_count" data-destination-node="virus_count">
+                <path class="sub-edge outer" d="M 1139 602 C 1195 602 1195 602 1251 602" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 1139 602 C 1195 602 1195 602 1251 602" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="index" data-destination-port="index" data-source-node="index" data-source-connection="out/index/index" data-destination-connection="in/salmon_quant_human/index" data-destination-node="salmon_quant_human">
+                <path class="sub-edge outer" d="M -244 -924 C -101.05120086669922 -924 -101.05120086669922 -678.1904258728027 41.89759826660156 -678.1904258728027" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M -244 -924 C -101.05120086669922 -924 -101.05120086669922 -678.1904258728027 41.89759826660156 -678.1904258728027" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="out_fastq1" data-destination-port="inf1" data-source-node="fastp_pe" data-source-connection="out/fastp_pe/out_fastq1" data-destination-connection="in/salmon_quant_human/inf1" data-destination-node="salmon_quant_human">
+                <path class="sub-edge outer" d="M -255.17097854614258 -322.79993057250977 C -113.22406578063965 -322.79993057250977 -113.22406578063965 -702.9685297012329 28.72284698486328 -702.9685297012329" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M -255.17097854614258 -322.79993057250977 C -113.22406578063965 -322.79993057250977 -113.22406578063965 -702.9685297012329 28.72284698486328 -702.9685297012329" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="out_fastq2" data-destination-port="inf2" data-source-node="fastp_pe" data-source-connection="out/fastp_pe/out_fastq2" data-destination-connection="in/salmon_quant_human/inf2" data-destination-node="salmon_quant_human">
+                <path class="sub-edge outer" d="M -255.17097854614258 -363.20006942749023 C -113.22406578063965 -363.20006942749023 -113.22406578063965 -731.0314702987671 28.72284698486328 -731.0314702987671" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M -255.17097854614258 -363.20006942749023 C -113.22406578063965 -363.20006942749023 -113.22406578063965 -731.0314702987671 28.72284698486328 -731.0314702987671" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="nthreads" data-destination-port="runThreadN" data-source-node="nthreads" data-source-connection="out/nthreads/nthreads" data-destination-connection="in/salmon_quant_human/runThreadN" data-destination-node="salmon_quant_human">
+                <path class="sub-edge outer" d="M -329 303 C -143.55120086669922 303 -143.55120086669922 -755.8095741271973 41.89759826660156 -755.8095741271973" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M -329 303 C -143.55120086669922 303 -143.55120086669922 -755.8095741271973 41.89759826660156 -755.8095741271973" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            <g tabindex="-1" class="edge " data-source-port="quantdir" data-destination-port="quantdir" data-source-node="salmon_quant_human" data-source-connection="out/salmon_quant_human/quantdir" data-destination-connection="in/quantdir/quantdir" data-destination-node="quantdir">
+                <path class="sub-edge outer" d="M 143 -717 C 202.5 -717 202.5 -715 262 -715" style="fill:none; stroke:rgb(48, 48, 48); stroke-width:7px; "/>
+                <path class="sub-edge inner" d="M 143 -717 C 202.5 -717 202.5 -715 262 -715" style="fill:none; stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+            </g>
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        <g tabindex="-1" class="node step  " data-connection-id="fastp_pe" transform="matrix(1, 0, 0, 1, -302, -343)" data-id="fastp_pe">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="51" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="38.25" class="inner" style="fill:rgb(17, 167, 167); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 398.39 397.78" x="-10" y="-8" width="20" height="15"><title>tool2</title><polygon points="38.77 397.57 0 366 136.15 198.78 0 31.57 38.77 0 200.63 198.78 38.77 397.57" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><rect x="198.39" y="347.78" width="200" height="50" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 81)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">fastp_pe</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -41.77675425873859, -29.252398253903337)" data-connection-id="in/fastp_pe/threads" data-port-id="threads">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -51, 6.245698675651501e-15)" data-connection-id="in/fastp_pe/fastq2" data-port-id="fastq2">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port input-port" transform="matrix(1.0000000000000002, 0, 0, 1.0000000000000002, -41.77675425873858, 29.252398253903365)" data-connection-id="in/fastp_pe/fastq1" data-port-id="fastq1">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 46.829021226743826, -20.200068587635446)" data-connection-id="out/fastp_pe/out_fastq2" data-port-id="out_fastq2">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 46.829021226743826, 20.200068587635446)" data-connection-id="out/fastp_pe/out_fastq1" data-port-id="out_fastq1">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            </g><g tabindex="-1" class="node step  " data-connection-id="star_mapping_pe_human" transform="matrix(1, 0, 0, 1, -29, -369)" data-id="star_mapping_pe_human">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="93" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="69.75" class="inner" style="fill:rgb(17, 167, 167); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 398.39 397.78" x="-10" y="-8" width="20" height="15"><title>tool2</title><polygon points="38.77 397.57 0 366 136.15 198.78 0 31.57 38.77 0 200.63 198.78 38.77 397.57" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><rect x="198.39" y="347.78" width="200" height="50" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 123)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">STAR mapping: running mapping jobs.</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -63.82046631674112, -67.64575433176655)" data-connection-id="in/star_mapping_pe_human/outFileNamePrefix" data-port-id="outFileNamePrefix">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -85.39410120982022, -36.83541066103348)" data-connection-id="in/star_mapping_pe_human/nthreads" data-port-id="nthreads">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -93, 1.1389215232070385e-14)" data-connection-id="in/star_mapping_pe_human/genomeDir" data-port-id="genomeDir">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port input-port" transform="matrix(1.0000000000000002, 0, 0, 1.0000000000000002, -85.39410120982022, 36.8354106610335)" data-connection-id="in/star_mapping_pe_human/fq2" data-port-id="fq2">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -63.82046631674109, 67.64575433176657)" data-connection-id="in/star_mapping_pe_human/fq1" data-port-id="fq1">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 52.004940022779465, -77.10049424761887)" data-connection-id="out/star_mapping_pe_human/unmapped" data-port-id="unmapped">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 69.11246876939767, -62.22914639137382)" data-connection-id="out/star_mapping_pe_human/transcriptomesam" data-port-id="transcriptomesam">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 82.11412613588021, -43.660855339087846)" data-connection-id="out/star_mapping_pe_human/SJ.out.tab" data-port-id="SJ.out.tab">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 90.23750254366767, -22.4987362907691)" data-connection-id="out/star_mapping_pe_human/readspergene" data-port-id="readspergene">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 93, 0)" data-connection-id="out/star_mapping_pe_human/mappingstats" data-port-id="mappingstats">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 90.23750254366767, 22.4987362907691)" data-connection-id="out/star_mapping_pe_human/Log.progress.out" data-port-id="Log.progress.out">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 82.11412613588021, 43.660855339087846)" data-connection-id="out/star_mapping_pe_human/Log.out" data-port-id="Log.out">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 69.11246876939767, 62.22914639137382)" data-connection-id="out/star_mapping_pe_human/bamRemDups" data-port-id="bamRemDups">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 52.004940022779465, 77.10049424761887)" data-connection-id="out/star_mapping_pe_human/aligned" data-port-id="aligned">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            </g><g tabindex="-1" class="node step  " data-connection-id="samtools_view" transform="matrix(1, 0, 0, 1, 256, 97)" data-id="samtools_view">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="44" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="33" class="inner" style="fill:rgb(17, 167, 167); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 398.39 397.78" x="-10" y="-8" width="20" height="15"><title>tool2</title><polygon points="38.77 397.57 0 366 136.15 198.78 0 31.57 38.77 0 200.63 198.78 38.77 397.57" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><rect x="198.39" y="347.78" width="200" height="50" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 74)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">samtools-view</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -40.401510249807416, -17.427506119198636)" data-connection-id="in/samtools_view/threads" data-port-id="threads">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port input-port" transform="matrix(1.0000000000000002, 0, 0, 1.0000000000000002, -40.401510249807416, 17.427506119198647)" data-connection-id="in/samtools_view/bam" data-port-id="bam">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 44, 0)" data-connection-id="out/samtools_view/output" data-port-id="output">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            </g><g tabindex="-1" class="node step  " data-connection-id="bedtools_bamtofastq_pe" transform="matrix(1, 0, 0, 1, 445, 37)" data-id="bedtools_bamtofastq_pe">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="44" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="33" class="inner" style="fill:rgb(17, 167, 167); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 398.39 397.78" x="-10" y="-8" width="20" height="15"><title>tool2</title><polygon points="38.77 397.57 0 366 136.15 198.78 0 31.57 38.77 0 200.63 198.78 38.77 397.57" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><rect x="198.39" y="347.78" width="200" height="50" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 74)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">bedtools-bamtofastq-pe</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -44, 5.3884459162483544e-15)" data-connection-id="in/bedtools_bamtofastq_pe/input" data-port-id="input">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 40.401508509347615, -17.427510154038423)" data-connection-id="out/bedtools_bamtofastq_pe/output_fq2" data-port-id="output_fq2">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 40.401508509347615, 17.427510154038423)" data-connection-id="out/bedtools_bamtofastq_pe/output_fq1" data-port-id="output_fq1">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            </g><g tabindex="-1" class="node step  " data-connection-id="star_mapping_pe_virus" transform="matrix(1, 0, 0, 1, 786, 194)" data-id="star_mapping_pe_virus">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="93" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="69.75" class="inner" style="fill:rgb(17, 167, 167); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 398.39 397.78" x="-10" y="-8" width="20" height="15"><title>tool2</title><polygon points="38.77 397.57 0 366 136.15 198.78 0 31.57 38.77 0 200.63 198.78 38.77 397.57" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><rect x="198.39" y="347.78" width="200" height="50" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 123)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">STAR mapping: running mapping jobs.</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -69.11246876939767, -62.22914639137382)" data-connection-id="in/star_mapping_pe_virus/nthreads" data-port-id="nthreads">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port input-port" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -90.23750254366767, -22.498736290769077)" data-connection-id="in/star_mapping_pe_virus/genomeDir" data-port-id="genomeDir">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -90.23750254366767, 22.4987362907691)" data-connection-id="in/star_mapping_pe_virus/fq2" data-port-id="fq2">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port input-port" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -69.11246876939765, 62.229146391373824)" data-connection-id="in/star_mapping_pe_virus/fq1" data-port-id="fq1">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 52.004940022779465, -77.10049424761887)" data-connection-id="out/star_mapping_pe_virus/unmapped" data-port-id="unmapped">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 69.11246876939767, -62.22914639137382)" data-connection-id="out/star_mapping_pe_virus/transcriptomesam" data-port-id="transcriptomesam">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 82.11412613588021, -43.660855339087846)" data-connection-id="out/star_mapping_pe_virus/SJ.out.tab" data-port-id="SJ.out.tab">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 90.23750254366767, -22.4987362907691)" data-connection-id="out/star_mapping_pe_virus/readspergene" data-port-id="readspergene">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 93, 0)" data-connection-id="out/star_mapping_pe_virus/mappingstats" data-port-id="mappingstats">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 90.23750254366767, 22.4987362907691)" data-connection-id="out/star_mapping_pe_virus/Log.progress.out" data-port-id="Log.progress.out">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 82.11412613588021, 43.660855339087846)" data-connection-id="out/star_mapping_pe_virus/Log.out" data-port-id="Log.out">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 69.11246876939767, 62.22914639137382)" data-connection-id="out/star_mapping_pe_virus/bamRemDups" data-port-id="bamRemDups">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 52.004940022779465, 77.10049424761887)" data-connection-id="out/star_mapping_pe_virus/aligned" data-port-id="aligned">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            </g><g tabindex="-1" class="node step  " data-connection-id="mk_virus_count" transform="matrix(1, 0, 0, 1, 1102, 602)" data-id="mk_virus_count">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(17, 167, 167); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 398.39 397.78" x="-10" y="-8" width="20" height="15"><title>tool2</title><polygon points="38.77 397.57 0 366 136.15 198.78 0 31.57 38.77 0 200.63 198.78 38.77 397.57" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><rect x="198.39" y="347.78" width="200" height="50" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">mk_virus_count</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -37, 4.531193156845207e-15)" data-connection-id="in/mk_virus_count/virus_bam" data-port-id="virus_bam">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 37, 0)" data-connection-id="out/mk_virus_count/virus_count" data-port-id="virus_count">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            </g><g tabindex="-1" class="node step  " data-connection-id="salmon_quant_human" transform="matrix(1, 0, 0, 1, 85, -717)" data-id="salmon_quant_human">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="58" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="43.5" class="inner" style="fill:rgb(17, 167, 167); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 398.39 397.78" x="-10" y="-8" width="20" height="15"><title>tool2</title><polygon points="38.77 397.57 0 366 136.15 198.78 0 31.57 38.77 0 200.63 198.78 38.77 397.57" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><rect x="198.39" y="347.78" width="200" height="50" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 88)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">salmon_quant_human</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -43.10239987768887, -38.80957516881378)" data-connection-id="in/salmon_quant_human/runThreadN" data-port-id="runThreadN">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port input-port" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -56.2771521240078, -14.031469944780715)" data-connection-id="in/salmon_quant_human/inf2" data-port-id="inf2">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -56.2771521240078, 14.031469944780728)" data-connection-id="in/salmon_quant_human/inf1" data-port-id="inf1">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            <g class="port input-port" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -43.10239987768885, 38.80957516881379)" data-connection-id="in/salmon_quant_human/index" data-port-id="index">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 58, 0)" data-connection-id="out/salmon_quant_human/quantdir" data-port-id="quantdir">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            </g><g tabindex="-1" class="node input type-File " data-connection-id="out/fastq2/fastq2" transform="matrix(1, 0, 0, 1, -532, -424)" data-id="fastq2">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 462.86" y="-10" x="-11" width="20" height="20"><title>file_input</title><path d="M386.06,0H175V58.29l50,50V50H337.81V163.38h25l86.19.24V412.86H225V353.71l-50,50v59.15H499V112.94Zm1.75,113.45v-41l41.1,41.1Z" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/><polygon points="387.81 1.06 387.81 1.75 387.12 1.06 387.81 1.06" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><polygon points="290.36 231 176.68 344.68 141.32 309.32 194.64 256 0 256 0 206 194.64 206 142.32 153.68 177.68 118.32 290.36 231" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">fastq2</text>
+                
+                
+                
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 37, 0)" data-connection-id="out/fastq2/fastq2" data-port-id="fastq2">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            </g><g tabindex="-1" class="node input type-File " data-connection-id="out/fastq1/fastq1" transform="matrix(1, 0, 0, 1, -534, -269)" data-id="fastq1">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 462.86" y="-10" x="-11" width="20" height="20"><title>file_input</title><path d="M386.06,0H175V58.29l50,50V50H337.81V163.38h25l86.19.24V412.86H225V353.71l-50,50v59.15H499V112.94Zm1.75,113.45v-41l41.1,41.1Z" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/><polygon points="387.81 1.06 387.81 1.75 387.12 1.06 387.81 1.06" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><polygon points="290.36 231 176.68 344.68 141.32 309.32 194.64 256 0 256 0 206 194.64 206 142.32 153.68 177.68 118.32 290.36 231" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">fastq1</text>
+                
+                
+                
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 37, 0)" data-connection-id="out/fastq1/fastq1" data-port-id="fastq1">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            </g><g tabindex="-1" class="node input type-Directory " data-connection-id="out/genomeDir_human/genomeDir_human" transform="matrix(1, 0, 0, 1, -305, -602)" data-id="genomeDir_human">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 365" x="-11" y="-10" width="20" height="20"><title>type_input</title><g id="input"><path d="M316.5,68a181.72,181.72,0,0,0-114.12,40.09L238,143.72a132.5,132.5,0,1,1,1.16,214.39L203.48,393.8A182.5,182.5,0,1,0,316.5,68Z" transform="translate(0 -68)" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/><g id="Layer_22" data-name="Layer 22"><g id="Layer_9_copy_4" data-name="Layer 9 copy 4"><polygon points="290.36 182 176.68 295.68 141.32 260.32 194.64 207 0 207 0 157 194.64 157 142.32 104.68 177.68 69.32 290.36 182" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/></g></g></g></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">genomeDir_human</text>
+                
+                
+                
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 37, 0)" data-connection-id="out/genomeDir_human/genomeDir_human" data-port-id="genomeDir_human">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            </g><g tabindex="-1" class="node input type-string " data-connection-id="out/outFileNamePrefix_human/outFileNamePrefix_human" transform="matrix(1, 0, 0, 1, -304, -750)" data-id="outFileNamePrefix_human">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 365" x="-11" y="-10" width="20" height="20"><title>type_input</title><g id="input"><path d="M316.5,68a181.72,181.72,0,0,0-114.12,40.09L238,143.72a132.5,132.5,0,1,1,1.16,214.39L203.48,393.8A182.5,182.5,0,1,0,316.5,68Z" transform="translate(0 -68)" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/><g id="Layer_22" data-name="Layer 22"><g id="Layer_9_copy_4" data-name="Layer 9 copy 4"><polygon points="290.36 182 176.68 295.68 141.32 260.32 194.64 207 0 207 0 157 194.64 157 142.32 104.68 177.68 69.32 290.36 182" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/></g></g></g></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">outFileNamePrefix_human</text>
+                
+                
+                
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 37, 0)" data-connection-id="out/outFileNamePrefix_human/outFileNamePrefix_human" data-port-id="outFileNamePrefix_human">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            </g><g tabindex="-1" class="node input type-int " data-connection-id="out/nthreads/nthreads" transform="matrix(1, 0, 0, 1, -366, 303)" data-id="nthreads">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 365" x="-11" y="-10" width="20" height="20"><title>type_input</title><g id="input"><path d="M316.5,68a181.72,181.72,0,0,0-114.12,40.09L238,143.72a132.5,132.5,0,1,1,1.16,214.39L203.48,393.8A182.5,182.5,0,1,0,316.5,68Z" transform="translate(0 -68)" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/><g id="Layer_22" data-name="Layer 22"><g id="Layer_9_copy_4" data-name="Layer 9 copy 4"><polygon points="290.36 182 176.68 295.68 141.32 260.32 194.64 207 0 207 0 157 194.64 157 142.32 104.68 177.68 69.32 290.36 182" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/></g></g></g></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">nthreads</text>
+                
+                
+                
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 37, 0)" data-connection-id="out/nthreads/nthreads" data-port-id="nthreads">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            </g><g tabindex="-1" class="node input type-Directory " data-connection-id="out/genomeDir_virus/genomeDir_virus" transform="matrix(1, 0, 0, 1, 670, -69)" data-id="genomeDir_virus">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 365" x="-11" y="-10" width="20" height="20"><title>type_input</title><g id="input"><path d="M316.5,68a181.72,181.72,0,0,0-114.12,40.09L238,143.72a132.5,132.5,0,1,1,1.16,214.39L203.48,393.8A182.5,182.5,0,1,0,316.5,68Z" transform="translate(0 -68)" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/><g id="Layer_22" data-name="Layer 22"><g id="Layer_9_copy_4" data-name="Layer 9 copy 4"><polygon points="290.36 182 176.68 295.68 141.32 260.32 194.64 207 0 207 0 157 194.64 157 142.32 104.68 177.68 69.32 290.36 182" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/></g></g></g></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">genomeDir_virus</text>
+                
+                
+                
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 37, 0)" data-connection-id="out/genomeDir_virus/genomeDir_virus" data-port-id="genomeDir_virus">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            </g><g tabindex="-1" class="node input type-Directory " data-connection-id="out/index/index" transform="matrix(1, 0, 0, 1, -281, -924)" data-id="index">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 365" x="-11" y="-10" width="20" height="20"><title>type_input</title><g id="input"><path d="M316.5,68a181.72,181.72,0,0,0-114.12,40.09L238,143.72a132.5,132.5,0,1,1,1.16,214.39L203.48,393.8A182.5,182.5,0,1,0,316.5,68Z" transform="translate(0 -68)" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/><g id="Layer_22" data-name="Layer 22"><g id="Layer_9_copy_4" data-name="Layer 9 copy 4"><polygon points="290.36 182 176.68 295.68 141.32 260.32 194.64 207 0 207 0 157 194.64 157 142.32 104.68 177.68 69.32 290.36 182" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/></g></g></g></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">index</text>
+                
+                
+                
+            <g class="port output-port" transform="matrix(1, 0, 0, 1, 37, 0)" data-connection-id="out/index/index" data-port-id="index">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+            </g><g tabindex="-1" class="node output type-File " data-connection-id="in/Log.out_human/Log.out_human" transform="matrix(1, 0, 0, 1, 201, -114)" data-id="Log.out_human">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 462.86" x="-7" y="-11" width="20" height="20"><title>file_output</title><polygon points="387.81 1.06 387.81 1.75 387.12 1.06 387.81 1.06" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><polygon points="499 231 385.32 344.68 349.96 309.32 403.28 256 208.64 256 208.64 206 403.28 206 350.96 153.68 386.32 118.32 499 231" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><path d="M187.81,163.38l77.69.22H324V112.94L211.06,0H0V462.86H324V298.5H274V412.86H50V50H162.81V163.38Zm25-90.92,41.1,41.1-41.1-.11Z" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">Log.out_human</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -37, 4.531193156845207e-15)" data-connection-id="in/Log.out_human/Log.out_human" data-port-id="Log.out_human">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            </g><g tabindex="-1" class="node output type-File " data-connection-id="in/Log.progress.out_human/Log.progress.out_human" transform="matrix(1, 0, 0, 1, 203, -268)" data-id="Log.progress.out_human">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 462.86" x="-7" y="-11" width="20" height="20"><title>file_output</title><polygon points="387.81 1.06 387.81 1.75 387.12 1.06 387.81 1.06" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><polygon points="499 231 385.32 344.68 349.96 309.32 403.28 256 208.64 256 208.64 206 403.28 206 350.96 153.68 386.32 118.32 499 231" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><path d="M187.81,163.38l77.69.22H324V112.94L211.06,0H0V462.86H324V298.5H274V412.86H50V50H162.81V163.38Zm25-90.92,41.1,41.1-41.1-.11Z" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">Log.progress.out_human</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -37, 4.531193156845207e-15)" data-connection-id="in/Log.progress.out_human/Log.progress.out_human" data-port-id="Log.progress.out_human">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            </g><g tabindex="-1" class="node output type-File " data-connection-id="in/SJ.out.tab_human/SJ.out.tab_human" transform="matrix(1, 0, 0, 1, 206, -521)" data-id="SJ.out.tab_human">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 462.86" x="-7" y="-11" width="20" height="20"><title>file_output</title><polygon points="387.81 1.06 387.81 1.75 387.12 1.06 387.81 1.06" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><polygon points="499 231 385.32 344.68 349.96 309.32 403.28 256 208.64 256 208.64 206 403.28 206 350.96 153.68 386.32 118.32 499 231" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><path d="M187.81,163.38l77.69.22H324V112.94L211.06,0H0V462.86H324V298.5H274V412.86H50V50H162.81V163.38Zm25-90.92,41.1,41.1-41.1-.11Z" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">SJ.out.tab_human</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -37, 4.531193156845207e-15)" data-connection-id="in/SJ.out.tab_human/SJ.out.tab_human" data-port-id="SJ.out.tab_human">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            </g><g tabindex="-1" class="node output type-File " data-connection-id="in/aligned_bam_human/aligned_bam_human" transform="matrix(1, 0, 0, 1, 57, 130)" data-id="aligned_bam_human">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 462.86" x="-7" y="-11" width="20" height="20"><title>file_output</title><polygon points="387.81 1.06 387.81 1.75 387.12 1.06 387.81 1.06" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><polygon points="499 231 385.32 344.68 349.96 309.32 403.28 256 208.64 256 208.64 206 403.28 206 350.96 153.68 386.32 118.32 499 231" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><path d="M187.81,163.38l77.69.22H324V112.94L211.06,0H0V462.86H324V298.5H274V412.86H50V50H162.81V163.38Zm25-90.92,41.1,41.1-41.1-.11Z" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">aligned_bam_human</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -37, 4.531193156845207e-15)" data-connection-id="in/aligned_bam_human/aligned_bam_human" data-port-id="aligned_bam_human">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            </g><g tabindex="-1" class="node output type-File " data-connection-id="in/output_unmapped/output_unmapped" transform="matrix(1, 0, 0, 1, 412, 218)" data-id="output_unmapped">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 462.86" x="-7" y="-11" width="20" height="20"><title>file_output</title><polygon points="387.81 1.06 387.81 1.75 387.12 1.06 387.81 1.06" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><polygon points="499 231 385.32 344.68 349.96 309.32 403.28 256 208.64 256 208.64 206 403.28 206 350.96 153.68 386.32 118.32 499 231" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><path d="M187.81,163.38l77.69.22H324V112.94L211.06,0H0V462.86H324V298.5H274V412.86H50V50H162.81V163.38Zm25-90.92,41.1,41.1-41.1-.11Z" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">output_unmapped</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -37, 4.531193156845207e-15)" data-connection-id="in/output_unmapped/output_unmapped" data-port-id="output_unmapped">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            </g><g tabindex="-1" class="node output type-File " data-connection-id="in/output_fq2/output_fq2" transform="matrix(1, 0, 0, 1, 591, -329)" data-id="output_fq2">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 462.86" x="-7" y="-11" width="20" height="20"><title>file_output</title><polygon points="387.81 1.06 387.81 1.75 387.12 1.06 387.81 1.06" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><polygon points="499 231 385.32 344.68 349.96 309.32 403.28 256 208.64 256 208.64 206 403.28 206 350.96 153.68 386.32 118.32 499 231" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><path d="M187.81,163.38l77.69.22H324V112.94L211.06,0H0V462.86H324V298.5H274V412.86H50V50H162.81V163.38Zm25-90.92,41.1,41.1-41.1-.11Z" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">output_fq2</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -37, 4.531193156845207e-15)" data-connection-id="in/output_fq2/output_fq2" data-port-id="output_fq2">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            </g><g tabindex="-1" class="node output type-File " data-connection-id="in/output_fq1/output_fq1" transform="matrix(1, 0, 0, 1, 589, -168)" data-id="output_fq1">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 462.86" x="-7" y="-11" width="20" height="20"><title>file_output</title><polygon points="387.81 1.06 387.81 1.75 387.12 1.06 387.81 1.06" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><polygon points="499 231 385.32 344.68 349.96 309.32 403.28 256 208.64 256 208.64 206 403.28 206 350.96 153.68 386.32 118.32 499 231" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><path d="M187.81,163.38l77.69.22H324V112.94L211.06,0H0V462.86H324V298.5H274V412.86H50V50H162.81V163.38Zm25-90.92,41.1,41.1-41.1-.11Z" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">output_fq1</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -37, 4.531193156845207e-15)" data-connection-id="in/output_fq1/output_fq1" data-port-id="output_fq1">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            </g><g tabindex="-1" class="node output type-File " data-connection-id="in/SJ.out.tab_virus/SJ.out.tab_virus" transform="matrix(1, 0, 0, 1, 1034, 17)" data-id="SJ.out.tab_virus">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 462.86" x="-7" y="-11" width="20" height="20"><title>file_output</title><polygon points="387.81 1.06 387.81 1.75 387.12 1.06 387.81 1.06" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><polygon points="499 231 385.32 344.68 349.96 309.32 403.28 256 208.64 256 208.64 206 403.28 206 350.96 153.68 386.32 118.32 499 231" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><path d="M187.81,163.38l77.69.22H324V112.94L211.06,0H0V462.86H324V298.5H274V412.86H50V50H162.81V163.38Zm25-90.92,41.1,41.1-41.1-.11Z" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">SJ.out.tab_virus</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -37, 4.531193156845207e-15)" data-connection-id="in/SJ.out.tab_virus/SJ.out.tab_virus" data-port-id="SJ.out.tab_virus">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            </g><g tabindex="-1" class="node output type-File " data-connection-id="in/Log.progress.out_virus/Log.progress.out_virus" transform="matrix(1, 0, 0, 1, 1032, 293)" data-id="Log.progress.out_virus">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 462.86" x="-7" y="-11" width="20" height="20"><title>file_output</title><polygon points="387.81 1.06 387.81 1.75 387.12 1.06 387.81 1.06" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><polygon points="499 231 385.32 344.68 349.96 309.32 403.28 256 208.64 256 208.64 206 403.28 206 350.96 153.68 386.32 118.32 499 231" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><path d="M187.81,163.38l77.69.22H324V112.94L211.06,0H0V462.86H324V298.5H274V412.86H50V50H162.81V163.38Zm25-90.92,41.1,41.1-41.1-.11Z" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">Log.progress.out_virus</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -37, 4.531193156845207e-15)" data-connection-id="in/Log.progress.out_virus/Log.progress.out_virus" data-port-id="Log.progress.out_virus">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            </g><g tabindex="-1" class="node output type-File " data-connection-id="in/Log.out_virus/Log.out_virus" transform="matrix(1, 0, 0, 1, 1034, 438)" data-id="Log.out_virus">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 462.86" x="-7" y="-11" width="20" height="20"><title>file_output</title><polygon points="387.81 1.06 387.81 1.75 387.12 1.06 387.81 1.06" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><polygon points="499 231 385.32 344.68 349.96 309.32 403.28 256 208.64 256 208.64 206 403.28 206 350.96 153.68 386.32 118.32 499 231" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><path d="M187.81,163.38l77.69.22H324V112.94L211.06,0H0V462.86H324V298.5H274V412.86H50V50H162.81V163.38Zm25-90.92,41.1,41.1-41.1-.11Z" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">Log.out_virus</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -37, 4.531193156845207e-15)" data-connection-id="in/Log.out_virus/Log.out_virus" data-port-id="Log.out_virus">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            </g><g tabindex="-1" class="node output type-File " data-connection-id="in/aligned_virus/aligned_virus" transform="matrix(1, 0, 0, 1, 1037, 763)" data-id="aligned_virus">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 462.86" x="-7" y="-11" width="20" height="20"><title>file_output</title><polygon points="387.81 1.06 387.81 1.75 387.12 1.06 387.81 1.06" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><polygon points="499 231 385.32 344.68 349.96 309.32 403.28 256 208.64 256 208.64 206 403.28 206 350.96 153.68 386.32 118.32 499 231" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><path d="M187.81,163.38l77.69.22H324V112.94L211.06,0H0V462.86H324V298.5H274V412.86H50V50H162.81V163.38Zm25-90.92,41.1,41.1-41.1-.11Z" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">aligned_virus</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -37, 4.531193156845207e-15)" data-connection-id="in/aligned_virus/aligned_virus" data-port-id="aligned_virus">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            </g><g tabindex="-1" class="node output type-File " data-connection-id="in/mappingstats_virus/mappingstats_virus" transform="matrix(1, 0, 0, 1, 1038, 146)" data-id="mappingstats_virus">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 462.86" x="-7" y="-11" width="20" height="20"><title>file_output</title><polygon points="387.81 1.06 387.81 1.75 387.12 1.06 387.81 1.06" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><polygon points="499 231 385.32 344.68 349.96 309.32 403.28 256 208.64 256 208.64 206 403.28 206 350.96 153.68 386.32 118.32 499 231" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><path d="M187.81,163.38l77.69.22H324V112.94L211.06,0H0V462.86H324V298.5H274V412.86H50V50H162.81V163.38Zm25-90.92,41.1,41.1-41.1-.11Z" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">mappingstats_virus</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -37, 4.531193156845207e-15)" data-connection-id="in/mappingstats_virus/mappingstats_virus" data-port-id="mappingstats_virus">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            </g><g tabindex="-1" class="node output type-File " data-connection-id="in/mappingstats_human/mappingstats_human" transform="matrix(1, 0, 0, 1, 206, -394)" data-id="mappingstats_human">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499 462.86" x="-7" y="-11" width="20" height="20"><title>file_output</title><polygon points="387.81 1.06 387.81 1.75 387.12 1.06 387.81 1.06" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><polygon points="499 231 385.32 344.68 349.96 309.32 403.28 256 208.64 256 208.64 206 403.28 206 350.96 153.68 386.32 118.32 499 231" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/><path d="M187.81,163.38l77.69.22H324V112.94L211.06,0H0V462.86H324V298.5H274V412.86H50V50H162.81V163.38Zm25-90.92,41.1,41.1-41.1-.11Z" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">mappingstats_human</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -37, 4.531193156845207e-15)" data-connection-id="in/mappingstats_human/mappingstats_human" data-port-id="mappingstats_human">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            </g><g tabindex="-1" class="node output type-stdout " data-connection-id="in/virus_count/virus_count" transform="matrix(1, 0, 0, 1, 1288, 602)" data-id="virus_count">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500.36 365" x="-9" y="-10" width="20" height="20"><title>type_output</title><g id="output"><path d="M291.95,325.23a134,134,0,0,1-15.76,19,132.5,132.5,0,1,1,0-187.38,133.9,133.9,0,0,1,16.16,19.55l35.81-35.81A182.5,182.5,0,1,0,327.73,361Z" transform="translate(0 -68)" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/><g id="circle_source_copy" data-name="circle source copy"><g id="Layer_22_copy" data-name="Layer 22 copy"><g id="Layer_9_copy_5" data-name="Layer 9 copy 5"><polygon points="500.36 182 386.68 295.68 351.32 260.32 404.64 207 210 207 210 157 404.64 157 352.32 104.68 387.68 69.32 500.36 182" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/></g></g></g></g></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">virus_count</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -37, 4.531193156845207e-15)" data-connection-id="in/virus_count/virus_count" data-port-id="virus_count">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            </g><g tabindex="-1" class="node output type-Directory " data-connection-id="in/quantdir/quantdir" transform="matrix(1, 0, 0, 1, 299, -715)" data-id="quantdir">
+               
+                <g class="core" transform="matrix(1, 0, 0, 1, 0, 0)">
+                    <circle cx="0" cy="0" r="37" class="outer" style="fill:rgb(48, 48, 48); stroke:rgb(154, 154, 154); stroke-width:2px; "/>
+                    <circle cx="0" cy="0" r="27.75" class="inner" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                    
+                    <svg class="node-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500.36 365" x="-9" y="-10" width="20" height="20"><title>type_output</title><g id="output"><path d="M291.95,325.23a134,134,0,0,1-15.76,19,132.5,132.5,0,1,1,0-187.38,133.9,133.9,0,0,1,16.16,19.55l35.81-35.81A182.5,182.5,0,1,0,327.73,361Z" transform="translate(0 -68)" style="fill:rgb(48, 48, 48); stroke:rgb(48, 48, 48); stroke-width:3px; "/><g id="circle_source_copy" data-name="circle source copy"><g id="Layer_22_copy" data-name="Layer 22 copy"><g id="Layer_9_copy_5" data-name="Layer 9 copy 5"><polygon points="500.36 182 386.68 295.68 351.32 260.32 404.64 207 210 207 210 157 404.64 157 352.32 104.68 387.68 69.32 500.36 182" style="stroke:rgb(48, 48, 48); fill:rgb(48, 48, 48); "/></g></g></g></g></svg>
+                </g>
+                
+                <text transform="matrix(1.35823 0 0 1.35823 0 67)" class="title label" style="fill:rgb(255, 255, 255); font-size:13px; text-anchor:middle; font-family:sans-serif; ">quantdir</text>
+                
+                
+            <g class="port input-port" transform="matrix(1, 0, 0, 1, -37, 4.531193156845207e-15)" data-connection-id="in/quantdir/quantdir" data-port-id="quantdir">
+                <g class="io-port">
+                    <circle cx="0" cy="0" r="7" class="port-handle" style="fill:rgb(195, 195, 195); stroke:none; stroke-width:1px; "/>
+                </g>
+                
+            </g>
+            
+        
+                
+            </g></g>
+        </svg>

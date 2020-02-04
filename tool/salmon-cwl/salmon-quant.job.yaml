@@ -1,0 +1,17 @@
+gcBias: true
+index:
+  class: Directory
+  path: >-
+    ../test/salmon_index_human
+inf1:
+  class: File
+  path: >-
+    ../test/ERR3240275_fp_1.fastq.gz
+inf2:
+  class: File
+  path: >-
+    ../test/ERR3240275_fp_2.fastq.gz
+libType: A
+quantdir: salmon_human
+runThreadN: 4
+validateMappings: true

@@ -27,8 +27,12 @@ inputs:
     'sbg:y': 303.09088134765625
   - id: genomeDir_virus
     type: Directory
-    'sbg:x': 670.920166015625
-    'sbg:y': -69.70066833496094
+    'sbg:x': 417.4296875
+    'sbg:y': 452.7935791015625
+  - id: salmon_index_human
+    type: Directory
+    'sbg:x': -313.94915771484375
+    'sbg:y': -922.5796508789062
 outputs:
   - id: Log.out_human
     outputSource:
@@ -52,8 +56,8 @@ outputs:
     outputSource:
       - star_mapping_pe_human/aligned
     type: File
-    'sbg:x': 57.4921875
-    'sbg:y': 130.5
+    'sbg:x': 209.65237426757812
+    'sbg:y': 379.7947998046875
   - id: output_unmapped
     outputSource:
       - samtools_view/output
@@ -64,50 +68,62 @@ outputs:
     outputSource:
       - bedtools_bamtofastq_pe/output_fq2
     type: File?
-    'sbg:x': 591.3458862304688
-    'sbg:y': -329.0044250488281
+    'sbg:x': 549.3675537109375
+    'sbg:y': -334.5509948730469
   - id: output_fq1
     outputSource:
       - bedtools_bamtofastq_pe/output_fq1
     type: File
-    'sbg:x': 589.410888671875
-    'sbg:y': -168.9302978515625
+    'sbg:x': 562.6327514648438
+    'sbg:y': -168
   - id: SJ.out.tab_virus
     outputSource:
       - star_mapping_pe_virus/SJ.out.tab
     type: File?
-    'sbg:x': 1034.0048828125
-    'sbg:y': 17.815855026245117
+    'sbg:x': 954.8983154296875
+    'sbg:y': -110.67289733886719
   - id: Log.progress.out_virus
     outputSource:
       - star_mapping_pe_virus/Log.progress.out
     type: File?
-    'sbg:x': 1032.626220703125
-    'sbg:y': 293.0771179199219
+    'sbg:x': 959.8370361328125
+    'sbg:y': 193.0820770263672
   - id: Log.out_virus
     outputSource:
       - star_mapping_pe_virus/Log.out
     type: File?
-    'sbg:x': 1034.2930908203125
-    'sbg:y': 438.0975341796875
+    'sbg:x': 960.4492797851562
+    'sbg:y': 331.1433410644531
   - id: aligned_virus
     outputSource:
       - star_mapping_pe_virus/aligned
     type: File
-    'sbg:x': 1040.3548583984375
-    'sbg:y': 629.8064575195312
+    'sbg:x': 967.612548828125
+    'sbg:y': 645.0413208007812
   - id: mappingstats_virus
     outputSource:
       - star_mapping_pe_virus/mappingstats
     type: File?
-    'sbg:x': 1038.330322265625
-    'sbg:y': 146.6676025390625
+    'sbg:x': 956.122802734375
+    'sbg:y': 39.143333435058594
   - id: mappingstats_human
     outputSource:
       - star_mapping_pe_human/mappingstats
     type: File?
     'sbg:x': 206.1626434326172
     'sbg:y': -394.3936767578125
+  - id: virus_count
+    outputSource:
+      - mk_virus_count/virus_count
+    type: stdout
+    'sbg:x': 1124.24560546875
+    'sbg:y': 477.10260009765625
+  - id: output_quantdir_human
+    outputSource:
+      - salmon_quant_human/output_quantdir
+    type: Directory
+    'sbg:x': 300.56866455078125
+    'sbg:y': -715.6619262695312
 steps:
   - id: fastp_pe
     in:
@@ -169,8 +185,8 @@ steps:
       - id: output
     run: ../tool/samtools/samtools-view.cwl
     label: samtools-view
-    'sbg:x': 256
-    'sbg:y': 97
+    'sbg:x': 199.102294921875
+    'sbg:y': 52.59203338623047
   - id: bedtools_bamtofastq_pe
     in:
       - id: input
@@ -184,8 +200,8 @@ steps:
       - id: output_fq2
     run: ../tool/bedtools/bedtools-bamtofastq-pe.cwl
     label: bedtools-bamtofastq-pe
-    'sbg:x': 445
-    'sbg:y': 37
+    'sbg:x': 406.1430358886719
+    'sbg:y': 28.673505783081055
   - id: star_mapping_pe_virus
     in:
       - id: fq1
@@ -212,6 +228,39 @@ steps:
       - id: unmapped
     run: ../tool/star/star_mapping-pe/star_mapping-pe.cwl
     label: 'STAR mapping: running mapping jobs.'
-    'sbg:x': 792.4325561523438
-    'sbg:y': 221.78775024414062
+    'sbg:x': 681.9188232421875
+    'sbg:y': 132.9390411376953
+  - id: mk_virus_count
+    in:
+      - id: virus_bam
+        source: star_mapping_pe_virus/aligned
+    out:
+      - id: virus_count
+    run: ../tool/mk_virus_count.cwl
+    label: mk_virus_count
+    'sbg:x': 963.22509765625
+    'sbg:y': 479.8780822753906
+  - id: salmon_quant_human
+    in:
+      - id: index
+        source: salmon_index_human
+      - id: inf1
+        source: fastp_pe/out_fastq1
+      - id: inf2
+        source: fastp_pe/out_fastq2
+      - id: libType
+        default: A
+      - id: quantdir
+        default: salmon_human
+      - id: runThreadN
+        source: nthreads
+      - id: gcBias
+        default: true
+      - id: validateMappings
+        default: true
+    out:
+      - id: output_quantdir
+    run: ../tool/salmon-cwl/salmon-quant.cwl
+    'sbg:x': 85.66854095458984
+    'sbg:y': -717.1351318359375
 requirements: []
