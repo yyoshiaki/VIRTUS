@@ -1,3 +1,5 @@
+#!/usr/bin/env cwltool
+
 class: Workflow
 cwlVersion: v1.0
 id: virtect_pe_quant_singlevirus
