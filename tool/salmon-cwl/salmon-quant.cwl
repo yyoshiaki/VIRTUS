@@ -60,8 +60,9 @@ outputs:
   - id: output_quantdir
     type: Directory
     outputBinding:
-      glob: .
+      glob: $(inputs.quantdir)
 requirements:
   - class: ShellCommandRequirement
   - class: DockerRequirement
     dockerPull: 'combinelab/salmon:1.1.0'
+  - class: InlineJavascriptRequirement
