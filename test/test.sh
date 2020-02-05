@@ -1,7 +1,7 @@
 #!/bin/bash
 set -xe
 
-ls | grep -v -E 'test.sh' | xargs rm -r
+# ls | grep -v -E 'test.sh' | xargs rm -r
 
 fasterq-dump -e 8 ERR3240275 -p
 pigz ERR3240275_*.fastq
