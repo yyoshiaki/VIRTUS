@@ -1,5 +1,3 @@
-#!/usr/bin/env cwltool
-
 class: Workflow
 cwlVersion: v1.0
 id: virtect_pe_quant_singlevirus
@@ -64,20 +62,14 @@ outputs:
     outputSource:
       - star_mapping_pe/aligned
     type: File
-    'sbg:x': -85
-    'sbg:y': 273
+    'sbg:x': -86
+    'sbg:y': 169
   - id: output_quantdir
     outputSource:
       - salmon_quant/output_quantdir
     type: Directory
     'sbg:x': -74
     'sbg:y': -627
-  - id: output
-    outputSource:
-      - samtools_index/output
-    type: File
-    'sbg:x': 57.3651123046875
-    'sbg:y': 146
 steps:
   - id: star_mapping_pe
     in:
@@ -130,14 +122,4 @@ steps:
     run: ../tool/salmon-cwl/salmon-quant.cwl
     'sbg:x': -282
     'sbg:y': -625
-  - id: samtools_index
-    in:
-      - id: input
-        source: star_mapping_pe/aligned
-    out:
-      - id: output
-    run: ../tool/samtools/samtools-index.cwl
-    label: samtools-index
-    'sbg:x': -81
-    'sbg:y': 145
 requirements: []
