@@ -98,6 +98,7 @@ usage: ./virtect_pe.cwl [-h] --fastq2 FASTQ2 --fastq1 FASTQ1
                         [--nthreads NTHREADS] 
                         --genomeDir_virus GENOMEDIR_VIRUS 
                         --salmon_index_human SALMON_INDEX_HUMAN
+                        --salmon_quantdir_human SALMON_QUANTDIR_HUMAN
                         [job_order]
 
 positional arguments:
@@ -111,6 +112,7 @@ optional arguments:
   --outFileNamePrefix_human OUTFILENAMEPREFIX_HUMAN
   --nthreads NTHREADS
   --genomeDir_virus GENOMEDIR_VIRUS
+  --salmon_quantdir_human SALMON_QUANTDIR_HUMAN
   --salmon_index_human SALMON_INDEX_HUMAN
 
 ```
@@ -129,7 +131,8 @@ example2
 --fastq2 ../test/ERR3240275_2.fastq.gz \
 --genomeDir_human ../test/STAR_index_human \
 --genomeDir_virus ../test/STAR_index_virus \
---salmon_index_human ../test/salmon_index_human
+--salmon_index_human ../test/salmon_index_human \
+--salmon_quantdir_human salmon_human
 --outFileNamePrefix_human human \
 --nthreads 40
 ```

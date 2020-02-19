@@ -35,6 +35,10 @@ inputs:
     type: Directory
     'sbg:x': -313.94915771484375
     'sbg:y': -922.5796508789062
+  - id: salmon_quantdir_human
+    type: string
+    'sbg:x': -314.884765625
+    'sbg:y': -1090
 outputs:
   - id: Log.out_human
     outputSource:
@@ -253,7 +257,8 @@ steps:
       - id: libType
         default: A
       - id: quantdir
-        default: salmon_human
+        default: salmon_quantdir_human
+        source: salmon_quantdir_human
       - id: runThreadN
         source: nthreads
       - id: gcBias
