@@ -1,6 +1,6 @@
 # VirTect_cwl
 
-Re-implementation and upadate of [VirTect](https://github.com/WGLab/VirTect) by cwl.
+Virus detection and quantification in parallel with human genes. The viral genome references are from [VirTect](https://github.com/WGLab/VirTect). The workflow is inplementated by [Common Workflow Language](https://www.commonwl.org/) and [Rabix](https://rabix.io/). You can specify each parameter individually or give `yaml` or `json` file which describes all the parameter information. In detail, chick [the CWL User Guide](http://www.commonwl.org/user_guide/) out.
 
 ## dependencies
 
@@ -114,7 +114,6 @@ optional arguments:
   --genomeDir_virus GENOMEDIR_VIRUS
   --salmon_quantdir_human SALMON_QUANTDIR_HUMAN
   --salmon_index_human SALMON_INDEX_HUMAN
-
 ```
 
 example1
@@ -132,7 +131,7 @@ example2
 --genomeDir_human ../test/STAR_index_human \
 --genomeDir_virus ../test/STAR_index_virus \
 --salmon_index_human ../test/salmon_index_human \
---salmon_quantdir_human salmon_human
+--salmon_quantdir_human salmon_human \
 --outFileNamePrefix_human human \
 --nthreads 40
 ```
@@ -182,13 +181,35 @@ example2
 --genomeDir_singlevirus ../test/STAR_index_NC_007605.1 \
 --salmon_index_singlevirus ../test/salmon_index_NC_007605.1 \
 --outFileNamePrefix_star NC_007605.1 \
---quantdir salmon_NC_007605.1
+--quantdir salmon_NC_007605.1 \
 --runThreadN 40
 ```
 
 ![img/virtect_pe_quant_singlevirus.jpg](img/virtect_pe_quant_singlevirus.jpg)
 
+## tips
+
+- cwltool may occupy all the system disk by tmp directory. If you suspect the situation, check `/tmp` or avoid by cwltool's option. The example is below. You can also delete the dir by `--rm-tmpdir`.
+
+```
+cwltool --tmp-outdir-prefix=/home/yyasumizu/tmp_cwl/ \
+--tmpdir-prefix=/home/yyasumizu/tmp_cwl/ \
+~/yyoshiaki-git/VirTect_cwl/workflow/virtect_pe.cwl \
+--fastq1 /home/yyasumizu/NGS_public/PRJEB31829_Blimph_EB/donor1_day0_1.fastq.gz \
+--fastq2 /home/yyasumizu/NGS_public/PRJEB31829_Blimph_EB/donor1_day0_2.fastq.gz \
+--genomeDir_human /home/yyasumizu/yyoshiaki-git/VirTect_cwl/test/STAR_index_human \
+--genomeDir_virus /home/yyasumizu/yyoshiaki-git/VirTect_cwl/test/STAR_index_virus \
+--salmon_index_human /home/yyasumizu/yyoshiaki-git/VirTect_cwl/test/salmon_index_human \
+--salmon_quantdir_human donor1_day0/salmon_human \
+--outFileNamePrefix_human /home/yyasumizu/EB_Virtect/donor1_day0/human --nthreads 20
+```
+
+- when you specify .cwl files in the absolute path, error may occur. use the relative path.
+- note that you cannnot use `\`in --outFileNamePrefix_*
+
 ## test
+
+After you clone this repo, try the test run first.
 
 ```
 cd test
