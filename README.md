@@ -1,6 +1,6 @@
 # VirTect_cwl
 
-Virus detection and quantification in parallel with human genes. The viral genome references are from [VirTect](https://github.com/WGLab/VirTect). The workflow is inplementated by [Common Workflow Language](https://www.commonwl.org/) and [Rabix](https://rabix.io/). You can specify each parameter individually or give `yaml` or `json` file which describes all the parameter information. In detail, chick [the CWL User Guide](http://www.commonwl.org/user_guide/) out.
+Virus detection and quantification in parallel with human genes. The viral genome references are from [VirTect](https://github.com/WGLab/VirTect). The workflow is implemented by [Common Workflow Language](https://www.commonwl.org/) and [Rabix](https://rabix.io/). You can specify each parameter individually or give `yaml` or `json` file which describes all the parameter information. In detail, check [the CWL User Guide](http://www.commonwl.org/user_guide/) out.
 
 ## dependencies
 
