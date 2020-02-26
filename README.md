@@ -187,6 +187,30 @@ example2
 
 ![img/virtect_pe_quant_singlevirus.jpg](img/virtect_pe_quant_singlevirus.jpg)
 
+## mk_virus_tx2gene
+
+Create the file `tx2gene.txt` to map transcripts to each gene for tximport.
+
+```
+% python mk_virus_tx2gene.py -h
+usage: mk_virus_tx2gene.py [-h] input output
+
+create tx2gene from an NCBI virus transcript fasta file.
+
+positional arguments:
+  input       input fasta file
+  output      output file
+
+optional arguments:
+  -h, --help  show this help message and exit
+```
+
+example
+
+```
+python ./tool/mk_virus_tx2gene/mk_virus_tx2gene.py ./data/NC_007605.1.transcripts.fasta ./data/NC_007605.1.tx2gene.txt
+```
+
 ## tips
 
 - cwltool may occupy all the system disk by tmp directory. If you suspect the situation, check `/tmp` or avoid by cwltool's option. The example is below. You can also delete the dir by `--rm-tmpdir`.
