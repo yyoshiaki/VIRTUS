@@ -1,0 +1,5 @@
+input:
+  class: File
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/VirTect_cwl/data/NC_007605.1.transcripts.fasta
+output: tx2gene.txt
