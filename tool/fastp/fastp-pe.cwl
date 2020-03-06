@@ -1,38 +1,56 @@
-#!/usr/bin/env cwl-runner
-
-cwlVersion: v1.0
 class: CommandLineTool
-requirements:
-    InlineJavascriptRequirement: {}
-    DockerRequirement:
-        dockerPull: quay.io/biocontainers/fastp:0.20.0--hdbcaa40_0
-
-baseCommand: [fastp]
-arguments:
-    - -o 
-    - $(inputs.fastq1.basename.replace(/\.gz$|\.bz2$/, '').replace(/\.fq$|\.fastq$/, '')).fastp.fastq
-    - -O 
-    - $(inputs.fastq2.basename.replace(/\.gz$|\.bz2$/, '').replace(/\.fq$|\.fastq$/, '')).fastp.fastq
+cwlVersion: v1.0
+$namespaces:
+  sbg: 'https://www.sevenbridges.com/'
+baseCommand:
+  - fastp
 inputs:
-    fastq1:
-      type: File
-      inputBinding:
-        prefix: -i
-    fastq2:
-      type: File
-      inputBinding:
-        prefix: -I
-    threads:
-      type: int?
-      default: 1
-      inputBinding:
-        prefix: --thread
+  - id: fastq1
+    type: File
+    inputBinding:
+      position: 0
+      prefix: '-i'
+  - id: fastq2
+    type: File
+    inputBinding:
+      position: 0
+      prefix: '-I'
+  - default: 1
+    id: threads
+    type: int?
+    inputBinding:
+      position: 0
+      prefix: '--thread'
+  - id: input
+    type: File?
+    inputBinding:
+      position: 0
 outputs:
-    out_fastq1:
-       type: File
-       outputBinding:
-           glob: $(inputs.fastq1.basename.replace(/\.gz$|\.bz2$/, '').replace(/\.fq$|\.fastq$/, '')).fastp.fastq
-    out_fastq2:
-       type: File
-       outputBinding:
-           glob: $(inputs.fastq2.basename.replace(/\.gz$|\.bz2$/, '').replace(/\.fq$|\.fastq$/, '')).fastp.fastq
+  - id: out_fastq1
+    type: File
+    outputBinding:
+      glob: >-
+        $(inputs.fastq1.basename.replace(/\.gz$|\.bz2$/,
+        '').replace(/\.fq$|\.fastq$/, '')).fastp.fastq
+  - id: out_fastq2
+    type: File
+    outputBinding:
+      glob: >-
+        $(inputs.fastq2.basename.replace(/\.gz$|\.bz2$/,
+        '').replace(/\.fq$|\.fastq$/, '')).fastp.fastq
+arguments:
+  - '-o'
+  - >-
+    $(inputs.fastq1.basename.replace(/\.gz$|\.bz2$/,
+    '').replace(/\.fq$|\.fastq$/, '')).fastp.fastq
+  - '-O'
+  - >-
+    $(inputs.fastq2.basename.replace(/\.gz$|\.bz2$/,
+    '').replace(/\.fq$|\.fastq$/, '')).fastp.fastq
+  - position: 0
+    prefix: ''
+    valueFrom: '--trim_poly_x '
+requirements:
+  - class: DockerRequirement
+    dockerPull: 'quay.io/biocontainers/fastp:0.20.0--hdbcaa40_0'
+  - class: InlineJavascriptRequirement
