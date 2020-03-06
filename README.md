@@ -237,7 +237,7 @@ After you clone this repo, try the test run first.
 
 ```
 cd test
-bash prep_test.sh
+bash test.sh
 ```
 
 ## cwl sources

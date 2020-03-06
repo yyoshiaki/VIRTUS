@@ -49,8 +49,10 @@ arguments:
     '').replace(/\.fq$|\.fastq$/, '')).fastp.fastq
   - position: 0
     prefix: ''
+    shellQuote: false
     valueFrom: '--trim_poly_x '
 requirements:
+  - class: ShellCommandRequirement
   - class: DockerRequirement
     dockerPull: 'quay.io/biocontainers/fastp:0.20.0--hdbcaa40_0'
   - class: InlineJavascriptRequirement
