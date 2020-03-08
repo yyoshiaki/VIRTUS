@@ -1,6 +1,6 @@
-# VirTect_cwl
+# VIRTUS : VIRal Transcript Usage Sensor
 
-Virus detection and quantification in parallel with human genes. The viral genome references are from [VirTect](https://github.com/WGLab/VirTect). The workflow is implemented by [Common Workflow Language](https://www.commonwl.org/) and [Rabix](https://rabix.io/). You can specify each parameter individually or give `yaml` or `json` file which describes all the parameter information. In detail, check [the CWL User Guide](http://www.commonwl.org/user_guide/) out.
+Virus transcript detection and quantification in parallel with human genes considering viral splicing events. The viral genome references are from [VirTect](https://github.com/WGLab/VirTect). The workflow is implemented by [Common Workflow Language](https://www.commonwl.org/) and [Rabix](https://rabix.io/). You can specify each parameter individually or give `yaml` or `json` file which describes all the parameter information. In detail, check [the CWL User Guide](http://www.commonwl.org/user_guide/) out.
 
 ## dependencies
 
@@ -9,7 +9,7 @@ Virus detection and quantification in parallel with human genes. The viral genom
 
 ## createindex.cwl (execute only once)
 
-`VirTect_cwl/workflow`
+`VIRTUS/workflow`
 
 ```
 usage: createindex.cwl [-h] --url_virus URL_VIRUS
@@ -51,7 +51,7 @@ virus fasta is from [VirTect](https://github.com/WGLab/VirTect).
 
 ## createindex_singlevirus.cwl (execute only once)
 
-`VirTect_cwl/workflow`
+`VIRTUS/workflow`
 
 ```
 usage: createindex_singlevirus.cwl [-h] --dir_name_STAR DIR_NAME_STAR
@@ -87,12 +87,12 @@ We recommend you to download fasta files for viruses from [NCBI](https://www.ncb
 
 ![img_createindex_singlevirus.cwl](img/createindex_singlevirus.jpg)
 
-## virtect_pe.cwl
+## VIRTUS.PE.cwl
 
-`VirTect_cwl/workflow`
+`VIRTUS/workflow`
 
 ```
-usage: ./virtect_pe.cwl [-h] --fastq2 FASTQ2 --fastq1 FASTQ1 
+usage: ./VIRTUS.PE.cwl [-h] --fastq2 FASTQ2 --fastq1 FASTQ1 
                         --genomeDir_human GENOMEDIR_HUMAN
                         [--outFileNamePrefix_human OUTFILENAMEPREFIX_HUMAN]
                         [--nthreads NTHREADS] 
@@ -119,13 +119,13 @@ optional arguments:
 example1
 
 ```
-./virtect_pe.cwl virtect_pe.job.yaml
+./VIRTUS.PE.cwl VIRTUS.PE.job.yaml
 ```
 
 example2
 
 ```
-./virtect_pe.cwl \
+./VIRTUS.PE.cwl \
 --fastq1 ../test/ERR3240275_1.fastq.gz \
 --fastq2 ../test/ERR3240275_2.fastq.gz \
 --genomeDir_human ../test/STAR_index_human \
@@ -138,19 +138,19 @@ example2
 
 ![img/VIRTUS.PE.jpg](img/VIRTUS.PE.jpg)
 
-## virtect_pe_quant_singlevirus.cwl
+## VIRTUS.PE.singlevirus.cwl
 
-`VirTect_cwl/workflow`
+`VIRTUS/workflow`
 
 ```
-usage: ./virtect_pe_quant_singlevirus.cwl [-h] --fq2_unmapped FQ2_UNMAPPED
-                                          --fq1_unmapped FQ1_UNMAPPED
-                                          --genomeDir_singlevirus GENOMEDIR_SINGLEVIRUS
-                                          --salmon_index_singlevirus SALMON_INDEX_SINGLEVIRUS 
-                                          --quantdir QUANTDIR
-                                          [--outFileNamePrefix_star OUTFILENAMEPREFIX_STAR]
-                                          [--runThreadN RUNTHREADN]
-                                          [job_order]
+usage: ./VIRTUS.PE.singlevirus.cwl [-h] --fq2_unmapped FQ2_UNMAPPED
+                                        --fq1_unmapped FQ1_UNMAPPED
+                                        --genomeDir_singlevirus GENOMEDIR_SINGLEVIRUS
+                                        --salmon_index_singlevirus SALMON_INDEX_SINGLEVIRUS 
+                                        --quantdir QUANTDIR
+                                        [--outFileNamePrefix_star OUTFILENAMEPREFIX_STAR]
+                                        [--runThreadN RUNTHREADN]
+                                        [job_order]
 
 positional arguments:
   job_order             Job input json file
@@ -169,13 +169,13 @@ optional arguments:
 example1
 
 ```
-./virtect_pe_quant_singlevirus.cwl virtect_pe_quant_singlevirus.job.yaml
+./VIRTUS.PE.singlevirus.cwl VIRTUS.PE.singlevirus.job.yaml
 ```
 
 example2
 
 ```
-./virtect_pe_quant_singlevirus.cw \
+./VIRTUS.PE.singlevirus.cwl \
 --fq1_unmapped ../test/unmapped_1.fq \
 --fq2_unmapped ../test/unmapped_2.fq \
 --genomeDir_singlevirus ../test/STAR_index_NC_007605.1 \
@@ -185,7 +185,7 @@ example2
 --runThreadN 40
 ```
 
-![img/virtect_pe_quant_singlevirus.jpg](img/virtect_pe_quant_singlevirus.jpg)
+![img/VIRTUS.PE.singlevirus.jpg](img/VIRTUS.PE.singlevirus.jpg)
 
 ## mk_virus_tx2gene
 
@@ -218,14 +218,14 @@ python ./tool/mk_virus_tx2gene/mk_virus_tx2gene.py ./data/NC_007605.1.transcript
 ```
 cwltool --tmp-outdir-prefix=/home/yyasumizu/tmp_cwl/ \
 --tmpdir-prefix=/home/yyasumizu/tmp_cwl/ \
-~/yyoshiaki-git/VirTect_cwl/workflow/virtect_pe.cwl \
+~/yyoshiaki-git/VIRTUS/workflow/VIRTUS.PE.cwl \
 --fastq1 /home/yyasumizu/NGS_public/PRJEB31829_Blimph_EB/donor1_day0_1.fastq.gz \
 --fastq2 /home/yyasumizu/NGS_public/PRJEB31829_Blimph_EB/donor1_day0_2.fastq.gz \
---genomeDir_human /home/yyasumizu/yyoshiaki-git/VirTect_cwl/test/STAR_index_human \
---genomeDir_virus /home/yyasumizu/yyoshiaki-git/VirTect_cwl/test/STAR_index_virus \
---salmon_index_human /home/yyasumizu/yyoshiaki-git/VirTect_cwl/test/salmon_index_human \
+--genomeDir_human /home/yyasumizu/yyoshiaki-git/VIRTUS/test/STAR_index_human \
+--genomeDir_virus /home/yyasumizu/yyoshiaki-git/VIRTUS/test/STAR_index_virus \
+--salmon_index_human /home/yyasumizu/yyoshiaki-git/VIRTUS/test/salmon_index_human \
 --salmon_quantdir_human donor1_day0/salmon_human \
---outFileNamePrefix_human /home/yyasumizu/EB_Virtect/donor1_day0/human --nthreads 20
+--outFileNamePrefix_human /home/yyasumizu/EB_VIRTUS/donor1_day0/human --nthreads 20
 ```
 
 - when you specify .cwl files in the absolute path, error may occur. use the relative path.
