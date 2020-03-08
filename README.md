@@ -249,4 +249,4 @@ bash test.sh
 ## todo
  
 - [ ] SE mode will be available soon. You will be able to apply it to 10x's  `*_R2.fastq.gz`.
-- [ ] rename tool.
+- [x] rename tool.

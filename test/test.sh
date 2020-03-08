@@ -8,5 +8,5 @@ pigz ERR3240275_*.fastq
 
 ../workflow/createindex.cwl ../workflow/createindex.job.yaml
 ../workflow/createindex_singlevirus.cwl ../workflow/createindex_singlevirus.job.yaml
-../workflow/virtect_pe.cwl ../workflow/virtect_pe.job.yaml
-../workflow/virtect_pe_quant_singlevirus.cwl ../workflow/virtect_pe_quant_singlevirus.job.yaml
+../workflow/VIRTUS.PE.cwl ../workflow/VIRTUS.PE.job.yaml
+../workflow/VIRTUS.PE.singlevirus.cwl ../workflow/VIRTUS.PE.singlevirus.job.yaml
