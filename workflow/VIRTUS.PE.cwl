@@ -273,7 +273,7 @@ steps:
   - id: mk_summary_virus_count
     in:
       - id: input_STARLog
-        source: star_mapping_pe_human/Log.out
+        source: star_mapping_pe_human/mappingstats
       - id: input_virus_count
         source: mk_virus_count/virus_count
     out:
