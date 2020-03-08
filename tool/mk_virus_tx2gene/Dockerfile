@@ -1,4 +1,3 @@
-
 FROM amancevice/pandas:1.0.1
 
 WORKDIR /workdir
