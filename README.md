@@ -136,7 +136,7 @@ example2
 --nthreads 40
 ```
 
-![img/virtect_pe.jpg](img/virtect_pe.jpg)
+![img/VIRTUS.PE.jpg](img/VIRTUS.PE.jpg)
 
 ## virtect_pe_quant_singlevirus.cwl
 

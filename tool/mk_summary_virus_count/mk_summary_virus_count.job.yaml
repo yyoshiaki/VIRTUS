@@ -1,0 +1,8 @@
+input_STARLog:
+  class: File
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/EB_Virtect/donor1_day1/virusLog.final.out
+input_virus_count:
+  class: File
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/EB_Virtect/donor1_day1/virus_counts.txt

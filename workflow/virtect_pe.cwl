@@ -118,18 +118,18 @@ outputs:
     type: File?
     'sbg:x': 206.1626434326172
     'sbg:y': -394.3936767578125
-  - id: virus_count
-    outputSource:
-      - mk_virus_count/virus_count
-    type: File
-    'sbg:x': 1124.24560546875
-    'sbg:y': 477.10260009765625
   - id: output_quantdir_human
     outputSource:
       - salmon_quant_human/output_quantdir
     type: Directory
     'sbg:x': 300.56866455078125
     'sbg:y': -715.6619262695312
+  - id: output
+    outputSource:
+      - mk_summary_virus_count/output
+    type: File?
+    'sbg:x': 1280.2369384765625
+    'sbg:y': -573.7061767578125
 steps:
   - id: fastp_pe
     in:
@@ -270,4 +270,16 @@ steps:
     run: ../tool/salmon-cwl/salmon-quant.cwl
     'sbg:x': 85.66854095458984
     'sbg:y': -717.1351318359375
+  - id: mk_summary_virus_count
+    in:
+      - id: input_STARLog
+        source: star_mapping_pe_human/Log.out
+      - id: input_virus_count
+        source: mk_virus_count/virus_count
+    out:
+      - id: output
+    run: ../tool/mk_summary_virus_count/mk_summary_virus_count.cwl
+    label: mk_summary_virus_count
+    'sbg:x': 1132.9288330078125
+    'sbg:y': -576.298583984375
 requirements: []
