@@ -232,6 +232,7 @@ cwltool --tmp-outdir-prefix=/home/yyasumizu/tmp_cwl/ \
 - note that you cannnot use `\`in --outFileNamePrefix_*
 - STAR will require memory at least 30GB. Check your resources.
 - You can use udocker instead of docker by cwltool option `--user-space-docker-cmd=udocker`.
+- You can specify another host's reference URL such as the mouse in createindex steps, but note that virus references are designed for human viruses. We don't guarantee the result when you changed the reference species.  
 
 ## test
 
@@ -251,4 +252,5 @@ bash test.sh
 ## todo
  
 - [ ] SE mode will be available soon. You will be able to apply it to 10x's  `*_R2.fastq.gz`.
+- [ ] describe how to make single virus index.
 - [x] rename tool.
