@@ -2,8 +2,8 @@
 
 class: Workflow
 cwlVersion: v1.0
-id: virtect_cwl
-label: VirTect_cwl
+id: VIRTUS.PE
+label: VIRTUS.PE
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 inputs:

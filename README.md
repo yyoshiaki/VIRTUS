@@ -4,8 +4,8 @@ Virus transcript detection and quantification in parallel with human genes consi
 
 ## dependencies
 
-- cwltool `conda install -c bioconda cwltool`
-- docker
+- cwltool `conda install -c bioconda cwltool` 
+- docker (alternatively, you can use udocker when you have no root privileges. See [Tips section](https://github.com/yyoshiaki/VIRTUS#tips).)
 
 ## createindex.cwl (execute only once)
 
@@ -230,6 +230,8 @@ cwltool --tmp-outdir-prefix=/home/yyasumizu/tmp_cwl/ \
 
 - when you specify .cwl files in the absolute path, error may occur. use the relative path.
 - note that you cannnot use `\`in --outFileNamePrefix_*
+- STAR will require memory at least 30GB. Check your resources.
+- You can use udocker instead of docker by cwltool option `--user-space-docker-cmd=udocker`.
 
 ## test
 
