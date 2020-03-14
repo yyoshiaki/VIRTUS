@@ -1,3 +1,5 @@
+#!/usr/bin/env cwltool
+
 class: Workflow
 cwlVersion: v1.0
 id: _v_i_r_t_u_s__p_e
