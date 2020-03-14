@@ -17,10 +17,6 @@ inputs:
     type: int?
     'sbg:x': -366.3414611816406
     'sbg:y': 303.09088134765625
-  - id: genomeDir_virus
-    type: Directory
-    'sbg:x': 417.4296875
-    'sbg:y': 452.7935791015625
   - id: salmon_index_human
     type: Directory
     'sbg:x': -313.94915771484375
@@ -33,6 +29,10 @@ inputs:
     type: File
     'sbg:x': -433.9359130859375
     'sbg:y': -313.2906188964844
+  - id: genomeDir_virus
+    type: Directory
+    'sbg:x': 447.2225036621094
+    'sbg:y': -263.0279846191406
 outputs:
   - id: output_unmapped
     outputSource:
@@ -40,48 +40,6 @@ outputs:
     type: File
     'sbg:x': 412
     'sbg:y': 218
-  - id: output_fq2
-    outputSource:
-      - bedtools_bamtofastq_pe/output_fq2
-    type: File?
-    'sbg:x': 549.3675537109375
-    'sbg:y': -334.5509948730469
-  - id: output_fq1
-    outputSource:
-      - bedtools_bamtofastq_pe/output_fq1
-    type: File
-    'sbg:x': 562.6327514648438
-    'sbg:y': -168
-  - id: SJ.out.tab_virus
-    outputSource:
-      - star_mapping_pe_virus/SJ.out.tab
-    type: File?
-    'sbg:x': 954.8983154296875
-    'sbg:y': -110.67289733886719
-  - id: Log.progress.out_virus
-    outputSource:
-      - star_mapping_pe_virus/Log.progress.out
-    type: File?
-    'sbg:x': 959.8370361328125
-    'sbg:y': 193.0820770263672
-  - id: Log.out_virus
-    outputSource:
-      - star_mapping_pe_virus/Log.out
-    type: File?
-    'sbg:x': 960.4492797851562
-    'sbg:y': 331.1433410644531
-  - id: aligned_virus
-    outputSource:
-      - star_mapping_pe_virus/aligned
-    type: File
-    'sbg:x': 967.612548828125
-    'sbg:y': 645.0413208007812
-  - id: mappingstats_virus
-    outputSource:
-      - star_mapping_pe_virus/mappingstats
-    type: File?
-    'sbg:x': 956.122802734375
-    'sbg:y': 39.143333435058594
   - id: output
     outputSource:
       - mk_summary_virus_count/output
@@ -118,6 +76,36 @@ outputs:
     type: Directory
     'sbg:x': 241.95457458496094
     'sbg:y': -672.1799926757812
+  - id: output_fq
+    outputSource:
+      - bedtools_bamtofastq_se/output_fq
+    type: File
+    'sbg:x': 605.4130859375
+    'sbg:y': -62.6005744934082
+  - id: SJ.out.tab_virus
+    outputSource:
+      - star_mapping_se_virus/SJ.out.tab
+    type: File?
+    'sbg:x': 848.7875366210938
+    'sbg:y': -104.10987854003906
+  - id: mappingstats_virus
+    outputSource:
+      - star_mapping_se_virus/mappingstats
+    type: File?
+    'sbg:x': 889.2903442382812
+    'sbg:y': 25.706695556640625
+  - id: Log.out_virus
+    outputSource:
+      - star_mapping_se_virus/Log.out
+    type: File?
+    'sbg:x': 916.2921752929688
+    'sbg:y': 166.94712829589844
+  - id: aligned_bam_virus
+    outputSource:
+      - star_mapping_se_virus/aligned
+    type: File
+    'sbg:x': 844.6334228515625
+    'sbg:y': 646.7491455078125
 steps:
   - id: samtools_view
     in:
@@ -137,53 +125,10 @@ steps:
     label: samtools-view
     'sbg:x': 199.102294921875
     'sbg:y': 52.59203338623047
-  - id: bedtools_bamtofastq_pe
-    in:
-      - id: input
-        source: samtools_view/output
-      - id: fq
-        default: unmapped_1.fq
-      - id: fq2
-        default: unmapped_2.fq
-    out:
-      - id: output_fq1
-      - id: output_fq2
-    run: ../tool/bedtools/bedtools-bamtofastq-pe.cwl
-    label: bedtools-bamtofastq-pe
-    'sbg:x': 406.1430358886719
-    'sbg:y': 28.673505783081055
-  - id: star_mapping_pe_virus
-    in:
-      - id: fq1
-        source: bedtools_bamtofastq_pe/output_fq1
-      - id: fq2
-        source: bedtools_bamtofastq_pe/output_fq2
-      - id: genomeDir
-        source: genomeDir_virus
-      - id: nthreads
-        source: nthreads
-      - id: outFileNamePrefix
-        default: virus
-      - id: outSAMtype
-        default: BAM SortedByCoordinate
-    out:
-      - id: aligned
-      - id: bamRemDups
-      - id: mappingstats
-      - id: readspergene
-      - id: transcriptomesam
-      - id: Log.out
-      - id: Log.progress.out
-      - id: SJ.out.tab
-      - id: unmapped
-    run: ../tool/star/star_mapping-pe/star_mapping-pe.cwl
-    label: 'STAR mapping: running mapping jobs.'
-    'sbg:x': 681.9188232421875
-    'sbg:y': 132.9390411376953
   - id: mk_virus_count
     in:
       - id: virus_bam
-        source: star_mapping_pe_virus/aligned
+        source: star_mapping_se_virus/aligned
     out:
       - id: virus_count
     run: ../tool/mk_virus_count.cwl
@@ -261,6 +206,40 @@ steps:
     run: ../tool/salmon-cwl/salmon-quant_se.cwl
     'sbg:x': -10.507709503173828
     'sbg:y': -671.244873046875
+  - id: bedtools_bamtofastq_se
+    in:
+      - id: input
+        source: samtools_view/output
+    out:
+      - id: output_fq
+    run: ../tool/bedtools/bedtools-bamtofastq-se.cwl
+    label: bedtools-bamtofastq-pe
+    'sbg:x': 392.1208801269531
+    'sbg:y': -110.00155639648438
+  - id: star_mapping_se_virus
+    in:
+      - id: fq
+        source: bedtools_bamtofastq_se/output_fq
+      - id: genomeDir
+        source: genomeDir_virus
+      - id: nthreads
+        source: nthreads
+      - id: outSAMtype
+        default: BAM SortedByCoordinate
+    out:
+      - id: aligned
+      - id: bamRemDups
+      - id: mappingstats
+      - id: readspergene
+      - id: transcriptomesam
+      - id: Log.out
+      - id: Log.progress.out
+      - id: SJ.out.tab
+      - id: unmapped
+    run: ../tool/star/star_mapping-se/star_mapping-se.cwl
+    label: 'STAR mapping: running mapping jobs.'
+    'sbg:x': 722.9669799804688
+    'sbg:y': 137.9506378173828
 requirements: []
 'sbg:links':
   - id: 'https://github.com/yyoshiaki/VIRTUS'
