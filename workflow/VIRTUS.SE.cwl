@@ -155,6 +155,8 @@ steps:
         source: fastq
       - id: threads
         source: nthreads
+      - id: length
+        default: 40
     out:
       - id: out_fastq
     run: ../tool/fastp/fastp-se.cwl
@@ -228,6 +230,8 @@ steps:
         source: genomeDir_virus
       - id: nthreads
         source: nthreads
+      - id: outFileNamePrefix
+        default: virus
       - id: outSAMtype
         default: BAM SortedByCoordinate
     out:

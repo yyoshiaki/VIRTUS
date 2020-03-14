@@ -20,6 +20,11 @@ inputs:
     type: File?
     inputBinding:
       position: 0
+  - id: length
+    type: int?
+    inputBinding:
+      position: 0
+      prefix: '--length'
 outputs:
   - id: out_fastq
     type: File
@@ -30,7 +35,11 @@ outputs:
 arguments:
   - '-o'
   - >-
-    $(inputs.fastq.basename.replace(/\.gz$|\.bz2$/,
+    $(inputs.fastq1.basename.replace(/\.gz$|\.bz2$/,
+    '').replace(/\.fq$|\.fastq$/, '')).fastp.fastq
+  - '-O'
+  - >-
+    $(inputs.fastq2.basename.replace(/\.gz$|\.bz2$/,
     '').replace(/\.fq$|\.fastq$/, '')).fastp.fastq
   - position: 0
     prefix: ''

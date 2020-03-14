@@ -25,6 +25,11 @@ inputs:
     type: File?
     inputBinding:
       position: 0
+  - id: length
+    type: int?
+    inputBinding:
+      position: 0
+      prefix: '--length'
 outputs:
   - id: out_fastq1
     type: File
