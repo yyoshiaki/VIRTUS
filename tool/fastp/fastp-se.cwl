@@ -24,7 +24,7 @@ inputs:
     type: int?
     inputBinding:
       position: 0
-      prefix: '--length'
+      prefix: '--length_required'
 outputs:
   - id: out_fastq
     type: File
