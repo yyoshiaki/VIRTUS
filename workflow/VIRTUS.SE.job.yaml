@@ -1,7 +1,7 @@
 fastq:
   class: File
   path: >-
-    ../test/SRR8315715/SRR8315715.fastq.gz
+    ../test/SRR8315715/SRR8315715_2.fastq.gz
 genomeDir_human:
   class: Directory
   path: ../test/STAR_index_human

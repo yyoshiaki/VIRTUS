@@ -249,6 +249,14 @@ bash test.sh
 - [https://github.com/roryk/salmon-cwl](https://github.com/roryk/salmon-cwl) : salmon
 - [https://github.com/nigyta/bact_genome](https://github.com/nigyta/bact_genome) : fastp
 
+## Contact
+
+Yoshiaki Yasumizu ([yyasumizu@ifrec.osaka-u.ac.jp](yyasumizu@ifrec.osaka-u.ac.jp))
+
+## Citation
+
+Manuscript in preparation.
+
 ## todo
  
 - [ ] SE mode will be available soon. You will be able to apply it to 10x's  `*_R2.fastq.gz`.

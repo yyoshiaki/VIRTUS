@@ -20,7 +20,6 @@ pigz ERR3240275_*.fastq
 cd ..
 ../workflow/createindex_singlevirus.cwl ../workflow/createindex_singlevirus.job.NC_001806.2.yaml
 
-
 mkdir -p SRR8315715
 cd SRR8315715
 fasterq-dump -e 8 SRR8315715 -p
