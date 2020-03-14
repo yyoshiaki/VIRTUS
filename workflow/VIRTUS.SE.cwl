@@ -1,6 +1,8 @@
+#!/usr/bin/env cwltool
+
 class: Workflow
 cwlVersion: v1.0
-id: _v_i_r_t_u_s__p_e
+id: VIRTUS.SE
 label: VIRTUS.SE
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
@@ -210,6 +212,8 @@ steps:
     in:
       - id: input
         source: samtools_view/output
+      - id: fq
+        default: unmapped.fq
     out:
       - id: output_fq
     run: ../tool/bedtools/bedtools-bamtofastq-se.cwl

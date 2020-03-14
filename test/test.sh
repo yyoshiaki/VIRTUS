@@ -23,6 +23,6 @@ cd ..
 mkdir -p SRR8315715
 cd SRR8315715
 fasterq-dump -e 8 SRR8315715 -p
-pigz SRR8315715_*.fastq
+pigz SRR8315715*.fastq
 ../../workflow/VIRTUS.SE.cwl ../../workflow/VIRTUS.SE.job.yaml
 ../../workflow/VIRTUS.SE.singlevirus.cwl ../../workflow/VIRTUS.SE.singlevirus.job.yaml
