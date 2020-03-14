@@ -2,7 +2,7 @@ dir_name_STAR_human: STAR_index_human
 dir_name_STAR_virus: STAR_index_virus
 output_name_genomefasta_human: GRCh38.p13.genome.fa.gz
 output_name_human_transcipt: gencode.v33.transcripts.fa.gz
-output_name_virus: viruses_757.fasta
+output_name_virus: viruses_763.fasta
 runThreadN: 40
 salmon_index_human: salmon_index_human
 url_genomefasta_human: >-
@@ -10,4 +10,4 @@ url_genomefasta_human: >-
 url_transcript_human: >-
   ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_33/gencode.v33.transcripts.fa.gz
 url_virus: >-
-  https://raw.githubusercontent.com/WGLab/VirTect/master/viruses_reference/viruses_757.fasta
+  https://raw.githubusercontent.com/yyoshiaki/VIRTUS/master/data/viruses_763.fasta
