@@ -30,11 +30,7 @@ outputs:
 arguments:
   - '-o'
   - >-
-    $(inputs.fastq1.basename.replace(/\.gz$|\.bz2$/,
-    '').replace(/\.fq$|\.fastq$/, '')).fastp.fastq
-  - '-O'
-  - >-
-    $(inputs.fastq2.basename.replace(/\.gz$|\.bz2$/,
+    $(inputs.fastq.basename.replace(/\.gz$|\.bz2$/,
     '').replace(/\.fq$|\.fastq$/, '')).fastp.fastq
   - position: 0
     prefix: ''
