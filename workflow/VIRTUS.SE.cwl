@@ -1,8 +1,6 @@
-#!/usr/bin/env cwltool
-
 class: Workflow
 cwlVersion: v1.0
-id: VIRTUS.SE
+id: _v_i_r_t_u_s__s_e
 label: VIRTUS.SE
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
@@ -108,6 +106,12 @@ outputs:
     type: File
     'sbg:x': 844.6334228515625
     'sbg:y': 646.7491455078125
+  - id: aligned_bam_virus_filtered
+    outputSource:
+      - bam_filter_polyx/output
+    type: File?
+    'sbg:x': 949.710693359375
+    'sbg:y': 282.77105712890625
 steps:
   - id: samtools_view
     in:
@@ -130,7 +134,7 @@ steps:
   - id: mk_virus_count
     in:
       - id: virus_bam
-        source: star_mapping_se_virus/aligned
+        source: bam_filter_polyx/output
     out:
       - id: virus_count
     run: ../tool/mk_virus_count.cwl
@@ -248,6 +252,16 @@ steps:
     label: 'STAR mapping: running mapping jobs.'
     'sbg:x': 722.9669799804688
     'sbg:y': 137.9506378173828
+  - id: bam_filter_polyx
+    in:
+      - id: input
+        source: star_mapping_se_virus/aligned
+    out:
+      - id: output
+    run: ../tool/samtools/bam_filter_polyx.cwl
+    label: bam_filter_polyX
+    'sbg:x': 847.6024780273438
+    'sbg:y': 366.4100036621094
 requirements: []
 'sbg:links':
   - id: 'https://github.com/yyoshiaki/VIRTUS'

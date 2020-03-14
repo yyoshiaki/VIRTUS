@@ -1,8 +1,6 @@
-#!/usr/bin/env cwltool
-
 class: Workflow
 cwlVersion: v1.0
-id: VIRTUS.PE
+id: _v_i_r_t_u_s__p_e
 label: VIRTUS.PE
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
@@ -104,8 +102,8 @@ outputs:
     outputSource:
       - star_mapping_pe_virus/aligned
     type: File
-    'sbg:x': 967.612548828125
-    'sbg:y': 645.0413208007812
+    'sbg:x': 862.1668090820312
+    'sbg:y': 348.64471435546875
   - id: mappingstats_virus
     outputSource:
       - star_mapping_pe_virus/mappingstats
@@ -130,6 +128,12 @@ outputs:
     type: File?
     'sbg:x': 1280.2369384765625
     'sbg:y': -573.7061767578125
+  - id: output_1
+    outputSource:
+      - bam_filter_polyx/output
+    type: File?
+    'sbg:x': 967.21630859375
+    'sbg:y': 668.790283203125
 steps:
   - id: fastp_pe
     in:
@@ -139,6 +143,8 @@ steps:
         source: fastq2
       - id: threads
         source: nthreads
+      - id: length
+        default: 40
     out:
       - id: out_fastq1
       - id: out_fastq2
@@ -239,7 +245,7 @@ steps:
   - id: mk_virus_count
     in:
       - id: virus_bam
-        source: star_mapping_pe_virus/aligned
+        source: bam_filter_polyx/output
     out:
       - id: virus_count
     run: ../tool/mk_virus_count.cwl
@@ -282,4 +288,14 @@ steps:
     label: mk_summary_virus_count
     'sbg:x': 1132.9288330078125
     'sbg:y': -576.298583984375
+  - id: bam_filter_polyx
+    in:
+      - id: input
+        source: star_mapping_pe_virus/aligned
+    out:
+      - id: output
+    run: ../tool/samtools/bam_filter_polyx.cwl
+    label: bam_filter_polyX
+    'sbg:x': 825.17626953125
+    'sbg:y': 513.4646606445312
 requirements: []
