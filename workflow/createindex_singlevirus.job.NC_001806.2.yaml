@@ -1,0 +1,12 @@
+dir_name_STAR: STAR_index_NC_001806.2
+genomeFastaFiles:
+  class: File
+  path: >-
+    ../data/NC_001806.2.fasta
+genomeSAindexNbases: 3
+index_salmon: salmon_index_NC_001806.2
+runThreadN: 40
+transcripts:
+  class: File
+  path: >-
+    ../data/NC_001806.2.transcripts.fasta

@@ -1,0 +1,16 @@
+fq1:
+  class: File
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/cwl/VirTect_cwl/test/ERR3240275_1.fastq
+fq2:
+  class: File
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/cwl/VirTect_cwl/test/ERR3240275_2.fastq
+genomeDir:
+  class: Directory
+  path: /Users/yasumizuyoshiaki/bioinformatics/cwl/VirTect_cwl/test/STAR_index_human
+nthreads: 4
+outFileNamePrefix: null
+outSAMunmapped: unmapped
+output_dir_name: null
+readFilesCommand: null

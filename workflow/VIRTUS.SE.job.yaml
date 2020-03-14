@@ -1,11 +1,7 @@
-fastq1:
+fastq:
   class: File
   path: >-
-    ../test/ERR3240275/ERR3240275_1.fastq.gz
-fastq2:
-  class: File
-  path: >-
-    ../test/ERR3240275/ERR3240275_2.fastq.gz
+    ../test/SRR8315715/SRR8315715.fastq.gz
 genomeDir_human:
   class: Directory
   path: ../test/STAR_index_human
