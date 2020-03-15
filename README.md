@@ -132,6 +132,18 @@ example2
 --nthreads 40
 ```
 
+### Output
+
+`virus.counts.final.tsv` is the main output. The empirical threashold of the hit reads is 500. The example of `virus.counts.final.tsv` is like this.
+
+|virus|hit reads|ratio hit reads / read mapped on human genome|
+|--|--|--|
+|NC_007605.1_Human_herpesvirus_4_complete_wild_type_genome|9813|0.00132130136267871|
+|NC_009334.1_Human_herpesvirus_4,_complete_genome|2025|0.0002726623111611523|
+|NC_001716.2_Human_herpesvirus_7,_complete_genome|412|5.5474998616491234e-05|
+
+`salmon_human` directory contains the output from salmon. You can manipurate the results using `tximport` or `tximeta` which are cool R libraries.
+
 ![img/VIRTUS.PE.jpg](img/VIRTUS.PE.jpg)
 
 ## VIRTUS.SE.cwl
@@ -230,6 +242,50 @@ example2
 
 ![img/VIRTUS.PE.singlevirus.jpg](img/VIRTUS.PE.singlevirus.jpg)
 
+## VIRTUS.SE.singlevirus.cwl
+
+`VIRTUS/workflow`
+
+```
+usage: ./VIRTUS.SE.singlevirus.cwl [-h] --fq_unmapped FQ_UNMAPPED
+                                        --genomeDir_singlevirus GENOMEDIR_SINGLEVIRUS
+                                        --salmon_index_singlevirus SALMON_INDEX_SINGLEVIRUS 
+                                        --quantdir QUANTDIR
+                                        [--outFileNamePrefix_star OUTFILENAMEPREFIX_STAR]
+                                        [--runThreadN RUNTHREADN]
+                                        [job_order]
+
+positional arguments:
+  job_order             Job input json file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --fq_unmapped FQ_UNMAPPED
+  --genomeDir_singlevirus GENOMEDIR_SINGLEVIRUS
+  --salmon_index_singlevirus SALMON_INDEX_SINGLEVIRUS
+  --quantdir QUANTDIR
+  --outFileNamePrefix_star OUTFILENAMEPREFIX_STAR
+  --runThreadN RUNTHREADN
+```
+
+example1
+
+```
+./VIRTUS.SE.singlevirus.cwl VIRTUS.SE.singlevirus.job.yaml
+```
+
+example2
+
+```
+./VIRTUS.SE.singlevirus.cwl \
+--fq_unmapped ../test/SRR8315715/unmapped.fq \
+--genomeDir_singlevirus ../test/STAR_index_NC_001806.2 \
+--salmon_index_singlevirus ../test/salmon_index_NC_001806.2 \
+--outFileNamePrefix_star NC_001806.2 \
+--quantdir salmon_NC_001806.2 \
+--runThreadN 40
+```
+
 ## mk_virus_tx2gene
 
 Create the file `tx2gene.txt` to map transcripts to each gene for tximport.
@@ -256,7 +312,22 @@ python ./tool/mk_virus_tx2gene/mk_virus_tx2gene.py ./data/NC_007605.1.transcript
 
 ## virus detection for 10x or Dropseq
 
-10x and Dropseq use paired end sequence. The second fastq file contains only transcript's sequences. We recommend you to first run `VIRTUS.SE.cwl` for the second reads, then run alevin for detected virus. `createindex_singlevirus.cwl` can be used for building the index for alevin.
+10x and Dropseq use paired end sequence. The second fastq file contains only transcript's sequences. We recommend you to first run `VIRTUS.SE.cwl` for the second reads, then run alevin for detected virus. `createindex_singlevirus.cwl` can be used for building the index for [Alevin](https://salmon.readthedocs.io/en/latest/alevin.html). For example, the Dropseq's output from SRR8315715 can be screened like the command below.
+
+```
+./VIRTUS.SE.cwl \
+--fastq ../test/SRR8315715_2.fastq.gz \
+--genomeDir_human ../test/STAR_index_human \
+--genomeDir_virus ../test/STAR_index_virus \
+--salmon_index_human ../test/salmon_index_human \
+--salmon_quantdir_human salmon_human \
+--outFileNamePrefix_human human \
+--nthreads 40
+```
+
+## virus detection for SmartSeq2
+
+Just use `VIRTUS.PE.cwl` on each cell individually. When the number of reads is insufficient, VIRTUS may not detect viruses.
 
 ## tips
 
@@ -303,8 +374,3 @@ Yoshiaki Yasumizu ([yyasumizu@ifrec.osaka-u.ac.jp](yyasumizu@ifrec.osaka-u.ac.jp
 ## Citation
 
 Manuscript in preparation.
-
-## todo
- 
-- [ ] describe how to make single virus index.
-- [ ] describe SE mode
