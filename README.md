@@ -47,8 +47,6 @@ optional arguments:
 
 virus fasta is from [VirTect](https://github.com/WGLab/VirTect).
 
-![img_createindex.cwl](img/createindex.jpg)
-
 ## createindex_singlevirus.cwl (execute only once)
 
 `VIRTUS/workflow`
@@ -84,8 +82,6 @@ example (EBV)
 ```
 
 We recommend you to download fasta files for viruses from [NCBI](https://www.ncbi.nlm.nih.gov/nuccore/NC_007605.1?report=fasta).
-
-![img_createindex_singlevirus.cwl](img/createindex_singlevirus.jpg)
 
 ## VIRTUS.PE.cwl
 
@@ -126,8 +122,8 @@ example2
 
 ```
 ./VIRTUS.PE.cwl \
---fastq1 ../test/ERR3240275_1.fastq.gz \
---fastq2 ../test/ERR3240275_2.fastq.gz \
+--fastq1 ../test/ERR3240275/ERR3240275_1.fastq.gz \
+--fastq2 ../test/ERR3240275/ERR3240275_2.fastq.gz \
 --genomeDir_human ../test/STAR_index_human \
 --genomeDir_virus ../test/STAR_index_virus \
 --salmon_index_human ../test/salmon_index_human \
@@ -137,6 +133,53 @@ example2
 ```
 
 ![img/VIRTUS.PE.jpg](img/VIRTUS.PE.jpg)
+
+## VIRTUS.SE.cwl
+
+`VIRTUS/workflow`
+
+```
+usage: ./VIRTUS.SE.cwl [-h] --fastq FASTQ 
+                        --genomeDir_human GENOMEDIR_HUMAN
+                        [--outFileNamePrefix_human OUTFILENAMEPREFIX_HUMAN]
+                        [--nthreads NTHREADS] 
+                        --genomeDir_virus GENOMEDIR_VIRUS 
+                        --salmon_index_human SALMON_INDEX_HUMAN
+                        --salmon_quantdir_human SALMON_QUANTDIR_HUMAN
+                        [job_order]
+
+positional arguments:
+  job_order             Job input json file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --fastq FASTQ
+  --genomeDir_human GENOMEDIR_HUMAN
+  --outFileNamePrefix_human OUTFILENAMEPREFIX_HUMAN
+  --nthreads NTHREADS
+  --genomeDir_virus GENOMEDIR_VIRUS
+  --salmon_quantdir_human SALMON_QUANTDIR_HUMAN
+  --salmon_index_human SALMON_INDEX_HUMAN
+```
+
+example1
+
+```
+./VIRTUS.SE.cwl VIRTUS.SE.job.yaml
+```
+
+example2
+
+```
+./VIRTUS.SE.cwl \
+--fastq ../test/SRR8315715_2.fastq.gz \
+--genomeDir_human ../test/STAR_index_human \
+--genomeDir_virus ../test/STAR_index_virus \
+--salmon_index_human ../test/salmon_index_human \
+--salmon_quantdir_human salmon_human \
+--outFileNamePrefix_human human \
+--nthreads 40
+```
 
 ## VIRTUS.PE.singlevirus.cwl
 
@@ -176,8 +219,8 @@ example2
 
 ```
 ./VIRTUS.PE.singlevirus.cwl \
---fq1_unmapped ../test/unmapped_1.fq \
---fq2_unmapped ../test/unmapped_2.fq \
+--fq1_unmapped ../test/ERR3240275/unmapped_1.fq \
+--fq2_unmapped ../test/ERR3240275/unmapped_2.fq \
 --genomeDir_singlevirus ../test/STAR_index_NC_007605.1 \
 --salmon_index_singlevirus ../test/salmon_index_NC_007605.1 \
 --outFileNamePrefix_star NC_007605.1 \
@@ -210,6 +253,10 @@ example
 ```
 python ./tool/mk_virus_tx2gene/mk_virus_tx2gene.py ./data/NC_007605.1.transcripts.fasta ./data/NC_007605.1.tx2gene.txt
 ```
+
+## virus detection for 10x or Dropseq
+
+10x and Dropseq use paired end sequence. The second fastq file contains only transcript's sequences. We recommend you to first run `VIRTUS.SE.cwl` for the second reads, then run alevin for detected virus. `createindex_singlevirus.cwl` can be used for building the index for alevin.
 
 ## tips
 
@@ -259,6 +306,5 @@ Manuscript in preparation.
 
 ## todo
  
-- [ ] SE mode will be available soon. You will be able to apply it to 10x's  `*_R2.fastq.gz`.
 - [ ] describe how to make single virus index.
-- [x] rename tool.
+- [ ] describe SE mode
