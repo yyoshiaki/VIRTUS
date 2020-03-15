@@ -97,6 +97,8 @@ steps:
         source: runThreadN
       - id: outFileNamePrefix
         source: outFileNamePrefix_star
+      - id: outSAMtype
+        default: 'BAM SortedByCoordinate '
     out:
       - id: aligned
       - id: bamRemDups
