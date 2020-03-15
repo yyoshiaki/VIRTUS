@@ -1,9 +1,9 @@
 fq1_unmapped:
   class: File
-  path: ../test/unmapped_1.fq
+  path: ../test/ERR3240275/unmapped_1.fq
 fq2_unmapped:
   class: File
-  path: ../test/unmapped_2.fq
+  path: ../test/ERR3240275/unmapped_2.fq
 genomeDir_singlevirus:
   class: Directory
   path: >-
