@@ -7,6 +7,14 @@ Virus transcript detection and quantification using normal human RNAseq. VIRTUS 
 - cwltool `conda install -c bioconda cwltool` 
 - docker (alternatively, you can use udocker when you have no root privileges. See [Tips section](https://github.com/yyoshiaki/VIRTUS#tips).)
 
+## Install
+
+```
+git clone https://github.com/yyoshiaki/VIRTUS
+```
+
+You can add `./VIRTUS/workflow` in `.zshrc` or `.bashrc` etc.
+
 ## createindex.cwl (execute only once)
 
 `VIRTUS/workflow`
@@ -134,7 +142,7 @@ example2
 
 ### Output
 
-`virus.counts.final.tsv` is the main output. The empirical threashold of the hit reads is 500. The example of `virus.counts.final.tsv` is like this.
+`virus.counts.final.tsv` is the main output. The empirical threashold of the hit reads is 400. The example of `virus.counts.final.tsv` is like this.
 
 |virus|hit reads|ratio hit reads / read mapped on human genome|
 |--|--|--|
@@ -240,6 +248,8 @@ example2
 --runThreadN 40
 ```
 
+`--quantdir` directory contains the output from salmon. You can manipurate the results using `tximport` or `tximeta` which are cool R libraries as well.
+
 ![img/VIRTUS.PE.singlevirus.jpg](img/VIRTUS.PE.singlevirus.jpg)
 
 ## VIRTUS.SE.singlevirus.cwl
@@ -327,7 +337,7 @@ python ./tool/mk_virus_tx2gene/mk_virus_tx2gene.py ./data/NC_007605.1.transcript
 
 ## virus detection for SmartSeq2
 
-Just use `VIRTUS.PE.cwl` on each cell individually. When the number of reads is insufficient, VIRTUS may not detect viruses.
+Just use `VIRTUS.PE.cwl` on each cell individually. When the number of reads is insufficient, VIRTUS may not detect viruses. The default threashold of the hit reads is 400. You can adjust the value in `tool/mk_virus_count.cwl`.
 
 ## tips
 
