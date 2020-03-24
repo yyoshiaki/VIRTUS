@@ -105,6 +105,7 @@ usage: ./VIRTUS.PE.cwl [-h] --fastq2 FASTQ2 --fastq1 FASTQ1
                         --genomeDir_virus GENOMEDIR_VIRUS 
                         --salmon_index_human SALMON_INDEX_HUMAN
                         --salmon_quantdir_human SALMON_QUANTDIR_HUMAN
+                        [--hit_cutoff HIT_CUTOFF]
                         [job_order]
 
 positional arguments:
