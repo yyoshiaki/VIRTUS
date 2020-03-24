@@ -11,15 +11,24 @@ inputs:
     type: File
     inputBinding:
       position: -2
+      shellQuote: false
+  - 'sbg:toolDefaultValue': '400'
+    id: hit_cutoff
+    type: int?
+    inputBinding:
+      position: 0
+      shellQuote: false
 outputs:
   - id: virus_count
     type: stdout
 label: mk_virus_count
 arguments:
   - position: 0
-    prefix: ''
     shellQuote: false
-    valueFrom: " | cut -f3 | sort | uniq -c | awk '{if ($1>=400) print $0}'"
+    valueFrom: '| cut -f3 | sort | uniq -c | awk ''{if ($1>='
+  - position: 2
+    shellQuote: false
+    valueFrom: ') print $0}'''
 requirements:
   - class: ShellCommandRequirement
   - class: DockerRequirement

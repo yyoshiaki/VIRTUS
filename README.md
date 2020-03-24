@@ -1,4 +1,4 @@
-# VIRTUS : VIRal Transcript Usage Sensor
+# VIRTUS : VIRal Transcript Usage Sensor v0.11 (alpha release)
 
 ## Note that this is an alpha release. Feel free to contact to Yoshiaki Yasumizu ([yyasumizu@ifrec.osaka-u.ac.jp](yyasumizu@ifrec.osaka-u.ac.jp)) before the usage.
 
@@ -15,7 +15,7 @@ Virus transcript detection and quantification using normal human RNAseq. VIRTUS 
 git clone https://github.com/yyoshiaki/VIRTUS
 ```
 
-You can add `./VIRTUS/workflow` in `.zshrc` or `.bashrc` etc.
+You can add `./VIRTUS/workflow` to `PATH` in `.zshrc` or `.bashrc` etc.
 
 ## createindex.cwl (execute only once)
 
@@ -120,6 +120,7 @@ optional arguments:
   --genomeDir_virus GENOMEDIR_VIRUS
   --salmon_quantdir_human SALMON_QUANTDIR_HUMAN
   --salmon_index_human SALMON_INDEX_HUMAN
+  --hit_cutoff HIT_CUTOFF
 ```
 
 example1
@@ -144,7 +145,7 @@ example2
 
 ### Output
 
-`virus.counts.final.tsv` is the main output. The empirical threashold of the hit reads is 400. The example of `virus.counts.final.tsv` is like this.
+`virus.counts.final.tsv` is the main output. The default threashold of the hit reads for each virus is set to 400 empirically. The example of `virus.counts.final.tsv` is like below.
 
 |virus|hit reads|ratio hit reads / read mapped on human genome|
 |--|--|--|
@@ -168,6 +169,7 @@ usage: ./VIRTUS.SE.cwl [-h] --fastq FASTQ
                         --genomeDir_virus GENOMEDIR_VIRUS 
                         --salmon_index_human SALMON_INDEX_HUMAN
                         --salmon_quantdir_human SALMON_QUANTDIR_HUMAN
+                        [--hit_cutoff HIT_CUTOFF]
                         [job_order]
 
 positional arguments:
@@ -182,6 +184,7 @@ optional arguments:
   --genomeDir_virus GENOMEDIR_VIRUS
   --salmon_quantdir_human SALMON_QUANTDIR_HUMAN
   --salmon_index_human SALMON_INDEX_HUMAN
+  --hit_cutoff HIT_CUTOFF
 ```
 
 example1
@@ -265,6 +268,7 @@ usage: ./VIRTUS.SE.singlevirus.cwl [-h] --fq_unmapped FQ_UNMAPPED
                                         --quantdir QUANTDIR
                                         [--outFileNamePrefix_star OUTFILENAMEPREFIX_STAR]
                                         [--runThreadN RUNTHREADN]
+                                        [--hit_cutoff HIT_CUTOFF]
                                         [job_order]
 
 positional arguments:
@@ -363,6 +367,7 @@ cwltool --tmp-outdir-prefix=/home/yyasumizu/tmp_cwl/ \
 - STAR will require memory at least 30GB. Check your resources.
 - You can use udocker instead of docker by cwltool option `--user-space-docker-cmd=udocker`.
 - You can specify another host's reference URL such as the mouse in createindex steps, but note that virus references are designed for human viruses. We don't guarantee the result when you changed the reference species.  
+- When you feel the sequence depth may be insufficient, see `virusAligned.filtered.sortedByCoord.out.bam` which conteins mapped reads assigned to viruses. Users can adjust the cutoff by `--hit_cutoff`
 
 ## test
 
@@ -386,3 +391,9 @@ Yoshiaki Yasumizu ([yyasumizu@ifrec.osaka-u.ac.jp](yyasumizu@ifrec.osaka-u.ac.jp
 ## Citation
 
 Manuscript in preparation.
+
+## Licence
+
+This software is freely available for academic users. Usage for commercial purposes is not allowed. Please refer to the LICENCE page.
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a>

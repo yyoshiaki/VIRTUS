@@ -3,6 +3,7 @@
 class: Workflow
 cwlVersion: v1.0
 id: _v_i_r_t_u_s__p_e
+doc: v0.11
 label: VIRTUS.PE
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
@@ -39,6 +40,10 @@ inputs:
     type: string
     'sbg:x': -314.884765625
     'sbg:y': -1090
+  - id: hit_cutoff
+    type: int?
+    'sbg:x': 805.1641845703125
+    'sbg:y': 666.56591796875
 outputs:
   - id: Log.out_human
     outputSource:
@@ -248,6 +253,9 @@ steps:
     in:
       - id: virus_bam
         source: bam_filter_polyx/output
+      - id: hit_cutoff
+        default: 400
+        source: hit_cutoff
     out:
       - id: virus_count
     run: ../tool/mk_virus_count.cwl
@@ -301,3 +309,5 @@ steps:
     'sbg:x': 825.17626953125
     'sbg:y': 513.4646606445312
 requirements: []
+'sbg:license': CC BY-NC 4.0
+'sbg:toolAuthor': Yoshiaki Yasumizu

@@ -1,0 +1,5 @@
+hit_cutoff: 400
+virus_bam:
+  class: File
+  path: >-
+    ../test/ERR3240275/virusAligned.filtered.sortedByCoord.out.bam
