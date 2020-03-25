@@ -1,4 +1,4 @@
-# VIRTUS : VIRal Transcript Usage Sensor v0.11 (alpha release) <img src="img/VIRTUS.jpg" width="20%" align="right" />
+# VIRTUS : VIRal Transcript Usage Sensor v0.11 <img src="img/VIRTUS.jpg" width="20%" align="right" />
 
 ## Note that this is an alpha release. Feel free to contact to Yoshiaki Yasumizu ([yyasumizu@ifrec.osaka-u.ac.jp](yyasumizu@ifrec.osaka-u.ac.jp)) before the usage.
 
