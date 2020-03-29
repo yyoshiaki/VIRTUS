@@ -368,7 +368,7 @@ cwltool --tmp-outdir-prefix=/home/yyasumizu/tmp_cwl/ \
 - STAR will require memory at least 30GB. Check your resources.
 - You can use udocker instead of docker by cwltool option `--user-space-docker-cmd=udocker`.
 - You can specify another host's reference URL such as the mouse in createindex steps, but note that virus references are designed for human viruses. We don't guarantee the result when you changed the reference species.  
-- When you feel the sequence depth may be insufficient, see `virusAligned.filtered.sortedByCoord.out.bam` which conteins mapped reads assigned to viruses. Users can adjust the cutoff by `--hit_cutoff`
+- When you feel the sequence depth may be insufficient, see `virusAligned.filtered.sortedByCoord.out.bam` which conteins mapped reads assigned to viruses. Users can adjust the cutoff by `--hit_cutoff`. For screening viruses, we recommend users set the cutoff to a low number such as 50.
 
 ## test
 
