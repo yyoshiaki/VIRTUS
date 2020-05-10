@@ -1,7 +1,5 @@
 # VIRTUS : VIRal Transcript Usage Sensor v0.11 <img src="img/VIRTUS.jpg" width="20%" align="right" />
 
-## Note that this is an alpha release. Feel free to contact to Yoshiaki Yasumizu ([yyasumizu@ifrec.osaka-u.ac.jp](yyasumizu@ifrec.osaka-u.ac.jp)) before the usage.
-
 Virus transcript detection and quantification using normal human RNAseq. VIRTUS is the first tool to detect viral transcripts considering their splicing event rather than the viral genome copy number. VIRTUS can be applied to both bulk RNAseq and single-cell RNAseq. The virus reference covers 763 viruses including SARS-CoV-2 (cause of COVID-19). The references are mainly from [VirTect](https://github.com/WGLab/VirTect). The workflow is implemented by [Common Workflow Language](https://www.commonwl.org/) and [Rabix](https://rabix.io/). You can specify each parameter individually or give `yaml` or `json` file which describes all the parameter information. In detail, check [the CWL User Guide](http://www.commonwl.org/user_guide/) out. 
 
 ## dependencies
@@ -391,7 +389,8 @@ Yoshiaki Yasumizu ([yyasumizu@ifrec.osaka-u.ac.jp](yyasumizu@ifrec.osaka-u.ac.jp
 
 ## Citation
 
-Manuscript in preparation.
+VIRTUS: a pipeline for comprehensive virus analysis from conventional RNA-seq data
+Yoshiaki Yasumizu, Atsushi Hara, Shimon Sakaguchi, Naganari Ohkura. *bioRxiv* 2020.05.08.085308; doi: https://doi.org/10.1101/2020.05.08.085308
 
 ## Licence
 
