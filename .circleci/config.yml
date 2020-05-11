@@ -12,7 +12,4 @@ jobs:
 
       # build and push Docker image
       - run: |
-          ls
-          which docker
-          which conda
-          
+          docker version
