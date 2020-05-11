@@ -1,9 +1,18 @@
 version: 2.1
 jobs:
   build:
-    docker: 
+    docker:
       - image: continuumio/miniconda:4.7.12
     steps:
-      - checkout # check out the code in the project directory
-      - run: ls && which docker
-      
+      - checkout
+      # ... steps for building/testing app ...
+
+      - setup_remote_docker:
+          docker_layer_caching: true
+
+      # build and push Docker image
+      - run: |
+          ls
+          which docker
+          which conda
+          
