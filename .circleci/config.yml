@@ -1,0 +1,9 @@
+version: 2.1
+jobs:
+  build:
+    docker: 
+      - image: continuumio/miniconda:4.7.12
+    steps:
+      - checkout # check out the code in the project directory
+      - run: which docker
+      
