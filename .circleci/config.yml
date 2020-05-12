@@ -8,7 +8,9 @@ jobs:
           docker version
           wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
           bash ~/miniconda.sh -b -p $HOME/miniconda
-          $HOME/miniconda/bin/conda create -n py36 python=3.6 anaconda
-          $HOME/miniconda/bin/conda activate py36
+          $HOME/miniconda/bin/conda create -n py36 python=3.6
+          $HOME/miniconda/bin/conda init bash
+          source $HOME/.bashrc
+          conda activate py36
           conda install -c bioconda cwltool
           ls
