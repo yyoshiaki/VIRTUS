@@ -1,0 +1,18 @@
+version: 2.1
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+      - run: |
+          docker version
+          wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
+          bash ~/miniconda.sh -b -p $HOME/miniconda
+          $HOME/miniconda/bin/pip install virtualenv
+          $HOME/miniconda/bin/virtualenv -p python3 venv
+          source venv/bin/activate
+          pip install cwlref-runner
+          cwltool --version
+          cd test
+          bash test.sh
+          
