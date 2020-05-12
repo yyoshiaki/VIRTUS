@@ -392,6 +392,10 @@ Yoshiaki Yasumizu ([yyasumizu@ifrec.osaka-u.ac.jp](yyasumizu@ifrec.osaka-u.ac.jp
 VIRTUS: a pipeline for comprehensive virus analysis from conventional RNA-seq data
 Yoshiaki Yasumizu, Atsushi Hara, Shimon Sakaguchi, Naganari Ohkura. *bioRxiv* 2020.05.08.085308; doi: https://doi.org/10.1101/2020.05.08.085308
 
+## Acknowledgement
+
+Kozo Nishida : CI config and many other supports.
+
 ## Licence
 
 This software is freely available for academic users. Usage for commercial purposes is not allowed. Please refer to the LICENCE page.
