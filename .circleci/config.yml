@@ -6,11 +6,12 @@ jobs:
       - checkout
       - run: |
           docker version
-          sudo apt-get update
-          sudo apt-get install -y python3 python3-pip
-          virtualenv -p python3 venv
+          wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
+          bash ~/miniconda.sh -b -p $HOME/miniconda
+          $HOME/miniconda/bin/pip install virtualenv
+          $HOME/miniconda/bin/virtualenv -p python3 venv
           source venv/bin/activate
           pip install cwlref-runner
-          pip install cwltool
+          cwltool --version
           ls
           
