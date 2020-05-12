@@ -13,5 +13,6 @@ jobs:
           source venv/bin/activate
           pip install cwlref-runner
           cwltool --version
-          ls
+          cd test
+          bash test.sh
           
