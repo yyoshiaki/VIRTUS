@@ -4,7 +4,7 @@ Virus transcript detection and quantification using normal human RNAseq. VIRTUS 
 
 ## dependencies
 
-- cwltool `conda install -c bioconda cwltool` 
+- cwltool `pip install cwlref-runner` 
 - docker (alternatively, you can use udocker when you have no root privileges. See [Tips section](https://github.com/yyoshiaki/VIRTUS#tips).)
 
 ## Install
@@ -375,6 +375,7 @@ After you clone this repo, try the test run first.
 ```
 cd test
 bash test.sh
+cwltest --test test.yml --tool cwltool --badgedir ../badges
 ```
 
 ## cwl sources

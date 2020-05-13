@@ -3,16 +3,33 @@ jobs:
   build:
     machine: true
     steps:
+      # fix for local builds https://github.com/CircleCI-Public/circleci-cli/issues/330
+      - run:
+          name: Local build handling
+          command: |
+            if [[ ${CIRCLE_SHELL_ENV} =~ "localbuild" ]]; then
+              if [ -d /workdir ]; then
+                ln -s /workdir /tmp/_circleci_local_build_repo
+              else
+                echo "Run this local build using: circleci build -v \$(pwd):/workdir"
+                exit 1
+              fi
+            fi
       - checkout
-      - run: |
-          docker version
-          wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
-          bash ~/miniconda.sh -b -p $HOME/miniconda
-          $HOME/miniconda/bin/pip install virtualenv
-          $HOME/miniconda/bin/virtualenv -p python3 venv
-          source venv/bin/activate
-          pip install cwlref-runner
-          cwltool --version
-          cd test
-          bash test.sh
-          
+      - run:
+          no_output_timeout: 24h
+          command:  |
+            docker version
+            wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
+            bash ~/miniconda.sh -b -p $HOME/miniconda
+            $HOME/miniconda/bin/conda install -c bioconda -y sra-tools==2.9.2
+            export PATH=$PATH:$HOME/miniconda/bin
+            # fasterq-dump -e 8 ERR3240275 -p
+            $HOME/miniconda/bin/pip install virtualenv
+            $HOME/miniconda/bin/virtualenv -p python3 venv
+            source venv/bin/activate
+            pip install cwlref-runner
+            cwltool --version
+            cd test
+            bash test.sh
+        
