@@ -22,12 +22,20 @@ jobs:
             docker version
             wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
             bash ~/miniconda.sh -b -p $HOME/miniconda
-            $HOME/miniconda/bin/conda install -c bioconda -y sra-tools==2.9.2
-            export PATH=$PATH:$HOME/miniconda/bin
+
+            # mkdir -p ~/Programs
+            # export PATH="$PATH:$HOME/miniconda/bin:$HOME/Programs"
+            # wget -P ~/Programs http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.10.5/sratoolkit.2.10.5-ubuntu64.tar.gz
+            # tar zxvf sratoolkit.2.10.5-ubuntu64.tar.gz
+            
+            export PATH="$PATH:$HOME/miniconda/bin"
+            # conda install -c bioconda -c anaconda -y sra-tools==2.10.1
+            conda create -y --name sra-tools -c bioconda -c conda-forge python3 sra-tools==2.10.1
+            conda activate sra-tools
             # fasterq-dump -e 8 ERR3240275 -p
-            $HOME/miniconda/bin/pip install virtualenv
-            $HOME/miniconda/bin/virtualenv -p python3 venv
-            source venv/bin/activate
+            # $HOME/miniconda/bin/pip install virtualenv
+            # $HOME/miniconda/bin/virtualenv -p python3 venv
+            # source venv/bin/activate
             pip install cwlref-runner
             cwltool --version
             cd test

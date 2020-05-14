@@ -35,8 +35,6 @@ cd ..
 ../workflow/createindex_singlevirus.cwl ../workflow/createindex_singlevirus.job.NC_001806.2.yaml
 
 cd SRR8315715
-fasterq-dump -e 8 SRR8315715 -p
-pigz SRR8315715*.fastq
 if [[ ! -e ./SRR8315715_1.fastq.gz ]]; then
  fasterq-dump -e 8 SRR8315715 -p
  pigz SRR8315715_*.fastq

@@ -1,3 +1,4 @@
 .DS_Store
 test/*
-!test/prep_test.sh
+!test/*.sh
+!test/*.yaml

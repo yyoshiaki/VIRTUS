@@ -1,0 +1,64 @@
+# cwltest --test test.yml --tool cwltool --badgedir ../badges
+
+- job: ../workflow/createindex.job.yaml
+  tool: ../workflow/createindex.cwl
+  output:
+    out:
+      class: File
+      basename: STAR_index_human/SA 
+      checksum: sha256$f2f1922b247dcd2c8172956c2b3c9341aed5c2812627a39dd37736b6769cf155 
+  doc: Create indices.
+
+- job: ../workflow/createindex_singlevirus.job.NC_007605.1.yaml
+  tool: ../workflow/createindex_singlevirus.cwl
+  output:
+    out:
+      class: File
+      basename: STAR_index_NC_007605.1/SA
+      checksum: sha256$a3796a7bd8f49b22caa32c29afab1f229b2fb1bfe56e2ba65f53b1ecd73b3fbe
+  doc: Create indices for a virus.
+
+- job: ../../workflow/VIRTUS.PE.job.yaml
+  tool: ../../workflow/VIRTUS.PE.cwl
+  output:
+    out:
+      class: File
+      basename: ERR3240275/virus.counts.final.tsv
+      checksum: sha256$4cd736da1495a2ee4e97cf880231d160201c14467b72ecb9ce6759173d40ae0a
+  doc: VIRTUS PE
+
+- job: ../../workflow/VIRTUS.PE.singlevirus.job.yaml
+  tool: ../../workflow/VIRTUS.PE.singlevirus.cwl
+  output:
+    out:
+      class: File
+      basename: ERR3240275/NC_007605.1Aligned.sortedByCoord.out.bam
+      checksum: sha256$e21ac33d7b170e10634876c197430840586620f5080d8841102cc21db4fe20eb
+  doc: VIRTUS PE single virus.
+
+# - job: ../workflow/createindex_singlevirus.job.NC_001806.2.yaml
+#   tool: ../workflow/createindex_singlevirus.cwl
+#   output:
+#     out:
+#       class: File
+#       basename: STAR_index_NC_001806.2/SA
+#       checksum: sha256$fee8f52f6ee2586b430f9810f5ea3ffbeee85843353cfbab5d4e96c599074457
+#   doc: Create indices for a virus.
+
+# - job: ../../workflow/VIRTUS.SE.job.yaml
+#   tool: ../../workflow/VIRTUS.SE.cwl
+#   output:
+#     out:
+#       class: File
+#       basename: SRR8315715/virus.counts.final.tsv
+#       checksum: sha256$717d466497920438c11c75b71b80e85524d1180b2114445d0a7ea25a925178df
+#   doc: VIRTUS SE
+
+# - job: ../../workflow/VIRTUS.SE.singlevirus.job.yaml
+#   tool: ../../workflow/VIRTUS.SE.singlevirus.cwl
+#   output:
+#     out:
+#       class: File
+#       basename: SRR8315715/NC_001806.2Aligned.sortedByCoord.out.bam 
+#       checksum: sha256$3c25074dcb471924c5c2eb618739bc26c8899b3c56bbbc912c2934857d093478
+#   doc: VIRTUS PE single virus.

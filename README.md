@@ -375,8 +375,9 @@ After you clone this repo, try the test run first.
 ```
 cd test
 bash test.sh
-cwltest --test test.yml --tool cwltool --badgedir ../badges
 ```
+
+For developers, cwltest is done by `bash cwltest.sh` in `test` directory.
 
 ## cwl sources
 
