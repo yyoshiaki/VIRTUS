@@ -22,7 +22,7 @@ if [[ ! -e ./ERR3240275_1.fastq.gz ]]; then
  fasterq-dump -e 8 ERR3240275 -p
  pigz ERR3240275_*.fastq
 fi
-cwltest --test ../test.yml --tool cwltool --badgedir ../../badges
+cwltest --test ../test.yaml --tool cwltool --badgedir ../../badges
 cd ..
 
 # cd SRR8315715
