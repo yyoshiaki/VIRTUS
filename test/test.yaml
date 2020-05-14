@@ -18,8 +18,8 @@
       checksum: sha256$a3796a7bd8f49b22caa32c29afab1f229b2fb1bfe56e2ba65f53b1ecd73b3fbe
   doc: Create indices for a virus.
 
-- job: ../../workflow/VIRTUS.PE.job.yaml
-  tool: ../../workflow/VIRTUS.PE.cwl
+- job: ../workflow/VIRTUS.PE.job.yaml
+  tool: ../workflow/VIRTUS.PE.cwl
   output:
     out:
       class: File
@@ -27,8 +27,8 @@
       checksum: sha256$4cd736da1495a2ee4e97cf880231d160201c14467b72ecb9ce6759173d40ae0a
   doc: VIRTUS PE
 
-- job: ../../workflow/VIRTUS.PE.singlevirus.job.yaml
-  tool: ../../workflow/VIRTUS.PE.singlevirus.cwl
+- job: ../workflow/VIRTUS.PE.singlevirus.job.yaml
+  tool: ../workflow/VIRTUS.PE.singlevirus.cwl
   output:
     out:
       class: File
@@ -45,8 +45,8 @@
 #       checksum: sha256$fee8f52f6ee2586b430f9810f5ea3ffbeee85843353cfbab5d4e96c599074457
 #   doc: Create indices for a virus.
 
-# - job: ../../workflow/VIRTUS.SE.job.yaml
-#   tool: ../../workflow/VIRTUS.SE.cwl
+# - job: ../workflow/VIRTUS.SE.job.yaml
+#   tool: ../workflow/VIRTUS.SE.cwl
 #   output:
 #     out:
 #       class: File
