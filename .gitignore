@@ -3,4 +3,4 @@ test/*
 !test/*.sh
 !test/*.yaml
 wrapper/SRR*
-wrapper/.vscode*
+.vscode/settings.json
