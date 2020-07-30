@@ -325,6 +325,73 @@ example
 python ./tool/mk_virus_tx2gene/mk_virus_tx2gene.py ./data/NC_007605.1.transcripts.fasta ./data/NC_007605.1.tx2gene.txt
 ```
 
+## Wrapper for multiple analysis
+`VIRTUS/wrapper`
+
+This wrapper summariezes virus transcripts of multiple samples from the experiment matrix.\
+Mann-Whitney U-test and multiple t-test are conducted among samples.
+
+### **input**
+- experiment matrix should be separated by commas (csv format).
+
+- Only 2 groups can be specified.
+
+**SRR mode**
+
+|  name  |  SRR |  Layout  | Group | ... |
+| ---- | ---- | - | - | - |
+|  test1  | SRR9856913 | PE | infected | ...|
+|  test2  |  SRR9856914  | PE  | Mock | ... |
+
+**fastq mode**
+
+|  name  |  fastq |  Layout  | Group | ... |
+| ---- | ---- | - | - | - |
+|  test1  | hoge/SRR9856913 | PE | infected | ...|
+|  test2  |  hoge/SRR9856914  | PE  | Mock | ... |
+
+- If you want to use your own fastq, add `---fastq` option. This wrapper supports only `.fastq` and `.fastq.gz`.
+
+- fastq file specifies path excluding `.fastq.gz` or `_1.fastq.gz` and `_2.fastq.gz`. For example, `hoge/SRR1234567.fastq.gz` is described as `hoge/SRR1234567`.
+
+- If suffix is not `.fastq.gz` or `_1.fastq.gz` and `_2.fastq.gz`, add `-s` or `-s1` and `-s2` options.
+
+```
+usage: VIRTUS_wrapper.py [-h] --VIRTUSDir VIRTUSDIR --genomeDir_human
+                         GENOMEDIR_HUMAN --genomeDir_virus GENOMEDIR_VIRUS
+                         --salmon_index_human SALMON_INDEX_HUMAN
+                         [--salmon_quantdir_human SALMON_QUANTDIR_HUMAN]
+                         [--outFileNamePrefix_human OUTFILENAMEPREFIX_HUMAN]
+                         [--nthreads NTHREADS] [-s SUFFIX_SE]
+                         [-s1 SUFFIX_PE_1] [-s2 SUFFIX_PE_2] [--fastq]
+                         input_path
+
+positional arguments:
+  input_path
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --VIRTUSDir VIRTUSDIR
+  --genomeDir_human GENOMEDIR_HUMAN
+  --genomeDir_virus GENOMEDIR_VIRUS
+  --salmon_index_human SALMON_INDEX_HUMAN
+  --salmon_quantdir_human SALMON_QUANTDIR_HUMAN
+  --outFileNamePrefix_human OUTFILENAMEPREFIX_HUMAN
+  --nthreads NTHREADS
+  -s SUFFIX_SE, --Suffix_SE SUFFIX_SE
+  -s1 SUFFIX_PE_1, --Suffix_PE_1 SUFFIX_PE_1
+  -s2 SUFFIX_PE_2, --Suffix_PE_2 SUFFIX_PE_2
+  --fastq
+```
+example
+```
+./VIRTUS_wrapper.py input.csv \
+    --VIRTUS ../VIRTUS \
+    --genomeDir_human ../VIRTUS/index/STAR_index_human \
+    --genomeDir_virus ../VIRTUS/index/STAR_index_virus \
+    --salmon_index_human ../VIRTUS/index/salmon_index_human
+```
+
 ## virus detection for 10x or Dropseq
 
 10x and Dropseq use paired end sequence. The second fastq file contains only transcript's sequences. We recommend you to first run `VIRTUS.SE.cwl` for the second reads, then run alevin for detected virus. `createindex_singlevirus.cwl` can be used for building the index for [Alevin](https://salmon.readthedocs.io/en/latest/alevin.html). For example, the Dropseq's output from SRR8315715 can be screened like the command below.
