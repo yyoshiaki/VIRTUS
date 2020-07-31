@@ -9,6 +9,9 @@ import os
 from scipy import stats
 import statsmodels.api
 import seaborn as sns
+import matplotlib as mpl
+mpl.rcParams['pdf.fonttype'] = 42
+mpl.rcParams['ps.fonttype'] = 42
 
 # %%
 parser = argparse.ArgumentParser()
@@ -161,4 +164,4 @@ summary.to_csv("summary.csv")
 
 # %%
 g = sns.clustermap(summary.iloc[:-3,:-1].T, method = "ward", metric="euclidean")
-g.savefig("clustermap.png")
+g.savefig("clustermap.pdf", bbox_inches='tight')
