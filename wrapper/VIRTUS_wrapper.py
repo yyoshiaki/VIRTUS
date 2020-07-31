@@ -37,7 +37,6 @@ first_dir = os.getcwd()
 
 # %%
 series_list = []
-clean_cmd = "rm -rf /tmp/*"
 
 for index, item in df.iterrows():
     if args.fastq == False:
@@ -108,13 +107,6 @@ for index, item in df.iterrows():
             os.chdir(dir)
         except:
             print(dir," : No such directory")
-
-    print(clean_cmd,"\n")
-    try:
-        p_clean = subprocess.Popen(clean_cmd,shell = True)
-        p_clean.wait()
-    except:
-        print("clean error")
 
     print(VIRTUS_cmd,"\n")
     try:
