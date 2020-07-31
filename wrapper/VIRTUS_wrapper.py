@@ -37,7 +37,7 @@ first_dir = os.getcwd()
 
 # %%
 series_list = []
-clean_cmd = "rm -rf /tmp/*"
+clean_cmd = "rm -rf tmp"
 
 for index, item in df.iterrows():
     if args.fastq == False:
@@ -62,7 +62,7 @@ for index, item in df.iterrows():
 
     if item["Layout"] =="PE":
         VIRTUS_cmd = " ".join([
-            "cwltool --rm-tmpdir",
+            "cwltool --tmpdir-prefix tmp/",
             os.path.join(args.VIRTUSDir, "workflow/VIRTUS.PE.cwl"), 
             "--fastq1", fastq1,
             "--fastq2", fastq2, 
@@ -75,7 +75,7 @@ for index, item in df.iterrows():
         ])
     elif item["Layout"] =="SE":
         VIRTUS_cmd = " ".join([
-            "cwltool --rm-tmpdir",
+            "cwltool --tmpdir-prefix tmp/",
             os.path.join(args.VIRTUSDir, "workflow/VIRTUS.SE.cwl"), 
             "--fastq", fastq,
             "--genomeDir_human", args.genomeDir_human, 
@@ -109,19 +109,19 @@ for index, item in df.iterrows():
         except:
             print(dir," : No such directory")
 
-    print(clean_cmd,"\n")
-    try:
-        p_clean = subprocess.Popen(clean_cmd,shell = True)
-        p_clean.wait()
-    except:
-        print("clean error")
-
     print(VIRTUS_cmd,"\n")
     try:
         p_VIRTUS = subprocess.Popen(VIRTUS_cmd, shell = True)
         p_VIRTUS.wait()
     except:
         print("VIRTUS error")
+
+    print(clean_cmd,"\n")
+    try:
+        p_clean = subprocess.Popen(clean_cmd,shell = True)
+        p_clean.wait()
+    except:
+        print("clean error")
 
     try:
         df_virus = pd.read_table("virus.counts.final.tsv", index_col = 0)
