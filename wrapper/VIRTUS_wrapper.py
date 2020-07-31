@@ -152,8 +152,8 @@ if summary["Group"].nunique() == 2:
 
 fdr = pd.Series(statsmodels.stats.multitest.multipletests(pval,method = "fdr_bh")[1], index = pval.index)
 
-summary.loc["uval"] = uval
-summary.loc["pval"] = pval
+summary.loc["u-value"] = uval
+summary.loc["p-value"] = pval
 summary.loc["FDR"] = fdr
 
 summary.to_csv("summary.csv")
