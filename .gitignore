@@ -2,3 +2,5 @@
 test/*
 !test/*.sh
 !test/*.yaml
+wrapper/SRR*
+.vscode/settings.json
