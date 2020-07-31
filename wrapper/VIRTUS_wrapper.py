@@ -8,6 +8,7 @@ import argparse
 import os
 from scipy import stats
 import statsmodels.api
+import seaborn as sns
 
 # %%
 parser = argparse.ArgumentParser()
@@ -159,17 +160,5 @@ summary.loc["FDR"] = fdr
 summary.to_csv("summary.csv")
 
 # %%
-sample = summary.index[:-3]
-sample_num = len(sample)
-s = 0.05/(sample_num*(sample_num-1)/2)
-df = pd.DataFrame(columns=sample[:-1], index=sample[1:])
-
-for i in range(sample_num-1):
-    x = [np.nan for i in range(sample_num-1)]
-    for j in range(i+1,sample_num):
-        x[j-1] = stats.ttest_rel(summary.iloc[i,:-1],summary.iloc[j,:-1])[1]
-    df.iloc[:,i] = x
-df.to_csv("ttest.csv")
-
-with open('ttest.csv', 'a') as f:
-    print("".join(["Standard (Bonferroni) = ",str(s)]), file=f)
+g = sns.clustermap(summary.iloc[:-3,:-1].T, method = "ward", metric="euclidean")
+g.savefig("clustermap.png")
