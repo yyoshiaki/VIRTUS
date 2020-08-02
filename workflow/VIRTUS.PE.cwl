@@ -3,8 +3,7 @@
 class: Workflow
 cwlVersion: v1.0
 id: VIRTUS.PE
-doc: >-
-VIRTUS v0.11
+doc: VIRTUS v0.11
 label: VIRTUS.PE
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
