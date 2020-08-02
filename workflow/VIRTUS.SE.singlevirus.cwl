@@ -2,10 +2,10 @@
 
 class: Workflow
 cwlVersion: v1.0
-id: _v_i_r_t_u_s__p_e_singlevirus
+id: VIRTUS.PE.singlevirus
 doc: >-
   STAR mapping and salmon quantification for one specified virus. Prepare using
-  create_singlevirus.cwl beforehand. version 1.0.0
+  create_singlevirus.cwl beforehand. VIRTUS version 0.11
 label: VIRTUS.PE.singlevirus
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
