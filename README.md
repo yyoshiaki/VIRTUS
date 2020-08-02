@@ -15,6 +15,10 @@ git clone https://github.com/yyoshiaki/VIRTUS
 
 You can add `./VIRTUS/workflow` to `PATH` in `.zshrc` or `.bashrc` etc.
 
+## Version confirmation
+
+`Tool --help` will tell you the version. ex. `./VIRTUS.PE.cwl --help`
+
 ## createindex.cwl (execute only once)
 
 `VIRTUS/workflow`
