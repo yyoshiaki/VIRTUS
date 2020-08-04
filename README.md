@@ -4,7 +4,7 @@ Virus transcript detection and quantification using normal human RNAseq. VIRTUS 
 
 ## Documentation
 
-First, refer to [**WIKI**](https://github.com/yyoshiaki/VIRTUS/wiki).
+**First, refer to [WIKI](https://github.com/yyoshiaki/VIRTUS/wiki). We recommend walking through [Quick tutorial](https://github.com/yyoshiaki/VIRTUS/wiki/Quick-tutorial-(installation,-create-index,-and-first-run)).**
 
 ## dependencies
 
