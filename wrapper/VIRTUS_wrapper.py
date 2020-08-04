@@ -33,7 +33,7 @@ args = parser.parse_args()
 
 # %%
 df = pd.read_csv(args.input_path)
-df.columns = ["Name", "SRR", "Layout"] + list(df.columns[4:])
+df.columns = ["Name", "SRR", "Layout", "Group"] + list(df.columns[4:])
 first_dir = os.getcwd()
 
 print(args.VIRTUSDir)
