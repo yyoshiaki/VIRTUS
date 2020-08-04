@@ -54,7 +54,7 @@ clean_cmd = "rm -rf tmp"
 for index, item in df.iterrows():
     if args.fastq == False:
         dir = item["SRR"]
-        sample_index = item["Name"]
+        sample_index = item["SRR"]
         prefetch_cmd = " ".join(["prefetch",sample_index])
         fasterq_cmd = " ".join(["fasterq-dump", "--split-files", sample_index + ".sra", "-e","16"])
 
