@@ -408,6 +408,12 @@ example
     --salmon_index_human ../VIRTUS/index/salmon_index_human
 ```
 
+### output image
+
+![img/clustermap.png](img/clustermap.png)
+
+The value is the ratio of viral reads (hit viral reads / read mapped on human genome).
+
 ## virus detection for 10x or Dropseq
 
 10x and Dropseq use paired end sequence. The second fastq file contains only transcript's sequences. We recommend you to first run `VIRTUS.SE.cwl` for the second reads, then run alevin for detected virus. `createindex_singlevirus.cwl` can be used for building the index for [Alevin](https://salmon.readthedocs.io/en/latest/alevin.html). For example, the Dropseq's output from SRR8315715 can be screened like the command below.
