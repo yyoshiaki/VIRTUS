@@ -17,7 +17,7 @@ mpl.rcParams['ps.fonttype'] = 42
 parser = argparse.ArgumentParser()
 
 parser.add_argument('input_path')
-parser.add_argument('--VIRTUSDir', required = True)
+parser.add_argument('--VIRTUSDir', default = os.path.dirname(os.path.abspath(__file__)))
 parser.add_argument('--genomeDir_human', required = True)
 parser.add_argument('--genomeDir_virus', required = True)
 parser.add_argument('--salmon_index_human', required = True)
@@ -33,10 +33,16 @@ args = parser.parse_args()
 
 # %%
 df = pd.read_csv(args.input_path)
+df.columns = ["Name", "SRR", "Layout", "Group"] + list(df.columns[4:])
 first_dir = os.getcwd()
 
+print(args.VIRTUSDir)
 try:
-    if not os.path.exists(os.path.join(args.VIRTUSDir, "workflow/VIRTUS.PE.cwl")):
+    if os.path.exists(os.path.join(args.VIRTUSDir, "workflow/VIRTUS.PE.cwl")):
+        dir_VIRTUS = os.path.join(args.VIRTUSDir, "workflow")
+    elif os.path.exists(os.path.join(args.VIRTUSDir, "VIRTUS.PE.cwl")):  
+        dir_VIRTUS = args.VIRTUSDir
+    else:
         raise ValueError('not found VIRTUS.PE.cwl or VIRTUS.SE.cwl')
 except (ValueError, IndexError):
     exit('invalid path to VIRTUS. try to change --VIRTUSDir to the absolute path.')
@@ -58,8 +64,8 @@ for index, item in df.iterrows():
         elif item["Layout"] == "SE":
             fastq = sample_index + "_1.fastq"
     else:
-        dir = os.path.dirname(item["fastq"])
-        sample_index = os.path.basename(item["fastq"])
+        dir = os.path.dirname(item["SRR"])
+        sample_index = os.path.basename(item["SRR"])
         if item["Layout"] == "PE":
             fastq1 = sample_index + args.Suffix_PE_1
             fastq2 = sample_index + args.Suffix_PE_2
@@ -69,7 +75,7 @@ for index, item in df.iterrows():
     if item["Layout"] =="PE":
         VIRTUS_cmd = " ".join([
             "cwltool --tmpdir-prefix tmp/",
-            os.path.join(args.VIRTUSDir, "workflow/VIRTUS.PE.cwl"), 
+            os.path.join(dir_VIRTUS, "VIRTUS.PE.cwl"), 
             "--fastq1", fastq1,
             "--fastq2", fastq2, 
             "--genomeDir_human", args.genomeDir_human, 
@@ -82,7 +88,7 @@ for index, item in df.iterrows():
     elif item["Layout"] =="SE":
         VIRTUS_cmd = " ".join([
             "cwltool --tmpdir-prefix tmp/",
-            os.path.join(args.VIRTUSDir, "workflow/VIRTUS.SE.cwl"), 
+            os.path.join(dir_VIRTUS, "VIRTUS.SE.cwl"), 
             "--fastq", fastq,
             "--genomeDir_human", args.genomeDir_human, 
             "--genomeDir_virus", args.genomeDir_virus,
@@ -132,7 +138,7 @@ for index, item in df.iterrows():
     try:
         df_virus = pd.read_table("virus.counts.final.tsv", index_col = 0)
         series_virus = df_virus.loc[:,"rate_hit"]
-        series_virus = series_virus.rename(sample_index)
+        series_virus = series_virus.rename(item['Name'])
         series_list.append(series_virus)
     except:
         print("virus.counts.final.tsv not found")

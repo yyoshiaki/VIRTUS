@@ -1,0 +1,1 @@
+../workflow/createindex_singlevirus.cwl

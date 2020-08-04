@@ -1,6 +1,10 @@
 # VIRTUS : VIRal Transcript Usage Sensor v0.11 <img src="img/VIRTUS.jpg" width="20%" align="right" />
 
-Virus transcript detection and quantification using normal human RNAseq. VIRTUS is the first tool to detect viral transcripts considering their splicing event rather than the viral genome copy number. VIRTUS can be applied to both bulk RNAseq and single-cell RNAseq. The virus reference covers 763 viruses including SARS-CoV-2 (cause of COVID-19). The references are mainly from [VirTect](https://github.com/WGLab/VirTect). The workflow is implemented by [Common Workflow Language](https://www.commonwl.org/) and [Rabix](https://rabix.io/). You can specify each parameter individually or give `yaml` or `json` file which describes all the parameter information. In detail, check [the CWL User Guide](http://www.commonwl.org/user_guide/) out. 
+Virus transcript detection and quantification using normal human RNAseq. VIRTUS is the first tool to detect viral transcripts considering their splicing event rather than the viral genome copy number. VIRTUS can be applied to both bulk RNAseq and single-cell RNAseq. The virus reference covers 763 viruses including SARS-CoV-2 (cause of COVID-19). The workflow is implemented by [Common Workflow Language](https://www.commonwl.org/) and [Rabix](https://rabix.io/). You can specify each parameter individually or give `yaml` or `json` file which describes all the parameter information. In detail, check [the CWL User Guide](http://www.commonwl.org/user_guide/) out. 
+
+## Documentation
+
+**First, refer to [WIKI](https://github.com/yyoshiaki/VIRTUS/wiki). We recommend walking through [Quick tutorial](https://github.com/yyoshiaki/VIRTUS/wiki/Quick-tutorial-(installation,-create-index,-and-first-run)).**
 
 ## dependencies
 
@@ -13,7 +17,7 @@ Virus transcript detection and quantification using normal human RNAseq. VIRTUS 
 git clone https://github.com/yyoshiaki/VIRTUS
 ```
 
-You can add `./VIRTUS/workflow` to `PATH` in `.zshrc` or `.bashrc` etc.
+You can add `./VIRTUS/bin` to `PATH` in `.zshrc` or `.bashrc` etc.
 
 ## Version confirmation
 
@@ -356,15 +360,15 @@ Please install Python libraries below using `pip install` beforehand. anaconda m
 
 |  name  |  SRR |  Layout  | Group | ... |
 | ---- | ---- | - | - | - |
-|  test1  | SRR9856913 | PE | infected | ...|
-|  test2  |  SRR9856914  | PE  | Mock | ... |
+|  Inf_1  | SRR9856913 | PE | infected | ...|
+|  Ctrl_1  |  SRR9856914  | PE  | Mock | ... |
 
 **fastq mode**
 
 |  name  |  fastq |  Layout  | Group | ... |
 | ---- | ---- | - | - | - |
-|  test1  | hoge/SRR9856913 | PE | infected | ...|
-|  test2  |  hoge/SRR9856914  | PE  | Mock | ... |
+|  Inf_1  | hoge/SRR9856913 | PE | infected | ...|
+|  Ctrl_1  |  hoge/SRR9856914  | PE  | Mock | ... |
 
 - If you want to use your own fastq, add `---fastq` option. This wrapper supports only `.fastq` and `.fastq.gz`.
 
@@ -412,7 +416,7 @@ example
 
 ![img/clustermap.png](img/clustermap.png)
 
-The value is the ratio of viral reads (hit viral reads / read mapped on human genome).
+The value is the ratio of viral reads (hit viral reads/read mapped on the human genome).
 
 ## virus detection for 10x or Dropseq
 
