@@ -55,14 +55,14 @@ for index, item in df.iterrows():
     if args.fastq == False:
         dir = item["SRR"]
         sample_index = item["SRR"]
-        prefetch_cmd = " ".join(["prefetch",sample_index])
-        fasterq_cmd = " ".join(["fasterq-dump", "--split-files", sample_index + ".sra", "-e","16"])
+        prefetch_cmd = " ".join(["prefetch", sample_index])
+        fasterq_cmd = " ".join(["fasterq-dump", "--split-files", sample_index + ".sra", "-e", "16", "-o", sample_index])
 
         if item["Layout"] == "PE":
-            fastq1 = sample_index + ".sra_1.fastq"
-            fastq2 = sample_index + ".sra_2.fastq"
+            fastq1 = sample_index + "_1.fastq"
+            fastq2 = sample_index + "_2.fastq"
         elif item["Layout"] == "SE":
-            fastq = sample_index + ".sra_1.fastq"
+            fastq = sample_index + "_1.fastq"
     else:
         dir = os.path.dirname(item["SRR"])
         sample_index = os.path.basename(item["SRR"])
