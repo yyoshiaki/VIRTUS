@@ -335,6 +335,18 @@ python ./tool/mk_virus_tx2gene/mk_virus_tx2gene.py ./data/NC_007605.1.transcript
 This wrapper summariezes virus transcripts of multiple samples from the experiment matrix.\
 Mann-Whitney U-test is conducted among samples. Then, summary and cluster map are exported.
 
+### dependencies
+
+- python3 
+
+Please install Python libraries below using `pip install` beforehand. anaconda may be useful to install Python and packages easily.
+
+- numpy
+- pandas
+- scipy
+- statsmodels
+- seaborn
+
 ### **input**
 - experiment matrix should be separated by commas (csv format).
 
@@ -395,6 +407,12 @@ example
     --genomeDir_virus ../VIRTUS/index/STAR_index_virus \
     --salmon_index_human ../VIRTUS/index/salmon_index_human
 ```
+
+### output image
+
+![img/clustermap.png](img/clustermap.png)
+
+The value is the ratio of viral reads (hit viral reads / read mapped on human genome).
 
 ## virus detection for 10x or Dropseq
 
