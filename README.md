@@ -13,7 +13,7 @@ Virus transcript detection and quantification using normal human RNAseq. VIRTUS 
 git clone https://github.com/yyoshiaki/VIRTUS
 ```
 
-You can add `./VIRTUS/workflow` to `PATH` in `.zshrc` or `.bashrc` etc.
+You can add `./VIRTUS/bin` to `PATH` in `.zshrc` or `.bashrc` etc.
 
 ## Version confirmation
 
@@ -356,15 +356,15 @@ Please install Python libraries below using `pip install` beforehand. anaconda m
 
 |  name  |  SRR |  Layout  | Group | ... |
 | ---- | ---- | - | - | - |
-|  test1  | SRR9856913 | PE | infected | ...|
-|  test2  |  SRR9856914  | PE  | Mock | ... |
+|  Inf_1  | SRR9856913 | PE | infected | ...|
+|  Ctrl_1  |  SRR9856914  | PE  | Mock | ... |
 
 **fastq mode**
 
 |  name  |  fastq |  Layout  | Group | ... |
 | ---- | ---- | - | - | - |
-|  test1  | hoge/SRR9856913 | PE | infected | ...|
-|  test2  |  hoge/SRR9856914  | PE  | Mock | ... |
+|  Inf_1  | hoge/SRR9856913 | PE | infected | ...|
+|  Ctrl_1  |  hoge/SRR9856914  | PE  | Mock | ... |
 
 - If you want to use your own fastq, add `---fastq` option. This wrapper supports only `.fastq` and `.fastq.gz`.
 
@@ -412,7 +412,7 @@ example
 
 ![img/clustermap.png](img/clustermap.png)
 
-The value is the ratio of viral reads (hit viral reads / read mapped on human genome).
+The value is the ratio of viral reads (hit viral reads/read mapped on the human genome).
 
 ## virus detection for 10x or Dropseq
 

@@ -1,0 +1,1 @@
+../workflow/VIRTUS.PE.singlevirus.cwl
