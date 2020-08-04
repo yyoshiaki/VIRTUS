@@ -35,6 +35,12 @@ args = parser.parse_args()
 df = pd.read_csv(args.input_path)
 first_dir = os.getcwd()
 
+try:
+    if not os.path.exists(os.path.join(args.VIRTUSDir, "workflow/VIRTUS.PE.cwl")):
+        raise ValueError('not found VIRTUS.PE.cwl or VIRTUS.SE.cwl')
+except (ValueError, IndexError):
+    exit('invalid path to VIRTUS. try to change --VIRTUSDir to the absolute path.')
+
 # %%
 series_list = []
 clean_cmd = "rm -rf tmp"
@@ -165,3 +171,5 @@ summary.to_csv("summary.csv")
 # %%
 g = sns.clustermap(summary.iloc[:-3,:-1].T, method = "ward", metric="euclidean")
 g.savefig("clustermap.pdf", bbox_inches='tight')
+
+print('All processes succeeded.')

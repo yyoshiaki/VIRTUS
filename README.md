@@ -335,6 +335,18 @@ python ./tool/mk_virus_tx2gene/mk_virus_tx2gene.py ./data/NC_007605.1.transcript
 This wrapper summariezes virus transcripts of multiple samples from the experiment matrix.\
 Mann-Whitney U-test is conducted among samples. Then, summary and cluster map are exported.
 
+### dependencies
+
+- python3 
+
+Please install Python libraries below using `pip install` beforehand. anaconda may be useful to install Python and packages easily.
+
+- numpy
+- pandas
+- scipy
+- statsmodels
+- seaborn
+
 ### **input**
 - experiment matrix should be separated by commas (csv format).
 
