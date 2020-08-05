@@ -59,10 +59,10 @@ for index, item in df.iterrows():
         fasterq_cmd = " ".join(["fasterq-dump", "--split-files", sample_index + ".sra", "-e","16"])
 
         if item["Layout"] == "PE":
-            fastq1 = sample_index + ".sra_1.fastq"
-            fastq2 = sample_index + ".sra_2.fastq"
+            fastq1 = sample_index + "_1.fastq"
+            fastq2 = sample_index + "_2.fastq"
         elif item["Layout"] == "SE":
-            fastq = sample_index + ".sra.fastq"
+            fastq = sample_index + ".fastq"
     else:
         dir = os.path.dirname(item["fastq"])
         sample_index = os.path.basename(item["fastq"])
@@ -117,7 +117,7 @@ for index, item in df.iterrows():
                 os.rename(sample_index + ".sra_1.fastq", fastq1)
                 os.rename(sample_index + ".sra_2.fastq", fastq2)
             elif item["Layout"] == "SE":
-                os.rename(sample_index + ".sra_1.fastq", fastq)
+                os.rename(sample_index + ".sra.fastq", fastq)
                 
         except:
             print("fasterq error")
