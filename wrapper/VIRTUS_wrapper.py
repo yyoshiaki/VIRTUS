@@ -55,14 +55,14 @@ for index, item in df.iterrows():
     if args.fastq == False:
         dir = item["SRR"]
         sample_index = item["SRR"]
-        prefetch_cmd = " ".join(["prefetch", sample_index])
-        fasterq_cmd = " ".join(["fasterq-dump", "--split-files", sample_index + ".sra", "-e", "16", "-o", sample_index])
+        prefetch_cmd = " ".join(["prefetch",sample_index])
+        fasterq_cmd = " ".join(["fasterq-dump", "--split-files", sample_index + ".sra", "-e","16"])
 
         if item["Layout"] == "PE":
-            fastq1 = sample_index + "_1.fastq"
-            fastq2 = sample_index + "_2.fastq"
+            fastq1 = sample_index + ".sra_1.fastq"
+            fastq2 = sample_index + ".sra_2.fastq"
         elif item["Layout"] == "SE":
-            fastq = sample_index + "_1.fastq"
+            fastq = sample_index + ".sra.fastq"
     else:
         dir = os.path.dirname(item["SRR"])
         sample_index = os.path.basename(item["SRR"])
@@ -166,11 +166,11 @@ if summary["Group"].nunique() == 2:
             uval[summary.columns[i]] = u
             pval[summary.columns[i]] = p
 
-fdr = pd.Series(multipletests(pval,method = "fdr_bh")[1], index = pval.index)
+    fdr = pd.Series(multipletests(pval,method = "fdr_bh")[1], index = pval.index)
 
-summary.loc["u-value"] = uval
-summary.loc["p-value"] = pval
-summary.loc["FDR"] = fdr
+    summary.loc["u-value"] = uval
+    summary.loc["p-value"] = pval
+    summary.loc["FDR"] = fdr
 
 summary.to_csv("summary.csv")
 
