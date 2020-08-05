@@ -100,7 +100,6 @@ for index, item in df.iterrows():
         else:
             print("Layout Error")
         
-        input_list = [fastq1,fastq2]
 
     else:
         dir = item["SRR"]
@@ -111,8 +110,10 @@ for index, item in df.iterrows():
         if item["Layout"] == "PE":
             fastq1 = sample_index + "_1.fastq"
             fastq2 = sample_index + "_2.fastq"
+            input_list = [fastq1,fastq2]
         elif item["Layout"] == "SE":
             fastq = sample_index + ".fastq"
+            input_list = [fastq]
         else:
             print("Layout Error")
 
@@ -144,7 +145,6 @@ for index, item in df.iterrows():
     else:
         print("Layout Error")
 
-        input_list = [fastq]
     
     # run
     if args.fastq == False:
@@ -180,7 +180,7 @@ for index, item in df.iterrows():
             for i in input_list:
                 pigz_cmd = " ".join(["pigz",i])
                 print(pigz_cmd, "\n")
-                p_pigz = subprocess.Popen(pigz_cmd,shell = True)
+                p_pigz = subprocess.Popen(pigz_cmd, shell = True)
                 p_pigz.wait()
         except:
             print("Compression Error")
