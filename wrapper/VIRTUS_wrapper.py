@@ -64,8 +64,8 @@ for index, item in df.iterrows():
         elif item["Layout"] == "SE":
             fastq = sample_index + ".sra.fastq"
     else:
-        dir = os.path.dirname(item["SRR"])
-        sample_index = os.path.basename(item["SRR"])
+        dir = os.path.dirname(item["fastq"])
+        sample_index = os.path.basename(item["fastq"])
         if item["Layout"] == "PE":
             fastq1 = sample_index + args.Suffix_PE_1
             fastq2 = sample_index + args.Suffix_PE_2
@@ -113,6 +113,12 @@ for index, item in df.iterrows():
         try:
             p_fasterq = subprocess.Popen(fasterq_cmd, shell = True)
             p_fasterq.wait()
+            if item["Layout"] == "PE":
+                os.rename(sample_index + ".sra_1.fastq", fastq1)
+                os.rename(sample_index + ".sra_2.fastq", fastq2)
+            elif item["Layout"] == "SE":
+                os.rename(sample_index + ".sra_1.fastq", fastq)
+                
         except:
             print("fasterq error")
     else:
