@@ -62,7 +62,7 @@ for index, item in df.iterrows():
             fastq1 = sample_index + "_1.fastq"
             fastq2 = sample_index + "_2.fastq"
         elif item["Layout"] == "SE":
-            fastq = sample_index + "_1.fastq"
+            fastq = sample_index + ".fastq"
     else:
         dir = os.path.dirname(item["SRR"])
         sample_index = os.path.basename(item["SRR"])
