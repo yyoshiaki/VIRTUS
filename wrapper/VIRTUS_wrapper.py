@@ -119,7 +119,9 @@ for index, item in df.iterrows():
 
     if item["Layout"] =="PE":
         VIRTUS_cmd = " ".join([
-            "cwltool --tmpdir-prefix tmp/",
+            "cwltool",
+            "--tmpdir-prefix tmp/",
+            "--tmp-outdir-prefix tmp/",
             os.path.join(dir_VIRTUS, "VIRTUS.PE.cwl"), 
             "--fastq1", fastq1,
             "--fastq2", fastq2, 
@@ -132,7 +134,9 @@ for index, item in df.iterrows():
         ])
     elif item["Layout"] =="SE":
         VIRTUS_cmd = " ".join([
-            "cwltool --tmpdir-prefix tmp/",
+            "cwltool",
+            "--tmpdir-prefix tmp/",
+            "--tmp-outdir-prefix tmp/",
             os.path.join(dir_VIRTUS, "VIRTUS.SE.cwl"), 
             "--fastq", fastq,
             "--genomeDir_human", args.genomeDir_human, 
@@ -178,7 +182,7 @@ for index, item in df.iterrows():
     if args.fastq == False:
         try:
             for i in input_list:
-                pigz_cmd = " ".join(["pigz",i])
+                pigz_cmd = " ".join(["pigz", i])
                 print(pigz_cmd, "\n")
                 p_pigz = subprocess.Popen(pigz_cmd, shell = True)
                 p_pigz.wait()
