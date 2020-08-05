@@ -166,11 +166,11 @@ if summary["Group"].nunique() == 2:
             uval[summary.columns[i]] = u
             pval[summary.columns[i]] = p
 
-fdr = pd.Series(multipletests(pval,method = "fdr_bh")[1], index = pval.index)
+    fdr = pd.Series(multipletests(pval,method = "fdr_bh")[1], index = pval.index)
 
-summary.loc["u-value"] = uval
-summary.loc["p-value"] = pval
-summary.loc["FDR"] = fdr
+    summary.loc["u-value"] = uval
+    summary.loc["p-value"] = pval
+    summary.loc["FDR"] = fdr
 
 summary.to_csv("summary.csv")
 
