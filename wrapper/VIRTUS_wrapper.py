@@ -175,14 +175,15 @@ for index, item in df.iterrows():
     except:
         print("VIRTUS error")
 
-    try:
-        for i in input_list:
-            pigz_cmd = " ".join(["pigz",i])
-            print(pigz_cmd, "\n")
-            p_pigz = subprocess.Popen(pigz_cmd,shell = True)
-            p_pigz.wait()
-    except:
-        print("Compression Error")
+    if args.fastq == False:
+        try:
+            for i in input_list:
+                pigz_cmd = " ".join(["pigz",i])
+                print(pigz_cmd, "\n")
+                p_pigz = subprocess.Popen(pigz_cmd,shell = True)
+                p_pigz.wait()
+        except:
+            print("Compression Error")
 
     print(clean_cmd,"\n")
     try:
