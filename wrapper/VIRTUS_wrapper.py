@@ -26,6 +26,7 @@ parser.add_argument('--salmon_index_human', required = True)
 parser.add_argument('--salmon_quantdir_human', default = 'salmon_human')
 parser.add_argument('--outFileNamePrefix_human', default = 'human')
 parser.add_argument('--nthreads', default = '16')
+parser.add_argument('--hit_cutoff', default = '400')
 parser.add_argument('-s', '--Suffix_SE')
 parser.add_argument('-s1', '--Suffix_PE_1')
 parser.add_argument('-s2', '--Suffix_PE_2')
@@ -119,7 +120,9 @@ for index, item in df.iterrows():
 
     if item["Layout"] =="PE":
         VIRTUS_cmd = " ".join([
-            "cwltool --tmpdir-prefix tmp/",
+            "cwltool",
+            "--tmpdir-prefix tmp/",
+            "--tmp-outdir-prefix tmp/",
             os.path.join(dir_VIRTUS, "VIRTUS.PE.cwl"), 
             "--fastq1", fastq1,
             "--fastq2", fastq2, 
@@ -128,11 +131,14 @@ for index, item in df.iterrows():
             "--salmon_index_human", args.salmon_index_human,
             "--salmon_quantdir_human", args.salmon_quantdir_human,
             "--outFileNamePrefix_human", args.outFileNamePrefix_human,
-            "--nthreads", args.nthreads
+            "--nthreads", args.nthreads,
+            "--hit_cutoff", args.hit_cutoff
         ])
     elif item["Layout"] =="SE":
         VIRTUS_cmd = " ".join([
-            "cwltool --tmpdir-prefix tmp/",
+            "cwltool",
+            "--tmpdir-prefix tmp/",
+            "--tmp-outdir-prefix tmp/",
             os.path.join(dir_VIRTUS, "VIRTUS.SE.cwl"), 
             "--fastq", fastq,
             "--genomeDir_human", args.genomeDir_human, 
@@ -140,7 +146,8 @@ for index, item in df.iterrows():
             "--salmon_index_human", args.salmon_index_human,
             "--salmon_quantdir_human", args.salmon_quantdir_human,
             "--outFileNamePrefix_human", args.outFileNamePrefix_human,
-            "--nthreads", args.nthreads
+            "--nthreads", args.nthreads,
+            "--hit_cutoff", args.hit_cutoff
         ])
     else:
         print("Layout Error")
@@ -178,7 +185,7 @@ for index, item in df.iterrows():
     if args.fastq == False:
         try:
             for i in input_list:
-                pigz_cmd = " ".join(["pigz",i])
+                pigz_cmd = " ".join(["pigz", i])
                 print(pigz_cmd, "\n")
                 p_pigz = subprocess.Popen(pigz_cmd, shell = True)
                 p_pigz.wait()
