@@ -372,18 +372,19 @@ Please install Python libraries below using `pip install` beforehand. anaconda m
 
 - If you want to use your own fastq, add `---fastq` option. This wrapper supports only `.fastq` and `.fastq.gz`.
 
-- fastq file specifies path excluding `.fastq.gz` or `_1.fastq.gz` and `_2.fastq.gz`. For example, `hoge/SRR1234567.fastq.gz` is described as `hoge/SRR1234567`.
+- fastq file specifies path excluding `.fastq`/`.fastq.gz`/`.fq`/`.fq.gz` or `_1.fastq`/`_1.fastq.gz`/`_1.fq`/`_1.fq.gz` and `_2.fastq`/`_2.fastq.gz`/`_2.fq`/`_2.fq.gz`. For example, `hoge/SRR1234567.fastq.gz` is described as `hoge/SRR1234567`.
 
-- If suffix is not `.fastq.gz` or `_1.fastq.gz` and `_2.fastq.gz`, add `-s` or `-s1` and `-s2` options.
+- If suffix is not default, add `-s` or `-s1` and `-s2` options.
 
 ```
-usage: VIRTUS_wrapper.py [-h] --VIRTUSDir VIRTUSDIR --genomeDir_human
+usage: VIRTUS_wrapper.py [-h] [--VIRTUSDir VIRTUSDIR] --genomeDir_human
                          GENOMEDIR_HUMAN --genomeDir_virus GENOMEDIR_VIRUS
                          --salmon_index_human SALMON_INDEX_HUMAN
                          [--salmon_quantdir_human SALMON_QUANTDIR_HUMAN]
                          [--outFileNamePrefix_human OUTFILENAMEPREFIX_HUMAN]
-                         [--nthreads NTHREADS] [-s SUFFIX_SE]
-                         [-s1 SUFFIX_PE_1] [-s2 SUFFIX_PE_2] [--fastq]
+                         [--nthreads NTHREADS] [--hit_cutoff HIT_CUTOFF]
+                         [-s SUFFIX_SE] [-s1 SUFFIX_PE_1] [-s2 SUFFIX_PE_2]
+                         [--fastq]
                          input_path
 
 positional arguments:
@@ -398,6 +399,7 @@ optional arguments:
   --salmon_quantdir_human SALMON_QUANTDIR_HUMAN
   --outFileNamePrefix_human OUTFILENAMEPREFIX_HUMAN
   --nthreads NTHREADS
+  --hit_cutoff HIT_CUTOFF
   -s SUFFIX_SE, --Suffix_SE SUFFIX_SE
   -s1 SUFFIX_PE_1, --Suffix_PE_1 SUFFIX_PE_1
   -s2 SUFFIX_PE_2, --Suffix_PE_2 SUFFIX_PE_2
@@ -406,7 +408,7 @@ optional arguments:
 example
 ```
 ./VIRTUS_wrapper.py input.csv \
-    --VIRTUS ../VIRTUS \
+    --VIRTUSDir ../VIRTUS \
     --genomeDir_human ../VIRTUS/index/STAR_index_human \
     --genomeDir_virus ../VIRTUS/index/STAR_index_virus \
     --salmon_index_human ../VIRTUS/index/salmon_index_human
