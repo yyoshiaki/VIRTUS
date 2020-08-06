@@ -101,7 +101,6 @@ for index, item in df.iterrows():
         sample_index = item["SRR"]
         prefetch_cmd = " ".join(["prefetch",sample_index])
         fasterq_cmd = " ".join(["fasterq-dump", "--split-files", sample_index + ".sra", "-e","16"])
-
         if item["Layout"] == "PE":
             fastq1 = sample_index + "_1.fastq"
             fastq2 = sample_index + "_2.fastq"
