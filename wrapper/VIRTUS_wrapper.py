@@ -26,6 +26,7 @@ parser.add_argument('--salmon_index_human', required = True)
 parser.add_argument('--salmon_quantdir_human', default = 'salmon_human')
 parser.add_argument('--outFileNamePrefix_human', default = 'human')
 parser.add_argument('--nthreads', default = '16')
+parser.add_argument('--hit_cutoff', default = '400')
 parser.add_argument('-s', '--Suffix_SE')
 parser.add_argument('-s1', '--Suffix_PE_1')
 parser.add_argument('-s2', '--Suffix_PE_2')
@@ -35,6 +36,7 @@ args = parser.parse_args()
 
 # %%
 df = pd.read_csv(args.input_path)
+df.columns = ["Name", "SRR", "Layout", "Group"] + list(df.columns[4:])
 first_dir = os.getcwd()
 
 print(args.VIRTUSDir)
@@ -55,13 +57,11 @@ clean_cmd = "rm -rf tmp"
 for index, item in df.iterrows():
     # parameter setting
     if args.fastq == True:
-        dir = os.path.dirname(item["fastq"])
-        sample_index = os.path.basename(item["fastq"])
+        dir = os.path.dirname(item["SRR"])
+        sample_index = os.path.basename(item["SRR"])
         os.chdir(dir)
-
         p_temp = pathlib.Path(".")
         files = [str(i) for i in list(p_temp.iterdir()) if i.is_file()]
-
         if item["Layout"] == "PE":
             if args.Suffix_PE_1 == None:
                 pattern_1 = "^" + sample_index + "_1((\.fq\.gz)|(\.fq)|(\.fastq)|(\.fastq\.gz))$"
@@ -73,7 +73,6 @@ for index, item in df.iterrows():
                     print("fastq_1 not found")
             else:
                 fastq1 = sample_index + args.Suffix_PE_1
-
             if args.Suffix_PE_2 == None:
                 pattern_2 = "^" + sample_index + "_2((\.fq\.gz)|(\.fq)|(\.fastq)|(\.fastq\.gz))$"
                 matched_files_2 = sorted([i for i in files if re.match(pattern_2,i)])
@@ -84,7 +83,6 @@ for index, item in df.iterrows():
                     print("fastq_2 not found")
             else:
                 fastq2 = sample_index + args.Suffix_PE_2
-        
         elif item["Layout"] == "SE":
             if args.Suffix_SE == None:
                 pattern = "^" + sample_index + "((\.fq\.gz)|(\.fq)|(\.fastq)|(\.fastq\.gz))$"
@@ -96,17 +94,13 @@ for index, item in df.iterrows():
                     print("fastq not found")
             else:
                 fastq = sample_index + args.Suffix_SE
-        
         else:
             print("Layout Error")
-        
-
     else:
         dir = item["SRR"]
         sample_index = item["SRR"]
         prefetch_cmd = " ".join(["prefetch",sample_index])
         fasterq_cmd = " ".join(["fasterq-dump", "--split-files", sample_index + ".sra", "-e","16"])
-
         if item["Layout"] == "PE":
             fastq1 = sample_index + "_1.fastq"
             fastq2 = sample_index + "_2.fastq"
@@ -119,7 +113,9 @@ for index, item in df.iterrows():
 
     if item["Layout"] =="PE":
         VIRTUS_cmd = " ".join([
-            "cwltool --tmpdir-prefix tmp/",
+            "cwltool",
+            "--tmpdir-prefix tmp/",
+            "--tmp-outdir-prefix tmp/",
             os.path.join(dir_VIRTUS, "VIRTUS.PE.cwl"), 
             "--fastq1", fastq1,
             "--fastq2", fastq2, 
@@ -128,11 +124,14 @@ for index, item in df.iterrows():
             "--salmon_index_human", args.salmon_index_human,
             "--salmon_quantdir_human", args.salmon_quantdir_human,
             "--outFileNamePrefix_human", args.outFileNamePrefix_human,
-            "--nthreads", args.nthreads
+            "--nthreads", args.nthreads,
+            "--hit_cutoff", args.hit_cutoff
         ])
     elif item["Layout"] =="SE":
         VIRTUS_cmd = " ".join([
-            "cwltool --tmpdir-prefix tmp/",
+            "cwltool",
+            "--tmpdir-prefix tmp/",
+            "--tmp-outdir-prefix tmp/",
             os.path.join(dir_VIRTUS, "VIRTUS.SE.cwl"), 
             "--fastq", fastq,
             "--genomeDir_human", args.genomeDir_human, 
@@ -140,12 +139,12 @@ for index, item in df.iterrows():
             "--salmon_index_human", args.salmon_index_human,
             "--salmon_quantdir_human", args.salmon_quantdir_human,
             "--outFileNamePrefix_human", args.outFileNamePrefix_human,
-            "--nthreads", args.nthreads
+            "--nthreads", args.nthreads,
+            "--hit_cutoff", args.hit_cutoff
         ])
     else:
         print("Layout Error")
 
-    
     # run
     if args.fastq == False:
         print(prefetch_cmd,"\n")
@@ -178,7 +177,7 @@ for index, item in df.iterrows():
     if args.fastq == False:
         try:
             for i in input_list:
-                pigz_cmd = " ".join(["pigz",i])
+                pigz_cmd = " ".join(["pigz", i])
                 print(pigz_cmd, "\n")
                 p_pigz = subprocess.Popen(pigz_cmd, shell = True)
                 p_pigz.wait()
