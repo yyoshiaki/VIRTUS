@@ -210,8 +210,8 @@ Group = summary["Group"].unique()
 for i in Group:
     summary_dict[i] = summary[summary["Group"] == i]
 
-uval = pd.Series()
-pval = pd.Series()
+uval = pd.Series(dtype = "float64")
+pval = pd.Series(dtype = "float64")
 
 if summary["Group"].nunique() == 2:
     print("Conducting Mann-Whitney U-test")
