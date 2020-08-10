@@ -18,7 +18,8 @@ Yoshiaki Yasumizu, Atsushi Hara, Shimon Sakaguchi, Naganari Ohkura. *bioRxiv* 20
 
 ## Acknowledgement
 
-[Kozo Nishida](https://github.com/kozo2) : CI config and many other supports.
+- [Kozo Nishida](https://github.com/kozo2) : CI config and many other supports.
+- Ayano Onishi : Logo design.
 
 ## Licence
 
