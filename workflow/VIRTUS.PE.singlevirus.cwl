@@ -5,7 +5,7 @@ cwlVersion: v1.0
 id: VIRTUS.PE.singlevirus
 doc: >-
   STAR mapping and salmon quantification for one specified virus. Prepare using
-  create_singlevirus.cwl beforehand. version 0.11
+  create_singlevirus.cwl beforehand. version 1.0
 label: VIRTUS.PE.singlevirus
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'

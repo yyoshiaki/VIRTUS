@@ -166,9 +166,6 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: 'quay.io/biocontainers/star:2.7.1a--0'
-$schemas:
-  - 'https://schema.org/docs/schema_org_rdfa.html'
-  - 'http://edamontology.org/EDAM_1.18.owl'
 's:author':
   - class: 's:Person'
     's:email': 'mailto:inutano@gmail.com'

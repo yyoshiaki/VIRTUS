@@ -1,0 +1,14 @@
+23161329 *
+  10338 NC_001672.1_Tick-borne_encephalitis_virus,_complete_genome
+   5834 NC_001716.2_Human_herpesvirus_7,_complete_genome
+   6058 NC_002645.1_Human_coronavirus_229E,_complete_genome
+    486 NC_003977.1_Hepatitis_B_virus,_complete_genome
+  96094 NC_004102.1_Hepatitis_C_virus_genotype_1,_complete_genome
+ 166108 NC_007605.1_Human_herpesvirus_4_complete_wild_type_genome
+  33204 NC_009334.1_Human_herpesvirus_4,_complete_genome
+ 154866 NC_009823.1_Hepatitis_C_virus_genotype_2,_complete_genome
+   3116 NC_009827.1_Hepatitis_C_virus_genotype_6,_complete_genome
+   3854 NC_015521.1_Cutthroat_trout_virus,_complete_genome
+  37938 NC_018382.1_Bat_hepevirus,_complete_genome
+   2004 NC_022518.1_Human_endogenous_retrovirus_K113_complete_genome
+   1076 gi|12084981|lcl|HPV71REF.1|_Human_papillomavirus_71_(HPV71),_complete_genome

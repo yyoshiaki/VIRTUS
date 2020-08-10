@@ -1,8 +1,9 @@
 input_STARLog:
   class: File
   path: >-
-    /Users/yasumizuyoshiaki/bioinformatics/EB_Virtect/donor1_day1/virusLog.final.out
+    /home/yyasumizu/Programs/VIRTUS/tool/mk_summary_virus_count/humanLog.final.out
 input_virus_count:
   class: File
   path: >-
-    /Users/yasumizuyoshiaki/bioinformatics/EB_Virtect/donor1_day1/virus_counts.txt
+    /home/yyasumizu/Programs/VIRTUS/tool/mk_summary_virus_count/virus_counts.txt
+input_layout: PE
