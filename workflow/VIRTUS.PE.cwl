@@ -3,7 +3,7 @@
 class: Workflow
 cwlVersion: v1.0
 id: VIRTUS.PE
-doc: VIRTUS v0.11
+doc: VIRTUS v1.0
 label: VIRTUS.PE
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
@@ -292,6 +292,8 @@ steps:
         source: star_mapping_pe_human/mappingstats
       - id: input_virus_count
         source: mk_virus_count/virus_count
+      - id: input_layout
+        default: PE
     out:
       - id: output
     run: ../tool/mk_summary_virus_count/mk_summary_virus_count.cwl
