@@ -15,6 +15,10 @@ inputs:
     type: File
     inputBinding:
       position: 2
+  - id: input_layout
+    type: string
+    inputBinding:
+      position: 4
 outputs:
   - id: output
     type: File?
@@ -23,4 +27,4 @@ outputs:
 label: mk_summary_virus_count
 requirements:
   - class: DockerRequirement
-    dockerPull: yyasumizu/mk_summary_virus_count
+    dockerPull: yyasumizu/mk_summary_virus_count:latest
