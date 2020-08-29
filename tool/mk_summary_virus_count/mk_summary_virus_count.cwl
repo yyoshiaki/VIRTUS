@@ -27,4 +27,4 @@ outputs:
 label: mk_summary_virus_count
 requirements:
   - class: DockerRequirement
-    dockerPull: yyasumizu/mk_summary_virus_count:latest
+    dockerPull: yyasumizu/mk_summary_virus_count:1.0
