@@ -27,66 +27,24 @@ inputs:
     'sbg:x': 726.1741333007812
     'sbg:y': -559.9502563476562
 outputs:
-  - id: output_unmapped
-    outputSource:
-      - samtools_view/output
-    type: File
-    'sbg:x': 412
-    'sbg:y': 218
-  - id: output_fq2
-    outputSource:
-      - bedtools_bamtofastq_pe/output_fq2
-    type: File?
-    'sbg:x': 549.3675537109375
-    'sbg:y': -334.5509948730469
-  - id: output_fq1
-    outputSource:
-      - bedtools_bamtofastq_pe/output_fq1
-    type: File
-    'sbg:x': 562.6327514648438
-    'sbg:y': -168
-  - id: SJ.out.tab_virus
-    outputSource:
-      - star_mapping_pe_virus/SJ.out.tab
-    type: File?
-    'sbg:x': 954.8983154296875
-    'sbg:y': -110.67289733886719
-  - id: Log.progress.out_virus
-    outputSource:
-      - star_mapping_pe_virus/Log.progress.out
-    type: File?
-    'sbg:x': 959.8370361328125
-    'sbg:y': 193.0820770263672
-  - id: Log.out_virus
-    outputSource:
-      - star_mapping_pe_virus/Log.out
-    type: File?
-    'sbg:x': 960.4492797851562
-    'sbg:y': 331.1433410644531
   - id: aligned_virus
     outputSource:
       - star_mapping_pe_virus/aligned
     type: File
     'sbg:x': 862.1668090820312
     'sbg:y': 348.64471435546875
-  - id: mappingstats_virus
-    outputSource:
-      - star_mapping_pe_virus/mappingstats
-    type: File?
-    'sbg:x': 956.122802734375
-    'sbg:y': 39.143333435058594
-  - id: output
-    outputSource:
-      - mk_summary_virus_count/output
-    type: File?
-    'sbg:x': 1280.2369384765625
-    'sbg:y': -573.7061767578125
   - id: output_1
     outputSource:
       - bam_filter_polyx/output
     type: File?
     'sbg:x': 967.21630859375
     'sbg:y': 668.790283203125
+  - id: out
+    outputSource:
+      - mv/out
+    type: File
+    'sbg:x': 1450.875
+    'sbg:y': -569.5
 steps:
   - id: samtools_view
     in:
@@ -184,6 +142,18 @@ steps:
     label: bam_filter_polyX
     'sbg:x': 825.17626953125
     'sbg:y': 513.4646606445312
+  - id: mv
+    in:
+      - id: infile
+        source: mk_summary_virus_count/output
+      - id: outfile
+        default: virus.smv.tsv
+    out:
+      - id: out
+    run: ../tool/mv/mv.cwl
+    label: mv
+    'sbg:x': 1279
+    'sbg:y': -569
 requirements: []
 'sbg:license': CC BY-NC 4.0
 'sbg:toolAuthor': Yoshiaki Yasumizu
