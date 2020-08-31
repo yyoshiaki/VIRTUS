@@ -25,8 +25,10 @@ cwltool --rm-tmpdir ../workflow/createindex_singlevirus.cwl ../workflow/createin
 
 cd ERR3240275
 if [[ ! -e ./ERR3240275_1.fastq.gz ]]; then
- fasterq-dump -e 8 ERR3240275 -p
- pigz ERR3240275_*.fastq
+#  fasterq-dump -e 8 ERR3240275 -p
+#  pigz ERR3240275_*.fastq
+  wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR324/005/ERR3240275/ERR3240275_1.fastq.gz
+  wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR324/005/ERR3240275/ERR3240275_2.fastq.gz
 fi
 cwltool --rm-tmpdir ../../workflow/VIRTUS.PE.cwl ../../workflow/VIRTUS.PE.job.yaml
 cwltool --rm-tmpdir ../../workflow/VIRTUS.PE.singlevirus.cwl ../../workflow/VIRTUS.PE.singlevirus.job.yaml
@@ -36,8 +38,10 @@ cwltool --rm-tmpdir ../workflow/createindex_singlevirus.cwl ../workflow/createin
 
 cd SRR8315715
 if [[ ! -e ./SRR8315715_1.fastq.gz ]]; then
- fasterq-dump -e 8 SRR8315715 -p
- pigz SRR8315715_*.fastq
+#  fasterq-dump -e 8 SRR8315715 -p
+#  pigz SRR8315715_*.fastq
+  wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR831/005/SRR8315715/SRR8315715_1.fastq.gz
+  wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR831/005/SRR8315715/SRR8315715_2.fastq.gz
 fi
 cwltool --rm-tmpdir ../../workflow/VIRTUS.SE.cwl ../../workflow/VIRTUS.SE.job.yaml
 cwltool --rm-tmpdir ../../workflow/VIRTUS.SE.singlevirus.cwl ../../workflow/VIRTUS.SE.singlevirus.job.yaml

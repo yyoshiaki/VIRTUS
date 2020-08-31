@@ -1,0 +1,11 @@
+bam:
+  class: File
+  path: /Users/yyasumizu/bioinformatics/practice/smv/human.unmapped.bam
+genomeDir_virus:
+  class: Directory
+  path: /Users/yyasumizu/bioinformatics/practice/smv/STAR_index_virus
+hit_cutoff: 0
+input_STARLog:
+  class: File
+  path: /Users/yyasumizu/bioinformatics/practice/smv/virusLog.final.out
+nthreads: 8
