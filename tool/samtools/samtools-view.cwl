@@ -4,46 +4,38 @@ $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 id: samtools_view
 baseCommand:
-  - samtools
-  - view
+  - samtools_view_removemulti.sh
 inputs:
   - id: threads
     type: int?
+    default: 4
     inputBinding:
       position: 0
-      prefix: '-@'
-      shellQuote: false
-  - 'sbg:altPrefix': '-b'
-    id: b
-    type: boolean?
-    inputBinding:
-      position: 2
-      prefix: '-b'
+      prefix: ''
       shellQuote: false
   - id: f
     type: int?
+    default: 4
     inputBinding:
-      position: 4
-      prefix: '-f'
+      position: 3
+      prefix: ''
       shellQuote: false
   - id: prefix
+    default: human
     type: string?
     label: prefix
   - id: bam
     type: File
     inputBinding:
-      position: 10
+      position: 5
       shellQuote: false
 outputs:
   - id: output
     type: stdout
 label: samtools-view
-arguments:
-  - position: 0
-    prefix: ''
 requirements:
   - class: ShellCommandRequirement
   - class: DockerRequirement
-    dockerPull: 'quay.io/biocontainers/samtools:1.2-0'
+    dockerPull: 'yyasumizu/bam_filter_polyx:1.1'
   - class: InlineJavascriptRequirement
 stdout: $(inputs.prefix).unmapped.bam
