@@ -1,12 +1,12 @@
 #!/usr/bin/env cwltool
 
 class: Workflow
-cwlVersion: v1.0
-id: VIRTUS.PE.singlevirus
+cwlVersion: v1.1
+id: VIRTUS.SE.singlevirus
 doc: >-
   STAR mapping and salmon quantification for one specified virus. Prepare using
   create_singlevirus.cwl beforehand. VIRTUS version 1.0
-label: VIRTUS.PE.singlevirus
+label: VIRTUS.SE.singlevirus
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 inputs:
