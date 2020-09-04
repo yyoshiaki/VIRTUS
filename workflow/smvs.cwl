@@ -27,54 +27,24 @@ inputs:
     'sbg:x': 876.682861328125
     'sbg:y': -559.8308715820312
 outputs:
-  - id: output_unmapped
-    outputSource:
-      - samtools_view/output
-    type: File
-    'sbg:x': 412
-    'sbg:y': 218
-  - id: output
-    outputSource:
-      - mk_summary_virus_count/output
-    type: File?
-    'sbg:x': 1280.2369384765625
-    'sbg:y': -573.7061767578125
-  - id: output_fq
-    outputSource:
-      - bedtools_bamtofastq_se/output_fq
-    type: File
-    'sbg:x': 605.4130859375
-    'sbg:y': -62.6005744934082
-  - id: SJ.out.tab_virus
-    outputSource:
-      - star_mapping_se_virus/SJ.out.tab
-    type: File?
-    'sbg:x': 848.7875366210938
-    'sbg:y': -104.10987854003906
-  - id: mappingstats_virus
-    outputSource:
-      - star_mapping_se_virus/mappingstats
-    type: File?
-    'sbg:x': 889.2903442382812
-    'sbg:y': 25.706695556640625
-  - id: Log.out_virus
-    outputSource:
-      - star_mapping_se_virus/Log.out
-    type: File?
-    'sbg:x': 916.2921752929688
-    'sbg:y': 166.94712829589844
   - id: aligned_bam_virus
     outputSource:
       - star_mapping_se_virus/aligned
     type: File
-    'sbg:x': 844.6334228515625
-    'sbg:y': 646.7491455078125
+    'sbg:x': 950
+    'sbg:y': 666
   - id: aligned_bam_virus_filtered
     outputSource:
       - bam_filter_polyx/output
     type: File?
     'sbg:x': 949.710693359375
     'sbg:y': 282.77105712890625
+  - id: out
+    outputSource:
+      - mv/out
+    type: File
+    'sbg:x': 1457
+    'sbg:y': -580
 steps:
   - id: samtools_view
     in:
@@ -167,6 +137,18 @@ steps:
     label: bam_filter_polyX
     'sbg:x': 847.6024780273438
     'sbg:y': 366.4100036621094
+  - id: mv
+    in:
+      - id: infile
+        source: mk_summary_virus_count/output
+      - id: outfile
+        default: virus.smv.tsv
+    out:
+      - id: out
+    run: ../tool/mv/mv.cwl
+    label: mv
+    'sbg:x': 1288
+    'sbg:y': -578
 requirements: []
 'sbg:license': CC BY-NC 4.0
 'sbg:links':

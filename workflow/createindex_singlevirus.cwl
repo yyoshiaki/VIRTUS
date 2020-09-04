@@ -4,7 +4,7 @@ class: Workflow
 cwlVersion: v1.0
 id: createindex_singlevirus
 label: createindex_singlevirus
-doc: VIRTUS v1.0
+doc: VIRTUS v1.1
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 inputs:
