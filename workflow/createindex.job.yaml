@@ -10,4 +10,4 @@ url_genomefasta_human: >-
 url_transcript_human: >-
   ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_33/gencode.v33.transcripts.fa.gz
 url_virus: >-
-  https://raw.githubusercontent.com/yyoshiaki/VIRTUS/master/data/viruses_763.fasta
+  https://raw.githubusercontent.com/yyoshiaki/VIRTUS/master/data/viruses.fasta
