@@ -1,7 +1,9 @@
+ #!/usr/bin/env cwltool
+
 class: Workflow
 cwlVersion: v1.0
-id: _v_i_r_t_u_s__s_e
-doc: VIRTUS v1.1
+id: VIRTUS.SE
+doc: VIRTUS v1.2
 label: VIRTUS.SE
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
