@@ -1,8 +1,6 @@
-#!/usr/bin/env cwltool
-
 class: Workflow
 cwlVersion: v1.0
-id: VIRTUS.PE
+id: _v_i_r_t_u_s__p_e
 doc: VIRTUS v1.1
 label: VIRTUS.PE
 $namespaces:
@@ -73,14 +71,14 @@ outputs:
     outputSource:
       - samtools_view/output
     type: File
-    'sbg:x': 412
+    'sbg:x': 364.70672607421875
     'sbg:y': 218
   - id: output_fq2
     outputSource:
       - bedtools_bamtofastq_pe/output_fq2
     type: File?
-    'sbg:x': 549.3675537109375
-    'sbg:y': -334.5509948730469
+    'sbg:x': 558.2530517578125
+    'sbg:y': -337.0843505859375
   - id: output_fq1
     outputSource:
       - bedtools_bamtofastq_pe/output_fq1
@@ -192,8 +190,6 @@ steps:
     in:
       - id: threads
         source: nthreads
-      - id: b
-        default: true
       - id: f
         default: 4
       - id: prefix
@@ -219,14 +215,14 @@ steps:
       - id: output_fq2
     run: ../tool/bedtools/bedtools-bamtofastq-pe.cwl
     label: bedtools-bamtofastq-pe
-    'sbg:x': 406.1430358886719
-    'sbg:y': 28.673505783081055
+    'sbg:x': 359.7348327636719
+    'sbg:y': 25.943771362304688
   - id: star_mapping_pe_virus
     in:
       - id: fq1
-        source: bedtools_bamtofastq_pe/output_fq1
+        source: kz_filter_fq1/output
       - id: fq2
-        source: bedtools_bamtofastq_pe/output_fq2
+        source: kz_filter_fq2/output
       - id: genomeDir
         source: genomeDir_virus
       - id: nthreads
@@ -247,8 +243,8 @@ steps:
       - id: unmapped
     run: ../tool/star/star_mapping-pe/star_mapping-pe.cwl
     label: 'STAR mapping: running mapping jobs.'
-    'sbg:x': 681.9188232421875
-    'sbg:y': 132.9390411376953
+    'sbg:x': 753.9961547851562
+    'sbg:y': 133.0281219482422
   - id: mk_virus_count
     in:
       - id: virus_bam
@@ -310,6 +306,36 @@ steps:
     label: bam_filter_polyX
     'sbg:x': 825.17626953125
     'sbg:y': 513.4646606445312
-requirements: []
+  - id: kz_filter_fq2
+    in:
+      - id: threshold
+        default: 0.05
+      - id: input_fq
+        source: bedtools_bamtofastq_pe/output_fq2
+      - id: output_fq
+        default: kz_2.fq
+    out:
+      - id: output
+    run: ../tool/kz_filter/kz_filter.cwl
+    label: kz-filter_fq2
+    'sbg:x': 538.3936157226562
+    'sbg:y': 10.746968269348145
+  - id: kz_filter_fq1
+    in:
+      - id: threshold
+        default: 0.05
+      - id: input_fq
+        source: bedtools_bamtofastq_pe/output_fq1
+      - id: output_fq
+        default: kz_1.fq
+    out:
+      - id: output
+    run: ../tool/kz_filter/kz_filter.cwl
+    label: kz-filter_fq1
+    'sbg:x': 546.4216918945312
+    'sbg:y': 151.69073486328125
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: StepInputExpressionRequirement
 'sbg:license': CC BY-NC 4.0
 'sbg:toolAuthor': Yoshiaki Yasumizu
