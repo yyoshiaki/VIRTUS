@@ -1,4 +1,4 @@
- #!/usr/bin/env cwltool
+#!/usr/bin/env cwltool
 
 class: Workflow
 cwlVersion: v1.0
