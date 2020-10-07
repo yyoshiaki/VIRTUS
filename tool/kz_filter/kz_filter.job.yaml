@@ -1,0 +1,6 @@
+input_fq:
+  class: File
+  path: >-
+    /home/yyasumizu/media32TB/bioinformatics/practice/VIRTUS/test/ERR3240275/unmapped_1.fq
+output_fq: unmapped_kz0.1.fq
+threshold: 0.1

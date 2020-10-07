@@ -46,3 +46,5 @@ fi
 cwltool --rm-tmpdir ../../workflow/VIRTUS.SE.cwl ../../workflow/VIRTUS.SE.job.yaml
 cwltool --rm-tmpdir ../../workflow/VIRTUS.SE.singlevirus.cwl ../../workflow/VIRTUS.SE.singlevirus.job.yaml
 cd ..
+
+echo Successfully completed test.sh!
