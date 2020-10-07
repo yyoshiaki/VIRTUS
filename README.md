@@ -16,7 +16,7 @@ Yoshiaki Yasumizu ([yyasumizu@ifrec.osaka-u.ac.jp](yyasumizu@ifrec.osaka-u.ac.jp
 ## Citation
 
 VIRTUS: a pipeline for comprehensive virus analysis from conventional RNA-seq data
-Yoshiaki Yasumizu, Atsushi Hara, Shimon Sakaguchi, Naganari Ohkura. *bioRxiv* 2020.05.08.085308; doi: https://doi.org/10.1101/2020.05.08.085308
+Yasumizu, Yoshiaki, Atsushi Hara, Shimon Sakaguchi, and Naganari Ohkura. 2020. “OUP Accepted Manuscript.” Edited by Jan Gorodkin. *Bioinformatics*, October. https://doi.org/10.1093/bioinformatics/btaa859.
 
 ## Acknowledgement
 
