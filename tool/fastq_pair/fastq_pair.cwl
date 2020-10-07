@@ -28,3 +28,9 @@ requirements:
   - class: DockerRequirement
     dockerPull: 'quay.io/biocontainers/fastq-pair:1.0--he1b5a44_1'
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fq1)
+        writable: true
+      - entry: $(inputs.fq2)
+        writable: true

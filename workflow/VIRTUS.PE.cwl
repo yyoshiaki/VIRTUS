@@ -10,12 +10,12 @@ $namespaces:
 inputs:
   - id: fastq2
     type: File
-    'sbg:x': -532.9534301757812
-    'sbg:y': -424.9623107910156
+    'sbg:x': -446.9178771972656
+    'sbg:y': -426.26885986328125
   - id: fastq1
     type: File
-    'sbg:x': -534.9113159179688
-    'sbg:y': -269
+    'sbg:x': -445.51458740234375
+    'sbg:y': -274.6721496582031
   - id: genomeDir_human
     type: Directory
     'sbg:x': -305
@@ -26,8 +26,8 @@ inputs:
     'sbg:y': -750
   - id: nthreads
     type: int?
-    'sbg:x': -366.3414611816406
-    'sbg:y': 303.09088134765625
+    'sbg:x': -386.4197082519531
+    'sbg:y': 242.87530517578125
   - id: genomeDir_virus
     type: Directory
     'sbg:x': 417.4296875
@@ -67,14 +67,14 @@ outputs:
     outputSource:
       - star_mapping_pe_human/aligned
     type: File
-    'sbg:x': 209.65237426757812
-    'sbg:y': 379.7947998046875
+    'sbg:x': 190.84915161132812
+    'sbg:y': 381.26885986328125
   - id: output_unmapped
     outputSource:
       - samtools_view/output
     type: File
-    'sbg:x': 364.70672607421875
-    'sbg:y': 218
+    'sbg:x': 340.177001953125
+    'sbg:y': 225.9409942626953
   - id: output_fq2
     outputSource:
       - bedtools_bamtofastq_pe/output_fq2
@@ -156,8 +156,8 @@ steps:
       - id: out_fastq1
       - id: out_fastq2
     run: ../tool/fastp/fastp-pe.cwl
-    'sbg:x': -302
-    'sbg:y': -343
+    'sbg:x': -271.3704528808594
+    'sbg:y': -358.8819885253906
   - id: star_mapping_pe_human
     in:
       - id: fq1
@@ -202,8 +202,8 @@ steps:
       - id: output
     run: ../tool/samtools/samtools-view.cwl
     label: samtools-view
-    'sbg:x': 199.102294921875
-    'sbg:y': 52.59203338623047
+    'sbg:x': 179.7147216796875
+    'sbg:y': 53.134429931640625
   - id: bedtools_bamtofastq_pe
     in:
       - id: input
@@ -217,14 +217,14 @@ steps:
       - id: output_fq2
     run: ../tool/bedtools/bedtools-bamtofastq-pe.cwl
     label: bedtools-bamtofastq-pe
-    'sbg:x': 359.7348327636719
-    'sbg:y': 25.943771362304688
+    'sbg:x': 315.8917236328125
+    'sbg:y': -33.99026870727539
   - id: star_mapping_pe_virus
     in:
       - id: fq1
-        source: kz_filter_fq1/output
+        source: fastq_pair/fq1_paired
       - id: fq2
-        source: kz_filter_fq2/output
+        source: fastq_pair/fq2_paired
       - id: genomeDir
         source: genomeDir_virus
       - id: nthreads
@@ -320,12 +320,12 @@ steps:
       - id: output
     run: ../tool/kz_filter/kz_filter.cwl
     label: kz-filter_fq2
-    'sbg:x': 538.3936157226562
-    'sbg:y': 10.746968269348145
+    'sbg:x': 460.7408752441406
+    'sbg:y': 27.032846450805664
   - id: kz_filter_fq1
     in:
       - id: threshold
-        default: 0.05
+        default: 0.1
       - id: input_fq
         source: bedtools_bamtofastq_pe/output_fq1
       - id: output_fq
@@ -334,10 +334,21 @@ steps:
       - id: output
     run: ../tool/kz_filter/kz_filter.cwl
     label: kz-filter_fq1
-    'sbg:x': 546.4216918945312
-    'sbg:y': 151.69073486328125
-requirements:
-  - class: InlineJavascriptRequirement
-  - class: StepInputExpressionRequirement
+    'sbg:x': 462.7408752441406
+    'sbg:y': 147
+  - id: fastq_pair
+    in:
+      - id: fq1
+        source: kz_filter_fq1/output
+      - id: fq2
+        source: kz_filter_fq2/output
+    out:
+      - id: fq1_paired
+      - id: fq2_paired
+    run: ../tool/fastq_pair/fastq_pair.cwl
+    label: fastq_pair
+    'sbg:x': 577.2360229492188
+    'sbg:y': 93.92456817626953
+requirements: []
 'sbg:license': CC BY-NC 4.0
 'sbg:toolAuthor': Yoshiaki Yasumizu
