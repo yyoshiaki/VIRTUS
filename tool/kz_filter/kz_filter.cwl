@@ -6,7 +6,7 @@ id: kz_filter
 baseCommand:
   - kz
 inputs:
-  - 'sbg:toolDefaultValue': '0.05'
+  - 'sbg:toolDefaultValue': '0.1'
     id: threshold
     type: float?
     inputBinding:

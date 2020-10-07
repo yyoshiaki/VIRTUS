@@ -311,7 +311,7 @@ steps:
   - id: kz_filter_fq2
     in:
       - id: threshold
-        default: 0.05
+        default: 0.1
       - id: input_fq
         source: bedtools_bamtofastq_pe/output_fq2
       - id: output_fq

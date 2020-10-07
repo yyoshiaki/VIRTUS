@@ -1,0 +1,6 @@
+fq1:
+  class: File
+  path: /Users/yyasumizu/bioinformatics/tmp/kz_1.fq
+fq2:
+  class: File
+  path: /Users/yyasumizu/bioinformatics/tmp/kz_2.fq
