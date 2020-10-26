@@ -56,6 +56,8 @@ steps:
       - id: runThreadN
         source: runThreadN
       - id: genomeSAindexNbases
+        default: 12
+      - id: genomeSAindexNbases
         default: 10
         source: genomeSAindexNbases
     out:
