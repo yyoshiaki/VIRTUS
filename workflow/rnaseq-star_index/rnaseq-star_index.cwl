@@ -7,8 +7,8 @@ $namespaces:
 inputs:
   - id: runThreadN
     type: int?
-    'sbg:x': -223
-    'sbg:y': -263
+    'sbg:x': -232
+    'sbg:y': -321
   - id: url_genomefasta
     type: string
     'sbg:x': -679
@@ -21,6 +21,10 @@ inputs:
     type: string
     'sbg:x': -505.46875
     'sbg:y': 335
+  - id: genomeSAindexNbases
+    type: int?
+    'sbg:x': -227
+    'sbg:y': -181
 outputs:
   - id: downloaded_genomefasta
     outputSource:
@@ -46,6 +50,7 @@ steps:
         source: runThreadN
       - id: genomeSAindexNbases
         default: 14
+        source: genomeSAindexNbases
     out:
       - id: starIndex
     run: ../../tool/star/star_index/star_index.cwl
