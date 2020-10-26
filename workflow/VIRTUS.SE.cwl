@@ -3,7 +3,7 @@
 class: Workflow
 cwlVersion: v1.0
 id: VIRTUS.SE
-doc: VIRTUS v1.2
+doc: VIRTUS v1.2.1
 label: VIRTUS.SE
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
@@ -40,6 +40,11 @@ inputs:
     type: int?
     'sbg:x': 738.9225463867188
     'sbg:y': 519.65234375
+  - id: kz_threshold
+    type: float?
+    doc: 'default : 0.1'
+    'sbg:x': -254.75790405273438
+    'sbg:y': 476.1842956542969
 outputs:
   - id: output_unmapped
     outputSource:
@@ -276,6 +281,7 @@ steps:
     in:
       - id: threshold
         default: 0.1
+        source: kz_threshold
       - id: input_fq
         source: bedtools_bamtofastq_se/output_fq
       - id: output_fq
