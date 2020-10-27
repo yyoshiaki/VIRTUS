@@ -3,8 +3,8 @@
 class: Workflow
 cwlVersion: v1.0
 id: createindex
+doc: VIRTUS v1.2.1
 label: CreateIndex
-doc: VIRTUS v1.1
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 inputs:
@@ -94,6 +94,8 @@ steps:
         source: wget_virus/downloaded
       - id: runThreadN
         source: runThreadN
+      - id: genomeSAindexNbases
+        default: 12
     out:
       - id: starIndex
     run: ../tool/star/star_index/star_index.cwl
@@ -133,6 +135,8 @@ steps:
         source: output_name_genomefasta_human
       - id: dir_name
         source: dir_name_STAR_human
+      - id: genomeSAindexNbases
+        default: 14
     out:
       - id: downloaded_genomefasta
       - id: starIndex
@@ -151,8 +155,6 @@ steps:
         default: true
       - id: kmer
         default: 31
-      - id: type
-        default: quasi
     out:
       - id: index
     run: ../tool/salmon-cwl/salmon-index.cwl

@@ -1,7 +1,7 @@
 #!/usr/bin/env cwltool
 
 class: Workflow
-cwlVersion: v1.0
+cwlVersion: v1.2.1
 id: createindex_singlevirus
 label: createindex_singlevirus
 doc: VIRTUS v1.1
