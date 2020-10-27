@@ -1,7 +1,7 @@
 #!/usr/bin/env cwltool
 
 class: Workflow
-cwlVersion: v1.0
+cwlVersion: v1.2.1
 id: createindex_singlevirus
 label: createindex_singlevirus
 doc: VIRTUS v1.1
@@ -55,8 +55,6 @@ steps:
         source: genomeFastaFiles
       - id: runThreadN
         source: runThreadN
-      - id: genomeSAindexNbases
-        default: 12
       - id: genomeSAindexNbases
         default: 10
         source: genomeSAindexNbases
