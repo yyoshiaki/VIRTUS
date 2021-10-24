@@ -4,7 +4,7 @@ class: CommandLineTool
 doc: The non-interactive network downloader
 requirements:
   DockerRequirement:
-    dockerPull: alpine:3.9
+    dockerPull: inutano/wget:1.20.3-r1
   InlineJavascriptRequirement: {}
 baseCommand: wget
 inputs:

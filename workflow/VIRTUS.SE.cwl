@@ -3,7 +3,7 @@
 class: Workflow
 cwlVersion: v1.0
 id: VIRTUS.SE
-doc: VIRTUS v1.1
+doc: VIRTUS v1.2.1
 label: VIRTUS.SE
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
@@ -40,6 +40,11 @@ inputs:
     type: int?
     'sbg:x': 738.9225463867188
     'sbg:y': 519.65234375
+  - id: kz_threshold
+    type: float?
+    doc: 'default : 0.1'
+    'sbg:x': -254.75790405273438
+    'sbg:y': 476.1842956542969
 outputs:
   - id: output_unmapped
     outputSource:
@@ -124,8 +129,6 @@ steps:
     in:
       - id: threads
         source: nthreads
-      - id: b
-        default: true
       - id: f
         default: 4
       - id: prefix
@@ -236,12 +239,12 @@ steps:
       - id: output_fq
     run: ../tool/bedtools/bedtools-bamtofastq-se.cwl
     label: bedtools-bamtofastq-pe
-    'sbg:x': 392.1208801269531
-    'sbg:y': -110.00155639648438
+    'sbg:x': 350.34454345703125
+    'sbg:y': -113.04795837402344
   - id: star_mapping_se_virus
     in:
       - id: fq
-        source: bedtools_bamtofastq_se/output_fq
+        source: kz_filter/output
       - id: genomeDir
         source: genomeDir_virus
       - id: nthreads
@@ -274,9 +277,26 @@ steps:
     label: bam_filter_polyX
     'sbg:x': 847.6024780273438
     'sbg:y': 366.4100036621094
-requirements: []
+  - id: kz_filter
+    in:
+      - id: threshold
+        default: 0.1
+        source: kz_threshold
+      - id: input_fq
+        source: bedtools_bamtofastq_se/output_fq
+      - id: output_fq
+        default: kz.fq
+    out:
+      - id: output
+    run: ../tool/kz_filter/kz_filter.cwl
+    label: kz-filter
+    'sbg:x': 489.5152893066406
+    'sbg:y': 39.372711181640625
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: StepInputExpressionRequirement
+'sbg:license': CC BY-NC 4.0
 'sbg:links':
   - id: 'https://github.com/yyoshiaki/VIRTUS'
     label: ''
 'sbg:toolAuthor': Yoshiaki Yasumizu
-'sbg:license': CC BY-NC 4.0

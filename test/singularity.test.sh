@@ -20,8 +20,8 @@ fi
 echo "null" > null.txt
 ls | grep -v -E 'test.sh' | grep -v -E 'ERR3240275' | grep -v -E 'SRR8315715' | xargs rm -r
 
-cwltool --rm-tmpdir ../workflow/createindex.cwl ../workflow/createindex.job.yaml
-cwltool --rm-tmpdir ../workflow/createindex_singlevirus.cwl ../workflow/createindex_singlevirus.job.NC_007605.1.yaml
+cwltool --rm-tmpdir --singularity ../workflow/createindex.cwl ../workflow/createindex.job.yaml
+cwltool --rm-tmpdir --singularity ../workflow/createindex_singlevirus.cwl ../workflow/createindex_singlevirus.job.NC_007605.1.yaml
 
 cd ERR3240275
 if [[ ! -e ./ERR3240275_1.fastq.gz ]]; then
@@ -30,11 +30,11 @@ if [[ ! -e ./ERR3240275_1.fastq.gz ]]; then
   wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR324/005/ERR3240275/ERR3240275_1.fastq.gz
   wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR324/005/ERR3240275/ERR3240275_2.fastq.gz
 fi
-cwltool --rm-tmpdir ../../workflow/VIRTUS.PE.cwl ../../workflow/VIRTUS.PE.job.yaml
-cwltool --rm-tmpdir ../../workflow/VIRTUS.PE.singlevirus.cwl ../../workflow/VIRTUS.PE.singlevirus.job.yaml
+cwltool --rm-tmpdir --singularity ../../workflow/VIRTUS.PE.cwl ../../workflow/VIRTUS.PE.job.yaml
+cwltool --rm-tmpdir --singularity ../../workflow/VIRTUS.PE.singlevirus.cwl ../../workflow/VIRTUS.PE.singlevirus.job.yaml
 cd ..
 
-cwltool --rm-tmpdir ../workflow/createindex_singlevirus.cwl ../workflow/createindex_singlevirus.job.NC_001806.2.yaml
+cwltool --rm-tmpdir --singularity ../workflow/createindex_singlevirus.cwl ../workflow/createindex_singlevirus.job.NC_001806.2.yaml
 
 cd SRR8315715
 if [[ ! -e ./SRR8315715_1.fastq.gz ]]; then
@@ -43,8 +43,8 @@ if [[ ! -e ./SRR8315715_1.fastq.gz ]]; then
   wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR831/005/SRR8315715/SRR8315715_1.fastq.gz
   wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR831/005/SRR8315715/SRR8315715_2.fastq.gz
 fi
-cwltool --rm-tmpdir ../../workflow/VIRTUS.SE.cwl ../../workflow/VIRTUS.SE.job.yaml
-cwltool --rm-tmpdir ../../workflow/VIRTUS.SE.singlevirus.cwl ../../workflow/VIRTUS.SE.singlevirus.job.yaml
+cwltool --rm-tmpdir --singularity ../../workflow/VIRTUS.SE.cwl ../../workflow/VIRTUS.SE.job.yaml
+cwltool --rm-tmpdir --singularity ../../workflow/VIRTUS.SE.singlevirus.cwl ../../workflow/VIRTUS.SE.singlevirus.job.yaml
 cd ..
 
-echo Successfully completed test.sh!
+echo Successfully completed singularity.test.sh!
