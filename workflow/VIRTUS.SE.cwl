@@ -125,7 +125,7 @@ outputs:
   - id: virus_count
     outputSource:
       - mk_virus_count/virus_count
-    type: stdout
+    type: File
     'sbg:x': 1117
     'sbg:y': 604
 steps:

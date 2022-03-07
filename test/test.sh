@@ -40,7 +40,7 @@ cd SRR8315715
 if [[ ! -e ./SRR8315715_1.fastq.gz ]]; then
 #  fasterq-dump -e 8 SRR8315715 -p
 #  pigz SRR8315715_*.fastq
-  wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR831/005/SRR8315715/SRR8315715_1.fastq.gz
+# wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR831/005/SRR8315715/SRR8315715_1.fastq.gz
   wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR831/005/SRR8315715/SRR8315715_2.fastq.gz
 fi
 cwltool --rm-tmpdir ../../workflow/VIRTUS.SE.cwl ../../workflow/VIRTUS.SE.job.yaml
