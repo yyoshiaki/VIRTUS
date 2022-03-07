@@ -1,0 +1,4 @@
+input:
+  class: File
+  path: >-
+    /Users/yyasumizu/sol/yyoshiaki-git/VIRTUS/test/ERR3240275/virusAligned.filtered.sortedByCoord.out.bam

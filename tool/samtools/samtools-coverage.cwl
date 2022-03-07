@@ -2,10 +2,10 @@ class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
-id: samtools_index
+id: samtools_coverage
 baseCommand:
   - samtools
-  - index
+  - coverage
 inputs:
   - id: input
     type: File
@@ -13,10 +13,11 @@ inputs:
       position: 0
 outputs:
   - id: output
-    type: File?
+    type: File
     outputBinding:
-      glob: '*'
-label: samtools-index
+      glob: virus.coverage.txt
+label: samtools-coverage
 requirements:
   - class: DockerRequirement
     dockerPull: 'quay.io/biocontainers/samtools:1.15--h1170115_1'
+stdout: virus.coverage.txt
