@@ -1,8 +1,6 @@
-#!/usr/bin/env cwltool
-
 class: Workflow
 cwlVersion: v1.0
-id: VIRTUS.PE
+id: _v_i_r_t_u_s__p_e
 doc: VIRTUS v1.2.1
 label: VIRTUS.PE
 $namespaces:
@@ -140,12 +138,24 @@ outputs:
     type: File?
     'sbg:x': 1280.2369384765625
     'sbg:y': -573.7061767578125
-  - id: output_1
+  - id: aligned_bam_virus_filtered
     outputSource:
       - bam_filter_polyx/output
     type: File?
-    'sbg:x': 967.21630859375
-    'sbg:y': 668.790283203125
+    'sbg:x': 984
+    'sbg:y': 707
+  - id: output_coverage
+    outputSource:
+      - samtools_coverage/output
+    type: File
+    'sbg:x': 1142.3587646484375
+    'sbg:y': 520.5
+  - id: virus_count
+    outputSource:
+      - mk_virus_count/virus_count
+    type: stdout
+    'sbg:x': 1114.3587646484375
+    'sbg:y': 667.5
 steps:
   - id: fastp_pe
     in:
@@ -263,8 +273,8 @@ steps:
       - id: virus_count
     run: ../tool/mk_virus_count.cwl
     label: mk_virus_count
-    'sbg:x': 963.22509765625
-    'sbg:y': 479.8780822753906
+    'sbg:x': 967
+    'sbg:y': 578
   - id: salmon_quant_human
     in:
       - id: index
@@ -356,6 +366,16 @@ steps:
     label: fastq_pair
     'sbg:x': 577.2360229492188
     'sbg:y': 93.92456817626953
+  - id: samtools_coverage
+    in:
+      - id: input
+        source: bam_filter_polyx/output
+    out:
+      - id: output
+    run: ../tool/samtools/samtools-coverage.cwl
+    label: samtools-coverage
+    'sbg:x': 960
+    'sbg:y': 454
 requirements: []
 'sbg:license': CC BY-NC 4.0
 'sbg:toolAuthor': Yoshiaki Yasumizu

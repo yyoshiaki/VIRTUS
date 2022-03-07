@@ -6,22 +6,22 @@ id: samtools_view
 baseCommand:
   - samtools_view_removemulti.sh
 inputs:
-  - id: threads
+  - default: 4
+    id: threads
     type: int?
-    default: 4
     inputBinding:
       position: 0
       prefix: ''
       shellQuote: false
-  - id: f
+  - default: 4
+    id: f
     type: int?
-    default: 4
     inputBinding:
       position: 3
       prefix: ''
       shellQuote: false
-  - id: prefix
-    default: human
+  - default: human
+    id: prefix
     type: string?
     label: prefix
   - id: bam
@@ -36,6 +36,6 @@ label: samtools-view
 requirements:
   - class: ShellCommandRequirement
   - class: DockerRequirement
-    dockerPull: 'yyasumizu/bam_filter_polyx:1.1'
+    dockerPull: 'yyasumizu/bam_filter_polyx:1.3'
   - class: InlineJavascriptRequirement
 stdout: $(inputs.prefix).unmapped.bam

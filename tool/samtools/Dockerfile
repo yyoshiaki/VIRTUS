@@ -1,4 +1,4 @@
-FROM quay.io/biocontainers/samtools:1.2-0
+FROM quay.io/biocontainers/samtools:1.15--h1170115_1
 
 WORKDIR /workdir
 COPY bam_filter_polyx.sh /workdir

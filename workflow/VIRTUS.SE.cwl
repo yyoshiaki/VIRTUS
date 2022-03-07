@@ -1,8 +1,6 @@
-#!/usr/bin/env cwltool
-
 class: Workflow
 cwlVersion: v1.0
-id: VIRTUS.SE
+id: _v_i_r_t_u_s__s_e
 doc: VIRTUS v1.2.1
 label: VIRTUS.SE
 $namespaces:
@@ -10,12 +8,12 @@ $namespaces:
 inputs:
   - id: genomeDir_human
     type: Directory
-    'sbg:x': -305
-    'sbg:y': -602
+    'sbg:x': -315
+    'sbg:y': -603
   - id: outFileNamePrefix_human
     type: string?
-    'sbg:x': -317.6976318359375
-    'sbg:y': -741.7814331054688
+    'sbg:x': -312
+    'sbg:y': -754
   - id: nthreads
     type: int?
     'sbg:x': -366.3414611816406
@@ -110,20 +108,26 @@ outputs:
     outputSource:
       - star_mapping_se_virus/Log.out
     type: File?
-    'sbg:x': 916.2921752929688
-    'sbg:y': 166.94712829589844
+    'sbg:x': 907
+    'sbg:y': 151
   - id: aligned_bam_virus
     outputSource:
       - star_mapping_se_virus/aligned
     type: File
     'sbg:x': 844.6334228515625
     'sbg:y': 646.7491455078125
-  - id: aligned_bam_virus_filtered
+  - id: output_coverage
     outputSource:
-      - bam_filter_polyx/output
-    type: File?
-    'sbg:x': 949.710693359375
-    'sbg:y': 282.77105712890625
+      - samtools_coverage/output
+    type: File
+    'sbg:x': 1118
+    'sbg:y': 432
+  - id: virus_count
+    outputSource:
+      - mk_virus_count/virus_count
+    type: stdout
+    'sbg:x': 1117
+    'sbg:y': 604
 steps:
   - id: samtools_view
     in:
@@ -152,8 +156,8 @@ steps:
       - id: virus_count
     run: ../tool/mk_virus_count.cwl
     label: mk_virus_count
-    'sbg:x': 963.22509765625
-    'sbg:y': 479.8780822753906
+    'sbg:x': 962
+    'sbg:y': 510
   - id: mk_summary_virus_count
     in:
       - id: input_STARLog
@@ -292,9 +296,17 @@ steps:
     label: kz-filter
     'sbg:x': 489.5152893066406
     'sbg:y': 39.372711181640625
-requirements:
-  - class: InlineJavascriptRequirement
-  - class: StepInputExpressionRequirement
+  - id: samtools_coverage
+    in:
+      - id: input
+        source: bam_filter_polyx/output
+    out:
+      - id: output
+    run: ../tool/samtools/samtools-coverage.cwl
+    label: samtools-coverage
+    'sbg:x': 963
+    'sbg:y': 371
+requirements: []
 'sbg:license': CC BY-NC 4.0
 'sbg:links':
   - id: 'https://github.com/yyoshiaki/VIRTUS'
