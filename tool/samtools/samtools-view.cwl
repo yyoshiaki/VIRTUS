@@ -4,7 +4,7 @@ $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 id: samtools_view
 baseCommand:
-  - ./samtools_view_removemulti.sh
+  - samtools_view_removemulti.sh
 inputs:
   - default: 4
     id: threads
