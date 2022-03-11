@@ -1,7 +1,7 @@
 class: Workflow
 cwlVersion: v1.0
 id: createindex
-doc: VIRTUS v1.2.1
+doc: VIRTUS v2.0
 label: CreateIndex
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'

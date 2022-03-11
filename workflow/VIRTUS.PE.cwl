@@ -1,15 +1,15 @@
 class: Workflow
 cwlVersion: v1.0
-id: _v_i_r_t_u_s__p_e
-doc: VIRTUS v1.2.1
+id: _v_i_r_t_u_s_p_e
+doc: VIRTUS v2.0
 label: VIRTUS.PE
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 inputs:
   - id: fastq2
     type: File
-    'sbg:x': -446.9178771972656
-    'sbg:y': -426.26885986328125
+    'sbg:x': -438
+    'sbg:y': -427
   - id: fastq1
     type: File
     'sbg:x': -445.51458740234375
@@ -35,6 +35,10 @@ inputs:
     doc: 'default : 0.1.'
     'sbg:x': -296.2785949707031
     'sbg:y': 411.1441650390625
+  - id: filename_output
+    type: string
+    'sbg:x': 886.1015625
+    'sbg:y': -546
 outputs:
   - id: Log.out_human
     outputSource:
@@ -130,8 +134,8 @@ outputs:
     outputSource:
       - mk_summary_virus_count/output
     type: File?
-    'sbg:x': 1277
-    'sbg:y': -405
+    'sbg:x': 1276
+    'sbg:y': -400
 steps:
   - id: fastp_pe
     in:
@@ -276,8 +280,8 @@ steps:
       - id: output
     run: ../tool/kz_filter/kz_filter.cwl
     label: kz-filter_fq1
-    'sbg:x': 462.7408752441406
-    'sbg:y': 147
+    'sbg:x': 458
+    'sbg:y': 155
   - id: fastq_pair
     in:
       - id: fq1
@@ -311,6 +315,7 @@ steps:
         default: PE
       - id: filename_output
         default: VIRTUS.output.tsv
+        source: filename_output
     out:
       - id: output
     run: ../tool/mk_summary_virus_count/mk_summary_virus_count.cwl
@@ -319,4 +324,7 @@ steps:
     'sbg:y': -400
 requirements: []
 'sbg:license': CC BY-NC 4.0
+'sbg:links':
+  - id: 'https://github.com/yyoshiaki/VIRTUS2'
+    label: ''
 'sbg:toolAuthor': Yoshiaki Yasumizu

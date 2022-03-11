@@ -1,7 +1,7 @@
 class: Workflow
 cwlVersion: v1.0
-id: _v_i_r_t_u_s__s_e
-doc: VIRTUS v1.2.1
+id: _v_i_r_t_u_s_s_e
+doc: VIRTUS v2.0
 label: VIRTUS.SE
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
@@ -31,6 +31,10 @@ inputs:
     doc: 'default : 0.1'
     'sbg:x': -254.75790405273438
     'sbg:y': 476.1842956542969
+  - id: filename_output
+    type: string
+    'sbg:x': 817
+    'sbg:y': -440
 outputs:
   - id: output_unmapped
     outputSource:
@@ -243,6 +247,7 @@ steps:
         default: SE
       - id: filename_output
         default: VIRTUS.output.tsv
+        source: filename_output
     out:
       - id: output
     run: ../tool/mk_summary_virus_count/mk_summary_virus_count.cwl
@@ -252,6 +257,6 @@ steps:
 requirements: []
 'sbg:license': CC BY-NC 4.0
 'sbg:links':
-  - id: 'https://github.com/yyoshiaki/VIRTUS'
+  - id: 'https://github.com/yyoshiaki/VIRTUS2'
     label: ''
 'sbg:toolAuthor': Yoshiaki Yasumizu
