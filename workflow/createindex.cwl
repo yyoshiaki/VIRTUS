@@ -1,5 +1,3 @@
-#!/usr/bin/env cwltool
-
 class: Workflow
 cwlVersion: v1.0
 id: createindex
@@ -36,18 +34,6 @@ inputs:
     type: string
     'sbg:x': -1108
     'sbg:y': 115
-  - id: salmon_index_human
-    type: string
-    'sbg:x': -1140
-    'sbg:y': -978
-  - id: url_transcript_human
-    type: string
-    'sbg:x': -1146
-    'sbg:y': -1238
-  - id: output_name_human_transcipt
-    type: string
-    'sbg:x': -1139
-    'sbg:y': -1086
 outputs:
   - id: downloaded_virus
     outputSource:
@@ -73,18 +59,6 @@ outputs:
     type: File
     'sbg:x': -496
     'sbg:y': -30
-  - id: salmon_index_human
-    outputSource:
-      - salmon_index_human/index
-    type: Directory
-    'sbg:x': -404
-    'sbg:y': -988
-  - id: downloaded
-    outputSource:
-      - wget_transcipt/downloaded
-    type: File
-    'sbg:x': -733
-    'sbg:y': -1171
 steps:
   - id: star_index_virus
     in:
@@ -143,34 +117,5 @@ steps:
     run: rnaseq-star_index/rnaseq-star_index.cwl
     'sbg:x': -688
     'sbg:y': -91
-  - id: salmon_index_human
-    in:
-      - id: index
-        source: salmon_index_human
-      - id: threads
-        source: runThreadN
-      - id: transcripts
-        source: wget_transcipt/downloaded
-      - id: gencode
-        default: true
-      - id: kmer
-        default: 31
-    out:
-      - id: index
-    run: ../tool/salmon-cwl/salmon-index.cwl
-    'sbg:x': -708
-    'sbg:y': -947
-  - id: wget_transcipt
-    in:
-      - id: output_name
-        source: output_name_human_transcipt
-      - id: url
-        source: url_transcript_human
-    out:
-      - id: downloaded
-      - id: stderr
-    run: ../tool/wget/wget.cwl
-    'sbg:x': -946
-    'sbg:y': -1069
 requirements:
   - class: SubworkflowFeatureRequirement

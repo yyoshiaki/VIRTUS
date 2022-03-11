@@ -18,14 +18,6 @@ inputs:
     type: int?
     'sbg:x': -366.3414611816406
     'sbg:y': 303.09088134765625
-  - id: salmon_index_human
-    type: Directory
-    'sbg:x': -313.94915771484375
-    'sbg:y': -922.5796508789062
-  - id: salmon_quantdir_human
-    type: string
-    'sbg:x': -314.884765625
-    'sbg:y': -1090
   - id: fastq
     type: File
     'sbg:x': -433.9359130859375
@@ -34,10 +26,6 @@ inputs:
     type: Directory
     'sbg:x': 447.2225036621094
     'sbg:y': -263.0279846191406
-  - id: hit_cutoff
-    type: int?
-    'sbg:x': 738.9225463867188
-    'sbg:y': 519.65234375
   - id: kz_threshold
     type: float?
     doc: 'default : 0.1'
@@ -50,12 +38,6 @@ outputs:
     type: File
     'sbg:x': 412
     'sbg:y': 218
-  - id: output
-    outputSource:
-      - mk_summary_virus_count/output
-    type: File?
-    'sbg:x': 1280.2369384765625
-    'sbg:y': -573.7061767578125
   - id: aligned_bam_human
     outputSource:
       - star_mapping_se/aligned
@@ -80,12 +62,6 @@ outputs:
     type: File?
     'sbg:x': 240.66200256347656
     'sbg:y': -499.92999267578125
-  - id: output_quantdir_human
-    outputSource:
-      - salmon_quant_se/output_quantdir
-    type: Directory
-    'sbg:x': 241.95457458496094
-    'sbg:y': -672.1799926757812
   - id: output_fq
     outputSource:
       - bedtools_bamtofastq_se/output_fq
@@ -122,12 +98,12 @@ outputs:
     type: File
     'sbg:x': 1118
     'sbg:y': 432
-  - id: virus_count
+  - id: output
     outputSource:
-      - mk_virus_count/virus_count
-    type: File
-    'sbg:x': 1117
-    'sbg:y': 604
+      - mk_summary_virus_count_1/output
+    type: File?
+    'sbg:x': 1224
+    'sbg:y': -246
 steps:
   - id: samtools_view
     in:
@@ -145,33 +121,6 @@ steps:
     label: samtools-view
     'sbg:x': 199.102294921875
     'sbg:y': 52.59203338623047
-  - id: mk_virus_count
-    in:
-      - id: virus_bam
-        source: bam_filter_polyx/output
-      - id: hit_cutoff
-        default: 400
-        source: hit_cutoff
-    out:
-      - id: virus_count
-    run: ../tool/mk_virus_count.cwl
-    label: mk_virus_count
-    'sbg:x': 962
-    'sbg:y': 510
-  - id: mk_summary_virus_count
-    in:
-      - id: input_STARLog
-        source: star_mapping_se/mappingstats
-      - id: input_virus_count
-        source: mk_virus_count/virus_count
-      - id: input_layout
-        default: SE
-    out:
-      - id: output
-    run: ../tool/mk_summary_virus_count/mk_summary_virus_count.cwl
-    label: mk_summary_virus_count
-    'sbg:x': 1132.9288330078125
-    'sbg:y': -576.298583984375
   - id: fastp_se
     in:
       - id: fastq
@@ -211,28 +160,6 @@ steps:
     label: 'STAR mapping: running mapping jobs.'
     'sbg:x': 7.433086395263672
     'sbg:y': -424.0473327636719
-  - id: salmon_quant_se
-    in:
-      - id: index
-        source: salmon_index_human
-      - id: inf
-        source: fastp_se/out_fastq
-      - id: libType
-        default: A
-      - id: quantdir
-        default: salmon_quantdir_human
-        source: salmon_quantdir_human
-      - id: runThreadN
-        source: nthreads
-      - id: gcBias
-        default: true
-      - id: validateMappings
-        default: true
-    out:
-      - id: output_quantdir
-    run: ../tool/salmon-cwl/salmon-quant_se.cwl
-    'sbg:x': -10.507709503173828
-    'sbg:y': -671.244873046875
   - id: bedtools_bamtofastq_se
     in:
       - id: input
@@ -306,6 +233,22 @@ steps:
     label: samtools-coverage
     'sbg:x': 963
     'sbg:y': 371
+  - id: mk_summary_virus_count_1
+    in:
+      - id: input_STARLog
+        source: star_mapping_se/mappingstats
+      - id: input_virus_cov
+        source: samtools_coverage/output
+      - id: input_layout
+        default: SE
+      - id: filename_output
+        default: VIRTUS.output.tsv
+    out:
+      - id: output
+    run: ../tool/mk_summary_virus_count/mk_summary_virus_count.cwl
+    label: mk_summary_virus_count
+    'sbg:x': 1042
+    'sbg:y': -248
 requirements: []
 'sbg:license': CC BY-NC 4.0
 'sbg:links':
