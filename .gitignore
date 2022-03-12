@@ -4,3 +4,4 @@ test/*
 !test/*.yaml
 wrapper/SRR*
 .vscode/settings.json
+._.DS_Store

@@ -1,3 +1,5 @@
+#!/usr/bin/env cwltool
+
 class: Workflow
 cwlVersion: v1.0
 id: _v_i_r_t_u_s_p_e
@@ -32,11 +34,12 @@ inputs:
     'sbg:y': 452.7935791015625
   - id: kz_threshold
     type: float?
-    doc: 'default : 0.1.'
+    doc: 'default : 0.1'
     'sbg:x': -296.2785949707031
     'sbg:y': 411.1441650390625
   - id: filename_output
-    type: string
+    type: string?
+    doc: 'default : VIRTUS.output.tsv'
     'sbg:x': 886.1015625
     'sbg:y': -546
 outputs:

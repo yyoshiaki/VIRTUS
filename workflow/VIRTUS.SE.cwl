@@ -1,3 +1,5 @@
+#!/usr/bin/env cwltool
+
 class: Workflow
 cwlVersion: v1.0
 id: _v_i_r_t_u_s_s_e
@@ -32,7 +34,8 @@ inputs:
     'sbg:x': -254.75790405273438
     'sbg:y': 476.1842956542969
   - id: filename_output
-    type: string
+    type: string?
+    doc: 'default : VIRTUS.output.tsv'
     'sbg:x': 817
     'sbg:y': -440
 outputs:

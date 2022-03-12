@@ -10,3 +10,4 @@ genomeDir_virus:
   path: ../test/STAR_index_virus
 nthreads: 40
 outFileNamePrefix_human: human
+filename_output: VIRTUS.output.tsv
